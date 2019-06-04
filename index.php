@@ -25,7 +25,7 @@ require 'head.php';
             <img class="img-fluid" src="images/classroom btw illustration.jpg" alt="">
           </div>
           <p>
-            Joe Sabbadino has taugh driver's education in Greenville, SC for over 50 years. From the first time you
+            Joe Sabbadino has taught driver's education in Greenville, SC for over 50 years. From the first time you
             meet Mr. Sabb, you'll see his passion for safety on our roads. As a lifelong educator, Mr. Sabb has a
             knack for helping his students understand the importance of defensive driving and traffic safety.
           </p>
