@@ -81,6 +81,10 @@ require 'head.php';
               Driving students drive an average of 122.7 miles during their behind-the-wheel training
             </p>
           </div>
+          <p class="my-5">
+            All students need driving time with parents. By law, 15- and 16-year-old students have to log 40 hours
+            of driving time with parents before taking the license test.
+          </p>
           <div class="my-5 did-you-know">
             <p class="mb-0 did-you-know-title">Did You Know?</p>
             <p class="">
@@ -88,12 +92,24 @@ require 'head.php';
               permit to drive with anyone else
             </p>
           </div>
+          <p class="my-5">
+            For an additional fee, Mr. Sabbadino is also certified to give a license test to anyone who has
+            completed a driver education course. <a href="#prices-block">See below for pricing</a>. Once you
+            have completed this test with Mr. Sabbadino, you can take your paperwork directly to the DMV to
+            get your license.<br>
+            <em><strong>Note:</strong> The DMV reserves the right to randomly select applicants for retesting.</em>
+          </p>
           <div class="my-5 did-you-know">
             <p class="mb-0 did-you-know-title">Did You Know?</p>
             <p class="">
               A 15- or 16-year-old has to have a permit at least 6 months before taking a license test
             </p>
           </div>
+          <h2 id="prices-block">Prices</h2>
+          <p class="prices">
+            <strong>Driver Education Course</strong> &ndash; $330<br>
+            <strong>License Test</strong> &ndash; $50
+          </p>
           <p>
             Contact <a href="mailto:jandjsabb@att.net?subject=websitequestions">Mr. Sabbadino</a> for more information or to register for the driving course.
           </p>
