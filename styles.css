@@ -4,6 +4,7 @@
   3. Navigation Bar
   4. Footer Tagline
   5. Image Modal
+  6. Did You Know
 */
 
 
@@ -164,4 +165,19 @@ li {
     width: 30px;
     height: 30px;
   }
+}
+
+
+/* 6. Did You Know */
+
+.did-you-know {
+  border: 1px solid gray;
+
+  padding: 15px 30px;
+  border-radius: 15px;
+}
+
+.did-you-know .did-you-know-title {
+  font-size: 1.5em;
+  color: gray;
 }

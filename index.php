@@ -56,7 +56,7 @@ require 'head.php';
             Mr. Sabb has found this technique to be highly effective.
           </p>
           <p class="mt-5">
-            <strong>Behind the Wheel Driving Lessons Include:</strong>
+            <strong>Behind-the-Wheel Driving Lessons Include:</strong>
           </p>
           <ul class="mb-5 two-columns">
             <li>Off-road forward and backing maneuvers</li>
@@ -75,6 +75,25 @@ require 'head.php';
             Our driving lessons are designed to teach smooth starts and stops, increased speeds with controlled safety stops,
             front/rear vehicle judgement, and turning forward and backwards.
           </p>
+          <div class="my-5 did-you-know">
+            <p class="mb-0 did-you-know-title">Did You Know?</p>
+            <p class="">
+              Driving students drive an average of 122.7 miles during their behind-the-wheel training
+            </p>
+          </div>
+          <div class="my-5 did-you-know">
+            <p class="mb-0 did-you-know-title">Did You Know?</p>
+            <p class="">
+              A student does not need a permit to drive with a driving instructor. However, a student does need a
+              permit to drive with anyone else
+            </p>
+          </div>
+          <div class="my-5 did-you-know">
+            <p class="mb-0 did-you-know-title">Did You Know?</p>
+            <p class="">
+              A 15- or 16-year-old has to have a permit at least 6 months before taking a license test
+            </p>
+          </div>
           <p>
             Contact <a href="mailto:jandjsabb@att.net?subject=websitequestions">Mr. Sabbadino</a> for more information or to register for the driving course.
           </p>
