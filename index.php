@@ -39,7 +39,7 @@ require 'head.php';
           <p class="mb-0">
             Classroom Instruction Covers:
           </p>
-          <ul>
+          <ul class="two-columns">
             <li>Right attitudes for drivers</li>
             <li>Defensive driving</li>
             <li>Dangers of driving under the influence</li>
@@ -51,7 +51,7 @@ require 'head.php';
           <p class="mb-0">
             Behind the Wheel Driving Lessons Include:
           </p>
-          <ul>
+          <ul class="two-columns">
             <li>Off-road forward and backing maneuvers</li>
             <li>Tracking (keeping the vehicle centered in the lane)</li>
             <li>Scanning (using eyes properly for defensive driving)</li>

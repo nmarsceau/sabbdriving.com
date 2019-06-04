@@ -51,6 +51,15 @@ li {
   line-height: 1.3em;
 }
 
+@media screen and (min-width: 800px) {
+  .two-columns {
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+  }
+}
+
+
 
 /* 2. Future Class Dates */
 
