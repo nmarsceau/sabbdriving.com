@@ -12,8 +12,8 @@ require 'head.php';
   <?php require 'header.php'; ?>
 
   <div class="container">
-    <div class="row">
-      <h1 class="col-12 mb-4">Sabbadino Driving School</h1>
+    <div class="row pt-4">
+      <h1 class="col-12 mb-4 visually-hidden">Sabbadino Driving School</h1>
       <section class="col-lg-9"> <!-- main content -->
         <article>
           <h2>Learn Traffic Safety, Defensive Driving,<br />and Behind-the-Wheel Training</h2>
@@ -21,6 +21,9 @@ require 'head.php';
             At Sabbadino Driving School, our mission is to make safety first and to make safety last. Our driving
             courses in Taylors, SC include 10 hours of classroom instruction and 6 hours of behind-the-wheel training.
           </p>
+          <div class="my-5 text-center">
+            <img class="img-fluid" src="images/classroom btw illustration.jpg" alt="">
+          </div>
           <p>
             Joe Sabbadino has taugh driver's education in Greenville, SC for over 50 years. From the first time you
             meet Mr. Sabb, you'll see his passion for safety on our roads. As a lifelong educator, Mr. Sabb has a
@@ -30,11 +33,6 @@ require 'head.php';
             With 10 hours of classroom instruction and 6 hours of behind-the-wheel training, our driver training
             courses exceed the South Carolina driver's education requirements. The classroom instruction is
             scheduled in two and a half hour sessions over four weeks.
-          </p>
-          <p>
-            Our unique approach to behind-the-wheel training sets us apart. Mr. Sabbadino takes two students on
-            each driving lesson. Each student drives for half of the lesson and observes for the other half.
-            Mr. Sabb has found this technique to be highly effective.
           </p>
           <p class="mb-0">
             Classroom Instruction Covers:
@@ -48,6 +46,14 @@ require 'head.php';
             <li>Truck safety</li>
             <li>Emergencies</li>
           </ul>
+          <p>
+            Our unique approach to behind-the-wheel training sets us apart. Mr. Sabbadino takes two students on
+            each driving lesson. Each student drives for half of the lesson and observes for the other half.
+            Mr. Sabb has found this technique to be highly effective.
+          </p>
+          <div class="my-5">
+            <img class="img-fluid" src="images/behind the wheel.jpg" alt="Mr. Sabbadino drives with a student" />
+          </div>
           <p class="mb-0">
             Behind the Wheel Driving Lessons Include:
           </p>
