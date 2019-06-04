@@ -17,7 +17,7 @@ require 'head.php';
       <section class="col-lg-9"> <!-- main content -->
         <article>
           <h2>Learn Traffic Safety, Defensive Driving,<br />and Behind-the-Wheel Training</h2>
-          <p class="mt-4">
+          <p class="mt-4 mb-5">
             At Sabbadino Driving School, our mission is to make safety first and to make safety last. Our driving
             courses in Taylors, SC are taught by Joe Sabbadino. Mr. Sabb has over 50 years of experience teaching driver's
             education in the Greenville area. As a lifelong educator, he has a knack for helping his students understand
@@ -26,7 +26,7 @@ require 'head.php';
           <div class="my-5 text-center">
             <img class="img-fluid" src="images/classroom instruction.jpg" alt="Mr. Sabbadino teaches a class" />
           </div>
-          <p>
+          <p class="my-5">
             With 10 hours of classroom instruction, our driver training courses exceed the South Carolina driver
             education requirements. The classroom instruction is scheduled in two and a half hour sessions over four weeks.
           </p>
@@ -35,10 +35,10 @@ require 'head.php';
               src="images/required classroom time infographic.jpg"
               alt="Sabbadino driving school provides two extra hours of classroom training above the state requirement" />
           </div>
-          <p>
+          <p class="mt-5">
             <strong>Classroom Instruction Covers:</strong>
           </p>
-          <ul class="two-columns">
+          <ul class="mb-5 two-columns">
             <li>Right attitudes for drivers</li>
             <li>Defensive driving</li>
             <li>Dangers of driving under the influence</li>
@@ -50,7 +50,7 @@ require 'head.php';
           <div class="my-5">
             <img class="img-fluid" src="images/behind the wheel.jpg" alt="Mr. Sabbadino drives with a student" />
           </div>
-          <p>
+          <p class="my-5">
             Our unique approach to behind-the-wheel training sets us apart. Mr. Sabbadino takes two students on
             each driving lesson. Each student drives for half of the lesson and observes for the other half.
             Mr. Sabb has found this technique to be highly effective.
@@ -58,7 +58,7 @@ require 'head.php';
           <p class="mt-5">
             <strong>Behind the Wheel Driving Lessons Include:</strong>
           </p>
-          <ul class="two-columns">
+          <ul class="mb-5 two-columns">
             <li>Off-road forward and backing maneuvers</li>
             <li>Tracking (keeping the vehicle centered in the lane)</li>
             <li>Scanning (using eyes properly for defensive driving)</li>
@@ -71,26 +71,12 @@ require 'head.php';
             <li>Parallel parking</li>
             <li>Practicing South Carolina Highway Department road tests</li>
           </ul>
-          <p>
+          <p class="my-5">
             Our driving lessons are designed to teach smooth starts and stops, increased speeds with controlled safety stops,
             front/rear vehicle judgement, and turning forward and backwards.
           </p>
           <p>
             Contact <a href="mailto:jandjsabb@att.net?subject=websitequestions">Mr. Sabbadino</a> for more information or to register for the driving course.
-          </p>
-          <p>
-            <a href="docs/CourseBenefits.pdf">Read what one of Mr. Sabbadino&apos;s students had to say</a> about the benefits of a driver&apos;s education course!
-          </p>
-        </article>
-        <article class="mt-5">   
-          <h2>Free DMV Permit Practice Tests</h2>
-          <p>
-            <a href="https://www.dmv-written-test.com/south-carolina/practice-test-1.html">DMV Written Test</a> and <a href="http://dmv-permit-test.com/">DMV Practice Test</a> offer several free practice permit tests.
-            Taking sample DMV permit tests is a great way to prepare before taking the real written permit test!
-          </p>
-            
-          <p>
-            <a href="https://www.dmv-written-test.com/south-carolina/motorcycle/practice-test-1.html">DMV Written Test</a> also offers practice motorcycle permit tests.
           </p>
         </article>
       </section> <!-- end main content -->
@@ -150,6 +136,26 @@ require 'head.php';
             Follow that sidewalk to enter the lobby, and the classroom for our driving course is further in to the right.
             There will be a sign posted on the classroom door. Once you arrive at the church, you will see signs posted in various
             places to point you in the right direction.
+          </p>
+        </aside>
+
+        <aside class="mt-5">
+          <h2>Benefits of Driver Education</h2>
+          <p>
+            Read what one of Mr. Sabbadino&apos;s students had to say about
+            <a href="docs/CourseBenefits.pdf">the benefits of a driver&apos;s education course!</a>
+          </p>
+        </aside>
+
+        <aside class="mt-5">   
+          <h2>Free DMV Permit Practice Tests</h2>
+          <p>
+            <a href="https://www.dmv-written-test.com/south-carolina/practice-test-1.html">DMV Written Test</a> and <a href="http://dmv-permit-test.com/">DMV Practice Test</a> offer several free practice permit tests.
+            Taking sample DMV permit tests is a great way to prepare before taking the real written permit test!
+          </p>
+            
+          <p>
+            <a href="https://www.dmv-written-test.com/south-carolina/motorcycle/practice-test-1.html">DMV Written Test</a> also offers practice motorcycle permit tests.
           </p>
         </aside>
       </section> <!-- end sidebar -->
