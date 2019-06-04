@@ -18,22 +18,37 @@ require 'head.php';
         <article>
           <h2>Learn Traffic Safety, Defensive Driving,<br />and Behind-the-Wheel Training</h2>
           <p>
-            Welcome to Sabbadino Driving School where our priority is to make safety first and make safety last. Our driving courses, in Taylors, South Carolina,
-            consist of sixteen hours of teaching time&mdash;ten hours in the classroom (split up over four class sessions) and six hours behind the wheel&mdash;for $330 (price subject to change).
-            Students in Mr. Sabbadino&apos;s in-class driving course will learn the right attitude for drivers, defensive driving, the dangers of driving under the influence, nature&apos;s laws,
-            railroad safety, truck safety, emergencies, and, as time allows, additional aspects of driving and traffic safety education. Classroom time is 6:00 pm to 8:30 pm once a week.
-            The first session of behind-the-wheel driving will be scheduled during the first classroom time.
+            At Sabbadino Driving School, our mission is to make safety first and to make safety last. Our driving
+            courses in Taylors, SC include 10 hours of classroom instruction and 6 hours of behind-the-wheel training.
           </p>
           <p>
-            Driving lessons behind the wheel (BTW) are designed to teach smooth starts and stops, increased speeds with controlled safety stops, front/rear vehicle judgement, and turning
-            forward and backwards. BTW driver training includes off and on street driving lessons in Greenville and Paris Mountain. Driver training students drive an average of 122.7 miles
-            in the course of the BTW driving classes. A student does not need to have a permit to drive with the instructor; however, a student does need a permit to drive with anyone else.
-            A 15- or 16-year-old has to have a permit at least six months before taking a license test. All students need driving time with parents. By law, 15- and 16-year-old students have
-            to have logged 40 hours of driving time with parents before getting a driver&apos;s license. For an additional fee of $50, Mr. Sabbadino is certified to administer the highway
-            department driving test to anyone who has completed a Driver&apos;s Ed course. Once you have completed this test with Mr. Sabbadino, you can take your paperwork directly to the
-            DMV to get your license. (<b>Note:</b> The DMV reserves the right to randomly select applicants for retesting.)
+            Joe Sabbadino has taugh driver's education in Greenville, SC for over 50 years. From the first time you
+            meet Mr. Sabb, you'll see his passion for safety on our roads. As a lifelong educator, Mr. Sabb has a
+            knack for helping his students understand the importance of defensive driving and traffic safety.
           </p>
-          <p class="pb-0">
+          <p>
+            With 10 hours of classroom instruction and 6 hours of behind-the-wheel training, our driver training
+            courses exceed the South Carolina driver's education requirements. The classroom instruction is
+            scheduled in two and a half hour sessions over four weeks.
+          </p>
+          <p>
+            Our unique approach to behind-the-wheel training sets us apart. Mr. Sabbadino takes two students on
+            each driving lesson. Each student drives for half of the lesson and observes for the other half.
+            Mr. Sabb has found this technique to be highly effective.
+          </p>
+          <p class="mb-0">
+            Classroom Instruction Covers:
+          </p>
+          <ul>
+            <li>Right attitudes for drivers</li>
+            <li>Defensive driving</li>
+            <li>Dangers of driving under the influence</li>
+            <li>Nature's laws</li>
+            <li>Railroad safety</li>
+            <li>Truck safety</li>
+            <li>Emergencies</li>
+          </ul>
+          <p class="mb-0">
             Behind the Wheel Driving Lessons Include:
           </p>
           <ul>
@@ -43,13 +58,16 @@ require 'head.php';
             <li>Right and left turns</li>
             <li>Curb parking uphill and downhill</li>
             <li>Three-point turns</li>
-            <li>Interstate driving (orientation, entering and exiting, lane changing, and passing)</li>
-            <li>City driving (Downtown Greenville)</li>
-            <li>Mountain driving (Paris Mountain)</li>
+            <li>Interstate driving</li>
+            <li>City driving in Downtown Greenville</li>
+            <li>Mountain driving at Paris Mountain</li>
             <li>Parallel parking</li>
             <li>Practicing South Carolina Highway Department road tests</li>
-            <li>For an extra fee, Certified 3rd party SCDMV road testing is available</li>
           </ul>
+          <p>
+            Our driving lessons are designed to teach smooth starts and stops, increased speeds with controlled safety stops,
+            front/rear vehicle judgement, and turning forward and backwards.
+          </p>
           <p>
             Contact <a href="mailto:jandjsabb@att.net?subject=websitequestions">Mr. Sabbadino</a> for more information or to register for the driving course.
           </p>
