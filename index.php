@@ -19,21 +19,20 @@ require 'head.php';
           <h2>Learn Traffic Safety, Defensive Driving,<br />and Behind-the-Wheel Training</h2>
           <p>
             At Sabbadino Driving School, our mission is to make safety first and to make safety last. Our driving
-            courses in Taylors, SC include 10 hours of classroom instruction and 6 hours of behind-the-wheel training.
+            courses in Taylors, SC are taught by Joe Sabbadino. Mr. Sabb has over 50 years of experience teaching driver's
+            education in the Greenville area. As a lifelong educator, he has a knack for helping his students understand
+            the importance of defensive driving and traffic safety.
           </p>
           <div class="my-5 text-center">
-            <img class="img-fluid" src="images/classroom btw illustration.jpg" alt="">
+            <img class="img-fluid" src="images/classroom instruction.jpg" alt="Mr. Sabbadino teaches a class" />
           </div>
           <p>
-            Joe Sabbadino has taught driver's education in Greenville, SC for over 50 years. From the first time you
-            meet Mr. Sabb, you'll see his passion for safety on our roads. As a lifelong educator, Mr. Sabb has a
-            knack for helping his students understand the importance of defensive driving and traffic safety.
+            With 10 hours of classroom instruction, our driver training courses exceed the South Carolina driver's
+            education requirements. The classroom instruction is scheduled in two and a half hour sessions over four weeks.
           </p>
-          <p>
-            With 10 hours of classroom instruction and 6 hours of behind-the-wheel training, our driver training
-            courses exceed the South Carolina driver's education requirements. The classroom instruction is
-            scheduled in two and a half hour sessions over four weeks.
-          </p>
+          <div class="my-5 text-center">
+            <img class="img-fluid" src="images/required classroom time infographic.jpg" alt="" />
+          </div>
           <p class="mb-0">
             Classroom Instruction Covers:
           </p>
