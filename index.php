@@ -23,20 +23,23 @@ require 'head.php';
             education in the Greenville area. As a lifelong educator, he has a knack for helping his students understand
             the importance of defensive driving and traffic safety.
           </p>
-          <div class="my-5 text-center">
-            <img class="img-fluid" src="images/classroom instruction.jpg" alt="Mr. Sabbadino teaches a class" />
-          </div>
-          <p class="my-5">
+          <h3 class="mt-5">Classroom Instruction</h3>
+          <p class="mb-5">
             With 10 hours of classroom instruction, our driver training courses exceed the South Carolina driver
             education requirements. The classroom instruction is scheduled in two and a half hour sessions over four weeks.
           </p>
+          <div class="my-5 mr-auto ml-auto text-center w-75">
+            <img class="img-fluid" src="images/classroom instruction.jpg" alt="Mr. Sabbadino teaches a class" />
+          </div>
+          <!--
           <div class="my-5 text-center">
             <img class="img-fluid"
               src="images/required classroom time infographic.jpg"
               alt="Sabbadino driving school provides two extra hours of classroom training above the state requirement" />
           </div>
+          -->
           <p class="mt-5">
-            <strong>Classroom Instruction Covers:</strong>
+            Classroom Instruction Covers:
           </p>
           <ul class="mb-5 two-columns">
             <li>Right attitudes for drivers</li>
@@ -47,16 +50,19 @@ require 'head.php';
             <li>Truck safety</li>
             <li>Emergencies</li>
           </ul>
-          <div class="my-5">
-            <img class="img-fluid" src="images/behind the wheel.jpg" alt="Mr. Sabbadino drives with a student" />
-          </div>
-          <p class="my-5">
+
+          <h3 class="mt-5 pt-5">Behind-the-Wheel Training</h3>
+          <p class="mb-5">
             Our unique approach to behind-the-wheel training sets us apart. Mr. Sabbadino takes two students on
             each driving lesson. Each student drives for half of the lesson and observes for the other half.
-            Mr. Sabb has found this technique to be highly effective.
+            Mr. Sabb has found this technique to be highly effective. Our driving lessons are designed to teach smooth starts and stops, increased speeds with controlled safety stops,
+            front/rear vehicle judgement, and turning forward and backwards.
           </p>
+          <div class="my-5 mr-auto ml-auto text-center w-75">
+            <img class="img-fluid" src="images/behind the wheel.jpg" alt="Mr. Sabbadino drives with a student" />
+          </div>
           <p class="mt-5">
-            <strong>Behind-the-Wheel Driving Lessons Include:</strong>
+            Behind-the-Wheel Driving Lessons Include:
           </p>
           <ul class="mb-5 two-columns">
             <li>Off-road forward and backing maneuvers</li>
@@ -72,27 +78,21 @@ require 'head.php';
             <li>Practicing South Carolina Highway Department road tests</li>
           </ul>
           <p class="my-5">
-            Our driving lessons are designed to teach smooth starts and stops, increased speeds with controlled safety stops,
-            front/rear vehicle judgement, and turning forward and backwards.
+            In addition to the 6 hours of behind-the-wheel training, all students need driving time with parents.
+            By law, 15- and 16-year-old students have to log 40 hours of driving time with parents before taking
+            the license test.
           </p>
           <div class="my-5 did-you-know">
             <p class="mb-0 did-you-know-title">Did You Know?</p>
-            <p class="">
-              Driving students drive an average of 122.7 miles during their behind-the-wheel training
-            </p>
+            <ul>
+              <li>Students drive an average of 122.7 miles during their behind-the-wheel training</li>
+              <li>A student does not need a permit to drive with a driving instructor. However, a student does need a
+              permit to drive with anyone else</li>
+            </ul>
           </div>
-          <p class="my-5">
-            All students need driving time with parents. By law, 15- and 16-year-old students have to log 40 hours
-            of driving time with parents before taking the license test.
-          </p>
-          <div class="my-5 did-you-know">
-            <p class="mb-0 did-you-know-title">Did You Know?</p>
-            <p class="">
-              A student does not need a permit to drive with a driving instructor. However, a student does need a
-              permit to drive with anyone else
-            </p>
-          </div>
-          <p class="my-5">
+
+          <h3 class="mt-5 pt-5">Testing</h3>
+          <p class="mb-5">
             For an additional fee, Mr. Sabbadino is also certified to give a license test to anyone who has
             completed a driver education course. <a href="#prices-block">See below for pricing</a>. Once you
             have completed this test with Mr. Sabbadino, you can take your paperwork directly to the DMV to
@@ -105,11 +105,21 @@ require 'head.php';
               A 15- or 16-year-old has to have a permit at least 6 months before taking a license test
             </p>
           </div>
-          <h2 id="prices-block">Prices</h2>
-          <p class="prices">
-            <strong>Driver Education Course</strong> &ndash; $330<br>
-            <strong>License Test</strong> &ndash; $50
-          </p>
+
+          <h3 id="prices-block" class="mt-5 pt-5">Prices</h3>
+          <table class="table mb-5">
+            <tbody>
+              <tr>
+                <td>Driver Education Course</td>
+                <td><strong>$330</strong></td>
+              </tr>
+              <tr>
+                <td>License Test</td>
+                <td><strong>$50</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
           <p>
             Contact <a href="mailto:jandjsabb@att.net?subject=websitequestions">Mr. Sabbadino</a> for more information or to register for the driving course.
           </p>
