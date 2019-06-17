@@ -31,13 +31,6 @@ require 'head.php';
           <div class="my-5 mr-auto ml-auto text-center w-75">
             <img class="img-fluid" src="images/classroom instruction.jpg" alt="Mr. Sabbadino teaches a class" />
           </div>
-          <!--
-          <div class="my-5 text-center">
-            <img class="img-fluid"
-              src="images/required classroom time infographic.jpg"
-              alt="Sabbadino driving school provides two extra hours of classroom training above the state requirement" />
-          </div>
-          -->
           <p class="mt-5">
             Classroom Instruction Covers:
           </p>
@@ -120,8 +113,16 @@ require 'head.php';
             </tbody>
           </table>
 
-          <p>
-            Contact <a href="mailto:jandjsabb@att.net?subject=websitequestions">Mr. Sabbadino</a> for more information or to register for the driving course.
+          <p class="text-center my-5 pt-5" style="line-height: 3;">
+            <a href="mailto:jandjsabb@att.net
+            ?subject=Registration%20From%20Website
+            &body=Hi,%20I'd%20like%20to%20register%20for%20one%20of%20your
+            %20driver%20training%20classes."
+            class="py-3 px-4 bg-sabbgreen text-white">Contact Mr. Sabbadino</a>
+            <br> at <a href="mailto:jandjsabb@att.net
+            ?subject=Registration%20From%20Website
+            &body=Hi,%20I'd%20like%20to%20register%20for%20one%20of%20your
+            %20driver%20training%20classes.">jandjsabb@att.net</a> to register for a course.
           </p>
         </article>
       </section> <!-- end main content -->
