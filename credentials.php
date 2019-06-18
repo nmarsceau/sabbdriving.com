@@ -32,6 +32,7 @@ require 'head.php';
           <li>University Host, Bob Jones University</li>
           <li>Driver's Education Instructor (40+ years), Bob Jones Academy</li>
           <li>Research Safety Assistant, Texas A & M</li>
+          <li>Safety Consultant, ACME Delivery Services</li>
           <li>Driver Educator (15+ years, part-time), Greenville Technical College</li>
           <li>Driver Educator (15 years, part-time), Bob Jones University, TOPS program</li>
           <li>Driver Trainer (1 year, part-time), Auto-Safe Driving School</li>
