@@ -95,7 +95,7 @@ require 'head.php';
           <div class="my-5 did-you-know">
             <p class="mb-0 did-you-know-title">Did You Know?</p>
             <p class="">
-              A 15- or 16-year-old has to have a permit at least 6 months before taking a license test
+              You need a driver's permit for at least 6 months before taking a license test
             </p>
           </div>
 
