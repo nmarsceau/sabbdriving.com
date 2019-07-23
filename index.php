@@ -78,7 +78,7 @@ require 'head.php';
           <div class="my-5 did-you-know">
             <p class="mb-0 did-you-know-title">Did You Know?</p>
             <ul>
-              <li>Students drive an average of 122.7 miles during their behind-the-wheel training</li>
+              <li>Students drive about 100 miles during their behind-the-wheel training</li>
               <li>A student does not need a permit to drive with a driving instructor. However, a student does need a
               permit to drive with anyone else</li>
             </ul>
