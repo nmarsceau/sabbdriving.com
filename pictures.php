@@ -20,7 +20,7 @@ require 'head.php';
       <?php foreach($media_files as $file) { ?>
         <div class="col-6 col-md-4 col-lg-3 p-2">
           <a class="image-link" href="images/gallery/<?php echo $file['name']; ?>">
-            <img class="img-fluid"
+            <img class="img-fluid" loading="lazy"
                  src="images/gallery/<?php echo $file['thumbName']; ?>"
                  alt="<?php echo $file['alt']; ?>" />
           </a>

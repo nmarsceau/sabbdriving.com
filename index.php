@@ -29,7 +29,7 @@ require 'head.php';
             education requirements. The classroom instruction is scheduled in two and a half hour sessions over four weeks.
           </p>
           <div class="my-5 mr-auto ml-auto text-center w-75">
-            <img class="img-fluid" src="images/classroom instruction.jpg" alt="Mr. Sabbadino teaches a class" />
+            <img class="img-fluid" src="images/classroom instruction.jpg" alt="Mr. Sabbadino teaches a class" loading="lazy" />
           </div>
           <p class="mt-5">
             Classroom Instruction Covers:
@@ -52,7 +52,7 @@ require 'head.php';
             front/rear vehicle judgement, and turning forward and backwards.
           </p>
           <div class="my-5 mr-auto ml-auto text-center w-75">
-            <img class="img-fluid" src="images/behind the wheel.jpg" alt="Mr. Sabbadino drives with a student" />
+            <img class="img-fluid" src="images/behind the wheel.jpg" alt="Mr. Sabbadino drives with a student" loading="lazy" />
           </div>
           <p class="mt-5">
             Behind-the-Wheel Driving Lessons Include:
