@@ -1,58 +1,79 @@
 [
   {
-    "id": "may2019",
-    "name": "May 2019",
-    "dates": ["05/06/2019", "05/13/2019", "05/20/2019", "05/27/2019"],
+    "id": "janfeb2020",
+    "name": "January/February 2020",
+    "dates": ["01/13/2020", "01/20/2020", "01/27/2020", "02/04/2020"],
     "full": true,
-    "expiration": "05/06/2019"
+    "expiration": "01/13/2020"
   },
   {
-    "id": "june2019",
-    "name": "June 2019",
-    "dates": ["06/03/2019", "06/10/2019", "06/17/2019", "06/24/2019"],
-    "full": true,
-    "expiration": "06/03/2019"
+    "id": "febmar2020",
+    "name": "February/March 2020",
+    "dates": ["02/17/2020", "02/24/2020", "03/02/2020", "03/09/2020"],
+    "full": false,
+    "expiration": "02/17/2020"
   },
   {
-    "id": "july2019",
-    "name": "July 2019",
-    "dates": ["07/08/2019", "07/15/2019", "07/22/2019", "07/29/2019"],
-    "full": true,
-    "expiration": "07/08/2019"
-  },
-  {
-    "id": "aug2019",
-    "name": "August 2019",
-    "dates": ["08/01/2019", "08/08/2019", "08/15/2019", "08/22/2019"],
-    "full": true,
-    "expiration": "08/01/2019"
-  },
-  {
-    "id": "sept2019",
-    "name": "September 2019",
+    "id": "apr2020",
+    "name": "April 2020",
     "dates": [],
     "full": false,
-    "expiration": "09/01/2019"
+    "expiration": "04/01/2020"
   },
   {
-    "id": "oct2019",
-    "name": "October 2019",
-    "dates": [],
+    "id": "may2020",
+    "name": "May 2020",
+    "dates": ["05/04/2020", "05/11/2020", "05/18/2020", "05/25/2020"],
     "full": false,
-    "expiration": "10/1/2019"
+    "expiration": "05/04/2020"
   },
   {
-    "id": "nov2019",
-    "name": "November 2019",
-    "dates": [],
+    "id": "june2020",
+    "name": "June 2020",
+    "dates": ["06/08/2020", "06/15/2020", "06/22/2020", "06/29/2020"],
     "full": false,
-    "expiration": "11/1/2019"
+    "expiration": "06/08/2020"
   },
   {
-    "id": "dec2019",
-    "name": "December 2019",
+    "id": "july2020",
+    "name": "July 2020",
+    "dates": ["07/06/2020", "07/13/2020", "07/20/2020", "07/27/2020"],
+    "full": false,
+    "expiration": "07/06/2020"
+  },
+  {
+    "id": "aug2020",
+    "name": "August 2020",
+    "dates": ["08/03/2020", "08/10/2020", "08/17/2020", "08/24/2020"],
+    "full": false,
+    "expiration": "08/03/2020"
+  },
+  {
+    "id": "sept2020",
+    "name": "September 2020",
     "dates": [],
     "full": false,
-    "expiration": "12/1/2019"
+    "expiration": "09/01/2020"
+  },
+  {
+    "id": "oct2020",
+    "name": "October 2020",
+    "dates": [],
+    "full": false,
+    "expiration": "10/01/2020"
+  },
+  {
+    "id": "nov2020",
+    "name": "November 2020",
+    "dates": [],
+    "full": false,
+    "expiration": "11/01/2020"
+  },
+  {
+    "id": "dec2020",
+    "name": "December 2020",
+    "dates": [],
+    "full": false,
+    "expiration": "12/01/2020"
   }
 ]
