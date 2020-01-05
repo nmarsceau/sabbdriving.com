@@ -60,8 +60,11 @@ require 'head.php';
             and Emma Fordham took third place.
           </li>
           <li>
-            In the 2018 SCDTSEA* Seatbelt post contest, Mr. Sabbadino's student Jocelyn Brazeal
+            In the 2018 SCDTSEA* Seatbelt poster contest, Mr. Sabbadino's student Jocelyn Brazeal
             won first place. Another of Mr. Sabbadino's students, Hannah Terrell, won second place.
+          </li>
+          <li>
+            In the 2019 SCDTSEA* Seatbelt poster contest, Mr. Sabbadino's student Claire Swartz won first place.
           </li>
         </ul>
 
