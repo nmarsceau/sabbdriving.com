@@ -133,12 +133,12 @@ require 'head.php';
             if (strtotime($class['expiration']) >= time()) {
               if ($class['full']) { ?>
                 <p class="mb-2">
-                  <span class="text-muted"><?php echo $class['name']; ?></span>
+                  <span class="text-muted strikethrough"><?php echo $class['name']; ?></span>
                   <span class="text-danger">Full!</span>
                 </p>
               <?php } elseif (count($class['dates']) == 0) { ?>
                 <p class="mb-2">
-                  <span class="text-muted"><?php echo $class['name']; ?></span>
+                  <span class="text-muted strikethrough"><?php echo $class['name']; ?></span>
                   <span class="text-black-50">No Class</span>
                 </p>
               <?php } else { ?>
