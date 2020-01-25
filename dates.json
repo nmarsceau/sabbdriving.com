@@ -10,7 +10,7 @@
     "id": "febmar2020",
     "name": "February/March 2020",
     "dates": ["02/17/2020", "02/24/2020", "03/02/2020", "03/09/2020"],
-    "full": false,
+    "full": true,
     "expiration": "02/17/2020"
   },
   {
