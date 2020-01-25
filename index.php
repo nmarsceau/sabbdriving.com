@@ -6,7 +6,7 @@ $class_dates = json_decode(file_get_contents('dates.json'), true);
 require 'head.php';
 
 ?>
-<!-- github actions test 2 -->
+
 <body>
   <?php require 'nav.php'; ?>
   <?php require 'header.php'; ?>
