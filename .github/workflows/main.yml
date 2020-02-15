@@ -16,4 +16,3 @@ jobs:
         FTP_USERNAME: sabbdriving@nickmarso.com
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         ARGS: --delete
-        # --delete arg will delete files on the server if you've deleted them in git
