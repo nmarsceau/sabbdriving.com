@@ -1,0 +1,150 @@
+<!--<?php $media_files = json_decode(file_get_contents('media.json'), true); ?>-->
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Media | Sabbadino Driver Training &mdash; Taylors, SC Driver Education Courses</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="title" content="Upstate Driver Education Courses, Sabbadino Driving School, Taylors Driving Lessons" />
+  <meta name="description" content="Learn to drive near Greenville SC from one of the leading driving course instructors in the Upstate. Call today to register!" />
+  <meta name="keyword" content="driver education, driving school, defensive driving, traffic education, upstate driving courses" />
+
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous" />
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+</head>
+<body>
+  <nav class="sticky-top bg-white shadow-lg">
+    <div class="navbar navbar-expand-lg">
+      <a class="navbar-brand ml-xl-4 mr-0" href="index.html">
+        <picture>
+          <source media="(max-width: 400px)" srcset="images/brand-sm.jpg" />
+          <source media="(min-width: 1300px)" srcset="images/brand-xl.jpg" />
+          <img src="images/brand.jpg" alt="Sabbadino Driving School" />
+        </picture>
+      </a>
+
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content"
+              aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="navbar-content" class="collapse navbar-collapse justify-content-end">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link py-3 p-lg-2 p-xl-3" href="teaching.html"><span>Our Philosophy</span></a>
+          <a class="nav-item nav-link py-3 p-lg-2 p-xl-3" href="credentials.html"><span>Credentials</span></a>
+          <a class="nav-item nav-link py-3 p-lg-2 p-xl-3" href="commendations.html"><span>Commendations</span></a>
+          <a class="nav-item nav-link py-3 p-lg-2 p-xl-3" href="testimonials.html"><span>Testimonials</span></a>
+          <a class="nav-item nav-link py-3 p-lg-2 p-xl-3" href="pictures.html"><span>Media</span></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <header class="position-relative mb-3">
+    <picture>
+      <source media="(max-width: 400px)" srcset="images/hero400.jpg" />
+      <source media="(max-width: 600px)" srcset="images/hero600.jpg" />
+      <source media="(max-width: 800px)" srcset="images/hero800.jpg" />
+      <source media="(max-width: 1000px)" srcset="images/hero1000.jpg" />
+      <source media="(max-width: 1200px)" srcset="images/hero1200.jpg" />
+      <source media="(max-width: 1400px)" srcset="images/hero1400.jpg" />
+      <source media="(max-width: 1600px)" srcset="images/hero1600.jpg" />
+      <source media="(max-width: 1800px)" srcset="images/hero1800.jpg" />
+      <source media="(min-width: 1800px)" srcset="images/hero2000.jpg" />
+
+      <img src="images/hero1200.jpg" alt="" class="w-100" />
+    </picture>
+  </header>
+  <section class="container">
+    <div class="row">
+      <h1 class="col-12 mb-4">Media</h1>
+    </div>
+    <div class="row no-gutters">
+      <!--
+      <?php foreach($media_files as $file) { ?>
+        <div class="col-6 col-md-4 col-lg-3 p-2">
+          <a class="image-link" href="images/gallery/<?php echo $file['name']; ?>">
+            <img class="img-fluid" loading="lazy"
+                 src="images/gallery/<?php echo $file['thumbName']; ?>"
+                 alt="<?php echo $file['alt']; ?>" />
+          </a>
+        </div>
+      <?php } ?>
+      -->
+    </div>
+  </section>
+
+  <footer class="bg-dark text-light mt-5">
+    <div class="container">
+      <div class="row">
+        <p class="col-12 my-3 tagline font-italic text-white">
+          &ldquo;Make&nbsp;Safety&nbsp;First &amp;&nbsp;Make&nbsp;Safety&nbsp;Last&rdquo;
+        </p>
+        <p class="col-12 mb-5">
+          <a href="mailto:jandjsabb@att.net" class="text-white">jandjsabb@att.net</a>
+          | <a href="tel:18642920259" class="text-white">864.292.0259</a>
+        </p>
+        <p class="col-12 mb-5">
+          &copy;&nbsp;2011-<span id="copyright-current-year"></span>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('copyright-current-year').innerText = (new Date()).getFullYear();</script>
+
+  <div id="image-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content image-modal-content">
+        <div class="modal-body p-0">
+          <button type="button" class="image-modal-close position-absolute" data-dismiss="modal" aria-label="Close">
+            <img src="images/close_icon.png" alt="" aria-hidden="true" />
+          </button>
+          <img id="large-image-tag" class="img-fluid" src="" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+  <script>
+    function open_image_modal(filename, alt) {
+      $("#large-image-tag").attr("src", filename).attr("alt", alt);
+      $("#image-modal").modal('show');
+    }
+
+    $(function() {
+      $(".image-link").each(function(i, link) {
+        var filename = $(link).attr("href");
+        var alt = $("img", $(link)).attr("alt");
+        
+        $(link).attr("href", "javascript:void(0);");
+        $(link).click(function() {
+          open_image_modal(filename, alt);
+        });
+      });
+
+      $('#image-modal').on('hidden.bs.modal', function () {
+        $("#large-image-tag").attr("src", "").attr("alt", "");
+      });
+    });
+  </script>
+  
+</body>
+</html>
