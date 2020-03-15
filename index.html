@@ -178,7 +178,7 @@
       </section> <!-- end main content -->
       <section class="col-lg-3 mt-5 mt-lg-0"> <!-- sidebar -->
         <aside>
-          <h2>Future Class Dates</h2>
+          <h2>2020 Class Dates</h2>
           <div id="class_date_container"></div>
         </aside>
 
@@ -260,172 +260,122 @@
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
   <script>
+    // update copyright year
     document.getElementById('copyright-current-year').innerText = (new Date()).getFullYear();
 
-    const class_dates = [
-    {
-    "id": "janfeb2020",
-    "name": "January/February 2020",
-    "dates": ["01/13/2020", "01/20/2020", "01/27/2020", "02/04/2020"],
-    "full": true,
-    "expiration": [2020, 0, 13],
-  },
-      {
-        "id": "febmar2020",
-        "name": "February/March 2020",
-        //"dates": ["02/17/2020", "02/24/2020", "03/02/2020", "03/09/2020"],
-        "dates": [{y: 2020, m: 1, d: 17}, {y: 2020, m: 1, d: 24}, {y: 2020, m: 2, d: 2}, {y: 2020, m: 2, d: 9}],
-        "full": true,
-        //"expiration": "02/17/2020",
-        "expiration": {y: 2020, m: 1, d: 17},
-      },
-      {
-        "id": "apr2020",
-        "name": "April 2020",
-        "dates": [],
-        "full": false,
-        //"expiration": "04/01/2020",
-        "expiration": {y: 2020, m: 3, d: 1},
-      },
-      {
-        "id": "may2020",
-        "name": "May 2020",
-        //"dates": ["05/04/2020", "05/11/2020", "05/18/2020", "05/25/2020"],
-        "dates": [{y: 2020, m: 4, d: 4}, {y: 2020, m: 5, d: 11}, {y: 2020, m: 4, d: 18}, {y: 2020, m: 4, d: 25}],
-        "full": false,
-        //"expiration": "05/04/2020",
-        "expiration": {y: 2020, m: 4, d: 4},
-      },
-      {
-        "id": "june2020",
-        "name": "June 2020",
-        //"dates": ["06/08/2020", "06/15/2020", "06/22/2020", "06/29/2020"],
-        "dates": [{y: 2020, m: 5, d: 8}, {y: 2020, m: 5, d: 15}, {y: 2020, m: 5, d: 22}, {y: 2020, m: 5, d: 29}],
-        "full": false,
-        //"expiration": "06/08/2020",
-        "expiration": {y: 2020, m: 5, d: 8},
-      },
-      {
-        "id": "july2020",
-        "name": "July 2020",
-        //"dates": ["07/06/2020", "07/13/2020", "07/20/2020", "07/27/2020"],
-        "dates": [{y: 2020, m: 6, d: 6}, {y: 2020, m: 6, d: 13}, {y: 2020, m: 6, d: 20}, {y: 2020, m: 6, d: 27}],
-        "full": false,
-        //"expiration": "07/06/2020",
-        "expiration": {y: 2020, m: 6, d: 6},
-      },
-      {
-        "id": "aug2020",
-        "name": "August 2020",
-        //"dates": ["08/03/2020", "08/10/2020", "08/17/2020", "08/24/2020"],
-        "dates": [{y: 2020, m: 7, d: 3}, {y: 2020, m: 7, d: 10}, {y: 2020, m: 7, d: 17}, {y: 2020, m: 7, d: 24}],
-        "full": false,
-        //"expiration": "08/03/2020",
-        "expiration": {y: 2020, m: 7, d: 3},
-      },
-      {
-        "id": "sept2020",
-        "name": "September 2020",
-        "dates": [],
-        "full": false,
-        //"expiration": "09/01/2020",
-        "expiration": {y: 2020, m: 8, d: 1},
-      },
-      {
-        "id": "oct2020",
-        "name": "October 2020",
-        "dates": [],
-        "full": false,
-        //"expiration": "10/01/2020",
-        "expiration": {y: 2020, m: 9, d: 1},
-      },
-      {
-        "id": "nov2020",
-        "name": "November 2020",
-        "dates": [],
-        "full": false,
-        //"expiration": "11/01/2020",
-        "expiration": {y: 2020, m: 10, d: 1},
-      },
-      {
-        "id": "dec2020",
-        "name": "December 2020",
-        "dates": [],
-        "full": false,
-        //"expiration": "12/01/2020",
-        "expiration": {y: 2020, m: 11, d: 1},
-      }
-    ];
-    const class_date_container = document.getElementById('class_date_container');
-
-    const full_indicator = document.createElement('span');
-    full_indicator.classList.add('text-danger');
-    full_indicator.innerText = 'Full!';
-
-    const no_class_indicator = document.createElement('span');
-    no_class_indicator.classList.add('text-black-50');
-    no_class_indicator.innerText = 'No Class';
-
-    for (let class_date of class_dates) {
-      if ((new Date(class_date.expiration.y, class_date.expiration.m, class_date.expiration.d)) >= Date.now()) {
-        if (class_date.full || class_date.dates.length === 0) {
-          const element = document.createElement('p');
-          element.classList.add('mb-2');
-          const class_name = document.createElement('span');
-          class_name.classList.add('text-muted');
-          class_name.classList.add('strikethrough');
-          class_name.classList.add('mr-1')
-          class_name.innerText = class_date.name;
-          element.appendChild(class_name);
-          if (class_date.full) {
-            element.appendChild(full_indicator.cloneNode(true));
-          }
-          else {
-            element.appendChild(no_class_indicator.cloneNode(true));
-          }
-          class_date_container.appendChild(element);
-        }
-        else {
-          const class_date_toggle = document.createElement('a');
-          class_date_toggle.href = '#' + class_date.id;
-          class_date_toggle.classList.add('d-block');
-          class_date_toggle.classList.add('mb-2');
-          class_date_toggle.classList.add('future-class-date');
-          class_date_toggle.role = 'button';
-          class_date_toggle['data-toggle'] = 'collapse';
-          class_date_toggle['aria-expanded'] = 'false';
-          class_date_toggle['aria-controls'] = class_date.id;
-          const class_name = document.createElement('strong');
-          const class_dates_container = document.createElement('div');
-          class_dates_container.id = class_date.id;
-          class_dates_container.classList.add('collapse');
-          class_dates_container.classList.add('mb-2');
-          class_date.dates.forEach(_date => {
-            _date = new Date(_date.y, _date.m, _date.d);
-            const date = document.createElement('p');
-            date.classList.add('pl-2');
-            date.classList.add('mb-0');
-            date.innerText = /* TODO */;
-          });
-/*
-                <a>
-                  <strong><?php echo $class['name']; ?>&nbsp;</strong>
-                </a>
-                <div>
-                  <?php foreach ($class['dates'] as $date) { ?>
-                    <p class="pl-2 mb-0">
-                      <?php echo date_format(date_create($date), 'F j, Y'); ?>
-                    </p>
-                  <?php } ?>
-                </div>
-          */
-        }
-
-      }
+    // fill future class dates list
+    function get_date_number_suffix(date_number) {
+      if ([1, 21, 31].includes(date_number)) {return 'st';}
+      else if ([2, 22].includes(date_number)) {return 'nd';}
+      else if ([3, 23].includes(date_number)) {return 'rd';}
+      else {return 'th';}
     }
 
-    
+    function machine_readable_date(date) {
+      let month = date.getMonth() + 1;
+      month = (month < 10 ? '0' : '') + month;
+      let day = date.getDate();
+      day = (day < 10 ? '0' : '') + day;
+      return [date.getFullYear(), month, day].join('-');
+    }
+
+    const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const class_dates = [
+      {
+        name: 'April',
+        dates: [],
+        full: false,
+        expiration: {y: 2020, m: 3, d: 1},
+      },
+      {
+        name: 'May',
+        dates: [{y: 2020, m: 4, d: 4}, {y: 2020, m: 4, d: 11}, {y: 2020, m: 4, d: 18}, {y: 2020, m: 4, d: 25}],
+        full: false,
+        expiration: {y: 2020, m: 4, d: 4},
+      },
+      {
+        name: 'June',
+        dates: [{y: 2020, m: 5, d: 8}, {y: 2020, m: 5, d: 15}, {y: 2020, m: 5, d: 22}, {y: 2020, m: 5, d: 29}],
+        full: false,
+        expiration: {y: 2020, m: 5, d: 8},
+      },
+      {
+        name: 'July',
+        dates: [{y: 2020, m: 6, d: 6}, {y: 2020, m: 6, d: 13}, {y: 2020, m: 6, d: 20}, {y: 2020, m: 6, d: 27}],
+        full: false,
+        expiration: {y: 2020, m: 6, d: 6},
+      },
+      {
+        name: 'August',
+        dates: [{y: 2020, m: 7, d: 3}, {y: 2020, m: 7, d: 10}, {y: 2020, m: 7, d: 17}, {y: 2020, m: 7, d: 24}],
+        full: false,
+        expiration: {y: 2020, m: 7, d: 3},
+      },
+      {
+        name: 'October',
+        dates: [],
+        full: false,
+        expiration: {y: 2020, m: 9, d: 1},
+      },
+      {
+        name: 'November',
+        dates: [],
+        full: false,
+        expiration: {y: 2020, m: 10, d: 1},
+      },
+      {
+        name: 'December',
+        dates: [],
+        full: false,
+        expiration: {y: 2020, m: 11, d: 1},
+      }
+    ];
+
+    const class_date_container = document.getElementById('class_date_container');
+    for (let class_date of class_dates) {
+      if ((new Date(class_date.expiration.y, class_date.expiration.m, class_date.expiration.d)) >= Date.now()) {
+        const class_date_heading = document.createElement('h3');
+        class_date_heading.classList.add('mt-2', 'mb-0');
+        if (class_date.full || class_date.dates.length === 0) {
+          const class_name = document.createElement('span');
+          class_name.innerText = class_date.name;
+          class_name.classList.add('text-muted');
+          class_date_heading.appendChild(class_name);
+          const indicator = document.createElement('span');
+          indicator.classList.add('class-date-indicator', 'mb-0', 'ml-2');
+          if (class_date.full) {
+            indicator.classList.add('text-danger');
+            indicator.innerText = 'Full!';
+          }
+          else {
+            indicator.classList.add('text-muted');
+            indicator.innerText = 'No Class';
+          }
+          class_date_heading.appendChild(indicator);
+          class_date_container.appendChild(class_date_heading);
+        }
+        else {
+          class_date_heading.innerText = class_date.name;
+          class_date_container.appendChild(class_date_heading);
+          const class_dates_list = document.createElement('p');
+          class_dates_list.classList.add('mb-0', 'ml-3');
+          let last_month = null;
+          const date_parts = [];
+          class_date.dates.forEach((date, i) => {
+            const show_month_name = last_month !== date.m;
+            last_month = date.m;
+            date = new Date(date.y, date.m, date.d);
+            if (i > 0) {date_parts.push(show_month_name ? '<br>' : ', ');}
+            date_parts.push('<time datetime="' + machine_readable_date(date) + '">');
+            if (show_month_name) {date_parts.push(month_names[date.getMonth()] + ' ');}
+            date_parts.push(date.getDate() + get_date_number_suffix(date.getDate()));
+            date_parts.push('</time>');
+          });
+          class_dates_list.innerHTML = date_parts.join('');
+          class_date_container.appendChild(class_dates_list);
+        }
+      }
+    }
   </script>
-  
 </body>
 </html>

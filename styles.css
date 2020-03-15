@@ -81,20 +81,27 @@ li {
 }
 
 
-
 /* 2. Future Class Dates */
 
-.future-class-date,
-.future-class-date:hover {
-  color: black;
+#class_date_container h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: Georgia, sans-serif;
 }
 
-.future-class-date[aria-expanded="true"]:hover strong::after {
-  content: "\02296";
+#class_date_container h3 .class-date-indicator {
+  font-weight: normal;
+  font-size: 1rem;
 }
 
-.future-class-date[aria-expanded="false"]:hover strong::after {
-  content: "\02295";
+@media screen and (min-width: 500px) {
+  #class_date_container h3 {
+    font-size: 1.2rem;
+  }
+}
+
+#class_date_container p {
+  font-size: 1rem;
 }
 
 
@@ -123,6 +130,7 @@ li {
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 68, 0, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
+
 
 /* 4. Footer Tagline */
 .tagline {
