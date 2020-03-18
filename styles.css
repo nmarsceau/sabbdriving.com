@@ -3,13 +3,12 @@
   2. Future Class Dates
   3. Navigation Bar
   4. Footer Tagline
-  5. Image Modal
+  5. Image Viewer
   6. Did You Know
 */
 
 
 /* 1. Site-Wide */
-
 h1, h2, h3, h4, h5, h6 {
   font-family: sans-serif;
 }
@@ -72,17 +71,20 @@ li {
   }
 }
 
-.visually-hidden { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+.hidden-visually {
   position: absolute !important;
   height: 1px; width: 1px;
   overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
+}
+
+.hidden-all {
+  display: none;
 }
 
 
 /* 2. Future Class Dates */
-
 #class_date_container h3 {
   font-size: 1.1rem;
   font-weight: 600;
@@ -106,6 +108,11 @@ li {
 
 
 /* 3. Navigation Bar */
+nav.main-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
 
 .navbar {
   font-size: 1.3rem;
@@ -138,58 +145,17 @@ li {
 }
 
 
-/* 5. Image Modal */
-
-.image-modal-content {
-  background: rgba(0,0,0,0);
-  border: none;
+/* 5. Image Viewer */
+#image-container img {
+  width: 100%;
 }
-
-.image-modal-close {
-  top: -8px;
-  right: -8px;
-  padding: 4px;
-  line-height: 0px;
-
-  background: #333;
-  border: 3px solid #ccc;
-  border-radius: 50%;
-
-  cursor: pointer;
-}
-
-.image-modal-close:hover {
-  background: #000;
-  border-color: #fff;
-}
-
-.image-modal-close img {
-  width: 20px;
-  height: 20px;
-}
-
-@media screen and (min-width: 350px) {
-  .image-modal-close img {
-    width: 25px;
-    height: 25px;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .image-modal-close {
-    top: -15px;
-    right: -15px;
-  }
-
-  .image-modal-close img {
-    width: 30px;
-    height: 30px;
-  }
+#image-description {
+  padding: 15px 30px;
+  text-align: center;
 }
 
 
 /* 6. Did You Know */
-
 .did-you-know {
   border: 1px solid gray;
 

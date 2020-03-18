@@ -1,25 +1,22 @@
-<!--<?php $media_files = json_decode(file_get_contents('media.json'), true); ?>-->
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <title>Media | Sabbadino Driver Training &mdash; Taylors, SC Driver Education Courses</title>
+  <title>Media | Sabbadino Driver Training</title>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="title" content="Upstate Driver Education Courses, Sabbadino Driving School, Taylors Driving Lessons" />
-  <meta name="description" content="Learn to drive near Greenville SC from one of the leading driving course instructors in the Upstate. Call today to register!" />
+  <meta name="description" content="What does driver training look like? Check out these pictures taken during both our classroom and behind-the-wheel training." />
   <meta name="keyword" content="driver education, driving school, defensive driving, traffic education, upstate driving courses" />
 
-  <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous" />
+  <link href="reset.css" rel="stylesheet" type="text/css" />
+  <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link href="styles.css" rel="stylesheet" type="text/css" />
+  <link href="modal.css" rel="stylesheet" type="text/css" />
   <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 <body>
-  <nav class="sticky-top bg-white shadow-lg">
+  <nav class="main-navigation bg-white shadow-lg">
     <div class="navbar navbar-expand-lg">
       <a class="navbar-brand ml-xl-4 mr-0" href="index.html">
         <picture>
@@ -64,19 +61,7 @@
     <div class="row">
       <h1 class="col-12 mb-4">Media</h1>
     </div>
-    <div class="row no-gutters">
-      <!--
-      <?php foreach($media_files as $file) { ?>
-        <div class="col-6 col-md-4 col-lg-3 p-2">
-          <a class="image-link" href="images/gallery/<?php echo $file['name']; ?>">
-            <img class="img-fluid" loading="lazy"
-                 src="images/gallery/<?php echo $file['thumbName']; ?>"
-                 alt="<?php echo $file['alt']; ?>" />
-          </a>
-        </div>
-      <?php } ?>
-      -->
-    </div>
+    <div id="thumbnail-container" class="row no-gutters"></div>
   </section>
 
   <footer class="bg-dark text-light mt-5">
@@ -95,56 +80,190 @@
       </div>
     </div>
   </footer>
-  <script>document.getElementById('copyright-current-year').innerText = (new Date()).getFullYear();</script>
 
-  <div id="image-modal" class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content image-modal-content">
-        <div class="modal-body p-0">
-          <button type="button" class="image-modal-close position-absolute" data-dismiss="modal" aria-label="Close">
-            <img src="images/close_icon.png" alt="" aria-hidden="true" />
-          </button>
-          <img id="large-image-tag" class="img-fluid" src="" alt="" />
-        </div>
-      </div>
+  <div id="image-modal" class="my-modal hidden-all" aria-label="Image Viewer" aria-describedby="image-description">
+    <div class="my-modal-body">
+      <div id="image-container"><img src="" alt="" /></div>
+      <div id="image-description" aria-hidden="true"></div>
     </div>
   </div>
 
-  <script
-    src="https://code.jquery.com/jquery-3.4.0.min.js"
-    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
-    crossorigin="anonymous"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
-
+  <script src="modal.js"></script>
   <script>
-    function open_image_modal(filename, alt) {
-      $("#large-image-tag").attr("src", filename).attr("alt", alt);
-      $("#image-modal").modal('show');
+    // update copyright year
+    document.getElementById('copyright-current-year').innerText = (new Date()).getFullYear();
+
+    // set up images thumbnails and viewing modal
+    const image_modal = new Modal(document.getElementById('image-modal'));
+    const images = [
+      {
+        filename: '1.jpg',
+        thumbnail_filename: '1-thumb.jpg',
+        description: 'Posters about drinking and driving displayed around the drivers education classroom.',
+      },
+      {
+        filename: '2.jpg',
+        thumbnail_filename: '2-thumb.jpg',
+        description: 'Posters about drinking and driving displayed around the divers education classroom.',
+      },
+      {
+        filename: '3.jpg',
+        thumbnail_filename: '3-thumb.jpg',
+        description: 'Students wear drunk goggles and try to toss a ball into a bucket.',
+      },
+      {
+        filename: '4.jpg',
+        thumbnail_filename: '4-thumb.jpg',
+        description: 'Students test their reflexes on a machine that simulates pressing the brake pedal in a car.',
+      },
+      {
+        filename: '5.jpg',
+        thumbnail_filename: '5-thumb.jpg',
+        description: 'Students test their reflexes on a machine that simulates pressing the brake pedal in a car.',
+      },
+      {
+        filename: '6.jpg',
+        thumbnail_filename: '6-thumb.jpg',
+        description: 'Mr. Sabbadino begins his lesson for the evening.',
+      },
+      {
+        filename: '7.jpg',
+        thumbnail_filename: '7-thumb.jpg',
+        description: 'Mr. Sabbadino shows the class a video.',
+      },
+      {
+        filename: '8.jpg',
+        thumbnail_filename: '8-thumb.jpg',
+        description: 'Mr. Sabbadino shows the class a video.',
+      },
+      {
+        filename: '9.jpg',
+        thumbnail_filename: '9-thumb.jpg',
+        description: 'Mr. Sabbadino hands out a piece of paper to each of his students.',
+      },
+      {
+        filename: '10.jpg',
+        thumbnail_filename: '10-thumb.jpg',
+        description: 'Mr. Sabbadino hands out a piece of paper to each of his students.',
+      },
+      {
+        filename: '11.jpg',
+        thumbnail_filename: '11-thumb.jpg',
+        description: 'Mr. Sabbadino shows the class some material on the overhead projector.',
+      },
+      {
+        filename: '12.jpg',
+        thumbnail_filename: '12-thumb.jpg',
+        description: 'Mr. Sabbadino shows the class some material on the overhead projector.',
+      },
+      {
+        filename: '13.jpg',
+        thumbnail_filename: '13-thumb.jpg',
+        description: 'Mr. Sabbadino shows the class some material on the overhead projector.',
+      },
+      {
+        filename: '14.jpg',
+        thumbnail_filename: '14-thumb.jpg',
+        description: 'A student begins her driving lesson behind the wheel.',
+      },
+      {
+        filename: '15.jpg',
+        thumbnail_filename: '15-thumb.jpg',
+        description: 'A student begins his driving lesson in the parking lot.',
+      },
+      {
+        filename: '16.jpg',
+        thumbnail_filename: '16-thumb.jpg',
+        description: 'Mr. Sabbadino explains a driving exercise to his student.',
+      },
+      {
+        filename: '17.jpg',
+        thumbnail_filename: '17-thumb.jpg',
+        description: 'A driving student back up until the rear bumper touches the cone.',
+      },
+      {
+        filename: '18.jpg',
+        thumbnail_filename: '18-thumb.jpg',
+        description: 'A driving student weaves the car between the cones.',
+      },
+      {
+        filename: '19.jpg',
+        thumbnail_filename: '19-thumb.jpg',
+        description: 'A driving student eases the car forward until the from bumper touches the cone.',
+      },
+      {
+        filename: '20.jpg',
+        thumbnail_filename: '20-thumb.jpg',
+        description: 'Mr. Sabbadino and his two students continue their driving lesson on the road.',
+      },
+      {
+        filename: '21.jpg',
+        thumbnail_filename: '21-thumb.jpg',
+        description: 'A student drives down a four-lane road in the drivers education car with Mr. Sabbadino.',
+      },
+      {
+        filename: '22.jpg',
+        thumbnail_filename: '22-thumb.jpg',
+        description: 'The front end of the drivers education car as a student drives down the road.',
+      },
+      {
+        filename: '23.jpg',
+        thumbnail_filename: '23-thumb.jpg',
+        description: 'A driving student uses his blinker before changing lanes.',
+      },
+      {
+        filename: '24.jpg',
+        thumbnail_filename: '24-thumb.jpg',
+        description: 'A driving student uses his blinker before making a right on red.',
+      },
+      {
+        filename: '25.jpg',
+        thumbnail_filename: '25-thumb.jpg',
+        description: 'A student drives down a two-lane road in the drivers education car with Mr. Sabbadino.',
+      },
+      {
+        filename: '26.jpg',
+        thumbnail_filename: '26-thumb.jpg',
+        description: 'A student drives down a two-lane road in the drivers education car with Mr. Sabbadino.',
+      },
+      {
+        filename: '27.jpg',
+        thumbnail_filename: '27-thumb.jpg',
+        description: 'Mr. Sabbadino with Jocelyn Brazeal, winner of the 2018 SCDTSEA poster contest.',
+      },
+      {
+        filename: '28.jpg',
+        thumbnail_filename: '28-thumb.jpg',
+        description: 'Mr. Sabbadino with Claire Swartz, winner of the 2019 SCDTSEA poster contest.',
+      }
+    ];
+
+    const thumbnail_container = document.getElementById('thumbnail-container');
+    for (let image of images) {
+      const container = document.createElement('div');
+      container.classList.add('col-6', 'col-md-4', 'col-lg-3', 'p-2');
+      const image_link = document.createElement('a');
+      image_link.href = '';
+      image_link.classList.add('image-link');
+      image_link.addEventListener('click', event => {
+        event.preventDefault();
+        const image_container = image_modal.modal.querySelector('#image-container');
+        const image_element = image_container.querySelector('img');
+        const image_description = image_modal.modal.querySelector('#image-description');
+        image_element.addEventListener('load', () => {setTimeout(() => {image_modal.open();}, 150);});
+        image_element.src = 'images/gallery/' + image.filename;
+        image_element.alt = image.description;
+        image_description.innerText = image.description;
+      });
+      const thumbnail = document.createElement('img');
+      thumbnail.classList.add('img-fluid');
+      thumbnail.loading = 'lazy';
+      thumbnail.src = 'images/gallery/' + image.thumbnail_filename;
+      thumbnail.alt = image.description;
+      image_link.appendChild(thumbnail);
+      container.appendChild(image_link);
+      thumbnail_container.appendChild(container);
     }
-
-    $(function() {
-      $(".image-link").each(function(i, link) {
-        var filename = $(link).attr("href");
-        var alt = $("img", $(link)).attr("alt");
-        
-        $(link).attr("href", "javascript:void(0);");
-        $(link).click(function() {
-          open_image_modal(filename, alt);
-        });
-      });
-
-      $('#image-modal').on('hidden.bs.modal', function () {
-        $("#large-image-tag").attr("src", "").attr("alt", "");
-      });
-    });
   </script>
-  
 </body>
 </html>
