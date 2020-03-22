@@ -41,19 +41,7 @@ h3 {
   }
 }
 
-.strikethrough {
-  text-decoration: line-through;
-}
-
-.bg-sabbgreen {
-  background-color: #004400;
-}
-
-.text-sabbgreen {
-  color: #004400;
-}
-
-article, aside {
+article, aside, blockquote {
   font-family: Georgia, sans-serif;
   font-size: 1.2rem;
 }
@@ -76,6 +64,10 @@ li {
   }
 }
 
+.bg-sabbgreen {
+  background-color: #004400;
+}
+
 .hidden-visually {
   position: absolute !important;
   height: 1px; width: 1px;
@@ -94,24 +86,24 @@ li {
 
 
 /* 2. Future Class Dates */
-#class_date_container h3 {
+#class-date-container h3 {
   font-size: 1.1rem;
   font-weight: 600;
   font-family: Georgia, sans-serif;
 }
 
-#class_date_container h3 .class-date-indicator {
+#class-date-container h3 .class-date-indicator {
   font-weight: normal;
   font-size: 1rem;
 }
 
 @media screen and (min-width: 500px) {
-  #class_date_container h3 {
+  #class-date-container h3 {
     font-size: 1.2rem;
   }
 }
 
-#class_date_container p {
+#class-date-container p {
   font-size: 1rem;
 }
 

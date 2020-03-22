@@ -15,11 +15,11 @@
 </head>
 <body>
   <nav class="main-menu bg-white shadow-lg">
-    <a class="brand" href="index.html" aria-label="Site homepage">
+    <a class="brand" href="index.html">
       <picture>
         <source media="(max-width: 400px)" srcset="images/brand-sm.jpg" />
         <source media="(min-width: 1300px)" srcset="images/brand-xl.jpg" />
-        <img src="images/brand.jpg" alt="Sabbadino Driving School" />
+        <img src="images/brand.jpg" alt="home page" />
       </picture>
     </a>
     <button id="main-menu-toggle" type="button" aria-label="Toggle main menu"></button>
@@ -45,30 +45,34 @@
       <img src="images/hero1200.jpg" alt="" class="w-100" />
     </picture>
   </header>
-  <section class="container">
-    <div class="row">
+  <main class="container">
+    <section id="thumbnail-container" class="row no-gutters">
       <h1 class="col-12 mb-4">Media</h1>
-    </div>
-    <div id="thumbnail-container" class="row no-gutters"></div>
-  </section>
+    </section>
+  </main>
   <footer class="bg-dark text-light mt-5">
     <div class="container">
       <div class="row">
         <p class="col-12 my-3 tagline font-italic text-white">
           &ldquo;Make&nbsp;Safety&nbsp;First &amp;&nbsp;Make&nbsp;Safety&nbsp;Last&rdquo;
         </p>
-        <p class="col-12 mb-5">
+        <address class="col-12 mb-5">
+          <span class="hidden-visually">Joe Sabbadino</span>
           <a href="mailto:jandjsabb@att.net" class="text-white">jandjsabb@att.net</a>
           | <a href="tel:18642920259" class="text-white">864.292.0259</a>
-        </p>
+        </address>
         <p class="col-12 mb-5">
           &copy;&nbsp;2011-<span id="copyright-current-year"></span>
         </p>
       </div>
     </div>
   </footer>
-  <div id="image-modal" class="my-modal hidden-all" aria-label="Image Viewer" aria-describedby="image-description">
-    <div class="my-modal-body">
+  <div id="image-modal" class="my-modal-backdrop" tabindex="-1" hidden>
+    <div class="my-modal" aria-labelledby="image-viewer-label" role="dialog" aria-modal="true">
+      <button type="button" class="my-modal-close" aria-label="Close">
+        <span class="close-icon" aria-hidden="true">&times;</span>
+      </button>
+      <p id="image-viewer-label" hidden>Image Viewer</p>
       <div id="image-container"><img src="" alt="" /></div>
       <div id="image-description" aria-hidden="true"></div>
     </div>
@@ -76,7 +80,6 @@
   <script src="main.js"></script>
   <script src="modal.js"></script>
   <script>
-    // set up images thumbnails and viewing modal
     const image_modal = new Modal(document.getElementById('image-modal'));
     const images = [
       {

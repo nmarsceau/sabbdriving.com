@@ -1,56 +1,39 @@
+// https://bitsofco.de/accessible-modal-dialog/
+// https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html
+
 class Modal {
-	constructor (modal) {
-		this.modal = modal;
-		this.modal.role = 'dialog';
-		this.modal.addEventListener('keydown', () => {this.handle_key_press();});
-		this.overlay = document.getElementById('modal-overlay') || this.create_overlay();
-		this.overlay.addEventListener('click', () => {this.close();});
-		let close_button = modal.querySelector('button.modal-close') || this.create_close_button();
-		close_button.addEventListener('click', () => {this.close();});
+	constructor (container) {
+		this.container = container;
+		this.modal = container.querySelector('.my-modal');
+		this.close_button = this.modal.querySelector('button.my-modal-close');
+
 		this.focusable_elements = this.modal.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]');
 		this.first_focusable_element = this.focusable_elements[0];
 		this.last_focusable_element = this.focusable_elements[this.focusable_elements.length - 1];
 		this.last_focused_element = null;
-	}
 
-	create_overlay() {
-		const overlay = document.createElement('div');
-		overlay.id = 'modal-overlay';
-		overlay.classList.add('modal-overlay', 'hidden-all');
-		overlay.tabindex = '-1';
-		document.querySelector('body').appendChild(overlay);
-		return document.getElementById('modal-overlay');
-	}
-
-	create_close_button() {
-		const close_button = document.createElement('button');
-		close_button.type = 'button';
-		close_button['aria-label'] = 'Close';
-		close_button.classList.add('modal-close');
-		const close_icon = document.createElement('span');
-		close_icon.classList.add('close-icon');
-		close_icon['aria-hidden'] = 'true';
-		close_icon.innerHTML = '&times;';
-		close_button.appendChild(close_icon);
-		this.modal.appendChild(close_button);
-		return this.modal.querySelector('button.modal-close');
+		this.modal.addEventListener('keydown', event => {this.handle_key_press(event);});
+		this.close_button.addEventListener('click', () => {this.close();});
+		this.container.addEventListener('click', event => {
+			if(event.target === this.container) {this.close();}
+		});
 	}
 
 	open() {
-		this.overlay.classList.remove('hidden-all');
-		this.modal.classList.remove('hidden-all');
+		console.log(document.activeElement);
+		this.container.removeAttribute('hidden');
 		this.last_focused_element = document.activeElement;
 		this.first_focusable_element.focus();
 	}
 
 	close() {
-		this.overlay.classList.add('hidden-all');
-		this.modal.classList.add('hidden-all');
+		this.container.setAttribute('hidden', '');
+		console.log(this.last_focused_element);
 		this.last_focused_element.focus();
 		this.last_focused_element = null;
 	}
 
-	handle_key_press() {
+	handle_key_press(event) {
 		const key_tab = 9;
 		const key_esc = 27;
 		switch (event.keyCode) {

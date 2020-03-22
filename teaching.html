@@ -14,11 +14,11 @@
 </head>
 <body>
   <nav class="main-menu bg-white shadow-lg">
-    <a class="brand" href="index.html" aria-label="Site homepage">
+    <a class="brand" href="index.html">
       <picture>
         <source media="(max-width: 400px)" srcset="images/brand-sm.jpg" />
         <source media="(min-width: 1300px)" srcset="images/brand-xl.jpg" />
-        <img src="images/brand.jpg" alt="Sabbadino Driving School" />
+        <img src="images/brand.jpg" alt="home page" />
       </picture>
     </a>
     <button id="main-menu-toggle" type="button" aria-label="Toggle main menu"></button>
@@ -44,8 +44,8 @@
       <img src="images/hero1200.jpg" alt="" class="w-100" />
     </picture>
   </header>
-	<article class="container">
-    <div class="row">
+	<main class="container">
+    <article class="row">
       <h1 class="col-12 mb-4">Teaching Philosophy</h1>
       <div class="col-lg-9">       
 			  <p>
@@ -79,29 +79,30 @@
           beneficial learning experience.
         </p>
         <p>
-          <a href="docs/SabbadinoDrivingSchoolFamilyAgreement.pdf" target="_blank">Download Sabbadino Driving School's Family Agreement</a>
+          <a href="docs/SabbadinoDrivingSchoolFamilyAgreement.pdf" download>Download Sabbadino Driving School's Family Agreement <small>(PDF, 74 KB)</small></a>
         </p>
       </div>
-      <div class="col-8 col-sm-12 col-lg-7 col-xl-6">
+      <footer class="col-8 col-sm-12 col-lg-7 col-xl-6">
         <p class="mt-5 font-italic">
           &ldquo;Some&nbsp;great&nbsp;educational&nbsp;goals&nbsp;are
           for&nbsp;my&nbsp;students&nbsp;to&nbsp;<strong>KNOW</strong>&nbsp;Safety,
           <strong>THINK</strong>&nbsp;Safety,&nbsp;<strong>BELIEVE&nbsp;IN</strong>&nbsp;Safety,
           <strong>TAKE&nbsp;TIME</strong>&nbsp;to&nbsp;be&nbsp;safe.&rdquo;
         </p>
-      </div>
-    </div>
-  </article>
+      </footer>
+    </article>
+  </main>
   <footer class="bg-dark text-light mt-5">
     <div class="container">
       <div class="row">
         <p class="col-12 my-3 tagline font-italic text-white">
           &ldquo;Make&nbsp;Safety&nbsp;First &amp;&nbsp;Make&nbsp;Safety&nbsp;Last&rdquo;
         </p>
-        <p class="col-12 mb-5">
+        <address class="col-12 mb-5">
+          <span class="hidden-visually">Joe Sabbadino</span>
           <a href="mailto:jandjsabb@att.net" class="text-white">jandjsabb@att.net</a>
           | <a href="tel:18642920259" class="text-white">864.292.0259</a>
-        </p>
+        </address>
         <p class="col-12 mb-5">
           &copy;&nbsp;2011-<span id="copyright-current-year"></span>
         </p>

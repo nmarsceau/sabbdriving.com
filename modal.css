@@ -1,4 +1,4 @@
-.modal-overlay {
+.my-modal-backdrop {
   z-index: 999;
   position: fixed;
   top: 0;
@@ -16,6 +16,8 @@
   top: 2.5%;
   left: 2.5%;
   font-size: 1rem;
+  background-color: #fff;
+  color: #000;
   border: 2px solid #fff;
 }
 @media screen and (min-width: 850px) {
@@ -27,16 +29,10 @@
 
 .my-modal .my-modal-header {
   position: relative;
-  background-color: #fff;
   height: 50px;
 }
 
-.my-modal .my-modal-body {
-  background-color: #fff;
-  color: #000;
-}
-
-.my-modal .modal-close {
+.my-modal .my-modal-close {
   outline: none;
   border: none;
   cursor: pointer;
@@ -51,19 +47,19 @@
   line-height: 0;
   border-radius: 15%;
 }
-.my-modal .modal-close:hover {
+.my-modal .my-modal-close:hover {
   color: #000;
 }
-.my-modal .modal-close .close-icon {
+.my-modal .my-modal-close .close-icon {
   position: absolute;
   top: 0.4em;
   left: 0.2em;
 }
-.my-modal > .modal-close {
+.my-modal > .my-modal-close {
   top: -0.25em;
   right: -0.25em;
 }
-.my-modal .my-modal-header .modal-close {
+.my-modal .my-modal-header .my-modal-close {
   top: 0;
   right: 0;
 }
