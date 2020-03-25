@@ -3,13 +3,12 @@
   2. Future Class Dates
   3. Navigation Bar
   4. Footer Tagline
-  5. Image Modal
+  5. Image Viewer
   6. Did You Know
 */
 
 
 /* 1. Site-Wide */
-
 h1, h2, h3, h4, h5, h6 {
   font-family: sans-serif;
 }
@@ -42,21 +41,18 @@ h3 {
   }
 }
 
-.strikethrough {
-  text-decoration: line-through;
+main {
+  min-height: 50vh;
 }
 
-.bg-sabbgreen {
-  background-color: #004400;
-}
-
-.text-sabbgreen {
-  color: #004400;
-}
-
-article, aside {
+article, aside, blockquote {
   font-family: Georgia, sans-serif;
   font-size: 1.2rem;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 2em;
 }
 
 li {
@@ -72,57 +68,179 @@ li {
   }
 }
 
-.visually-hidden { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+.bg-sabbgreen {
+  background-color: #004400;
+}
+
+.hidden-visually {
   position: absolute !important;
   height: 1px; width: 1px;
   overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
 }
 
+.hidden-all {
+  display: none;
+}
+
+*:focus {
+  outline: 2px dotted #004400 !important;
+}
 
 
 /* 2. Future Class Dates */
-
-.future-class-date,
-.future-class-date:hover {
-  color: black;
+#class-date-container h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: Georgia, sans-serif;
 }
 
-.future-class-date[aria-expanded="true"]:hover strong::after {
-  content: "\02296";
+#class-date-container h3 .class-date-indicator {
+  font-weight: normal;
+  font-size: 1rem;
 }
 
-.future-class-date[aria-expanded="false"]:hover strong::after {
-  content: "\02295";
+@media screen and (min-width: 500px) {
+  #class-date-container h3 {
+    font-size: 1.2rem;
+  }
+}
+
+#class-date-container p {
+  font-size: 1rem;
 }
 
 
 /* 3. Navigation Bar */
-
-.navbar {
+nav.main-menu {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  height: 4em;
   font-size: 1.3rem;
 }
 
-.nav-item, .nav-item:active, .nav-item:hover {
+nav.main-menu ul.collapsed {
+  display: none;
+}
+
+nav.main-menu ul {
+  list-style-type: none;
+}
+
+nav.main-menu a.brand {
+  align-self: center;
+  margin-left: 15px;
+}
+
+nav.main-menu button {
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 68, 0, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+  cursor: pointer;
+  width: 3em;
+  height: 2em;
+  align-self: center;
+}
+
+nav.main-menu ul {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 15px 15px rgba(0, 68, 0, .2);
+  padding: 10px 0px 0px;
+}
+
+nav.main-menu ul li {
+  padding: 0;
+}
+
+nav.main-menu ul li a {
+  display: block;
+  padding: 15px 0px;
+  text-align: center;
   color: #004400;
 }
 
-.nav-item span {
-  border-bottom: 3px solid #ffffff;
+nav.main-menu ul li a:hover {
+  background-color: #ddd;
+  text-decoration: none;
 }
 
-.nav-item:hover span {
-  border-color: #004400;
+nav.main-menu ul li a:active {
+  background-color: #ddd;
+  text-decoration: none;
 }
 
-.navbar-toggler {
-  border: none;
+@media screen and (min-width: 875px) {
+  nav.main-menu a.brand {
+    margin-left: 5px;
+  }
+
+  nav.main-menu {
+    font-size: 1.1rem;
+  }
+
+  nav.main-menu button {
+    display: none;
+  }
+
+  nav.main-menu ul.collapsed {
+    display: inline-block;
+  }
+
+  nav.main-menu ul {
+    position: relative;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    text-align: right;
+  }
+
+  nav.main-menu ul li {
+    display: inline-block;
+    height: 100%;
+  }
+
+  nav.main-menu ul li a {
+    display: inline-block;
+    height: 100%;
+    padding: 1.2em 10px;
+  }
+
+  nav.main-menu ul li a:focus {
+    background-color: #fff;
+  }
+
+  nav.main-menu ul li a:hover {
+    text-decoration: underline 2px;
+    background-color: #fff;
+  }
+
+  nav.main-menu ul li a:active {
+    text-decoration: underline 2px;
+    background-color: #fff;
+  }
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 68, 0, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+@media screen and (min-width: 1000px) {
+  nav.main-menu {
+    font-size: 1.2rem;
+  }
+
+  nav.main-menu ul li a {
+    padding: 1.2em 15px;
+  }
 }
+
 
 /* 4. Footer Tagline */
 .tagline {
@@ -130,58 +248,17 @@ li {
 }
 
 
-/* 5. Image Modal */
-
-.image-modal-content {
-  background: rgba(0,0,0,0);
-  border: none;
+/* 5. Image Viewer */
+#image-container img {
+  width: 100%;
 }
-
-.image-modal-close {
-  top: -8px;
-  right: -8px;
-  padding: 4px;
-  line-height: 0px;
-
-  background: #333;
-  border: 3px solid #ccc;
-  border-radius: 50%;
-
-  cursor: pointer;
-}
-
-.image-modal-close:hover {
-  background: #000;
-  border-color: #fff;
-}
-
-.image-modal-close img {
-  width: 20px;
-  height: 20px;
-}
-
-@media screen and (min-width: 350px) {
-  .image-modal-close img {
-    width: 25px;
-    height: 25px;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .image-modal-close {
-    top: -15px;
-    right: -15px;
-  }
-
-  .image-modal-close img {
-    width: 30px;
-    height: 30px;
-  }
+#image-description {
+  padding: 15px 30px;
+  text-align: center;
 }
 
 
 /* 6. Did You Know */
-
 .did-you-know {
   border: 1px solid gray;
 
