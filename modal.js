@@ -1,10 +1,7 @@
-// https://bitsofco.de/accessible-modal-dialog/
-// https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html
-
 class Modal {
-	constructor (container) {
-		this.container = container;
-		this.modal = container.querySelector('.my-modal');
+	constructor (modal_container) {
+		this.modal_container = modal_container;
+		this.modal = modal_container.querySelector('.my-modal');
 		this.close_button = this.modal.querySelector('button.my-modal-close');
 
 		this.focusable_elements = this.modal.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]');
@@ -12,23 +9,21 @@ class Modal {
 		this.last_focusable_element = this.focusable_elements[this.focusable_elements.length - 1];
 		this.last_focused_element = null;
 
-		this.modal.addEventListener('keydown', event => {this.handle_key_press(event);});
-		this.close_button.addEventListener('click', () => {this.close();});
-		this.container.addEventListener('click', event => {
-			if(event.target === this.container) {this.close();}
+		this.modal.addEventListener('keydown', function(event) {this.handle_key_press(event);});
+		this.close_button.addEventListener('click', function() {this.close();});
+		this.modal_container.addEventListener('click', function(event) {
+			if(event.target === this.modal_container) {this.close();}
 		});
 	}
 
 	open() {
-		console.log(document.activeElement);
-		this.container.removeAttribute('hidden');
+		this.modal_container.removeAttribute('hidden');
 		this.last_focused_element = document.activeElement;
 		this.first_focusable_element.focus();
 	}
 
 	close() {
-		this.container.setAttribute('hidden', '');
-		console.log(this.last_focused_element);
+		this.modal_container.setAttribute('hidden', '');
 		this.last_focused_element.focus();
 		this.last_focused_element = null;
 	}

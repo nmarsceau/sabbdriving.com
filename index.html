@@ -45,6 +45,11 @@
     </picture>
   </header>
   <main class="container">
+    <noscript>
+      <div class="alert alert-warning text-center" role="alert">
+        It looks like JavaScript is disabled in your browser. Some features of this website may not work properly until JavaScript is enabled.
+      </div>
+    </noscript>
     <div class="row pt-4">
       <article class="col-lg-9">
         <h1 class="mb-4">Sabbadino Driving School</h1>
@@ -61,7 +66,7 @@
           education requirements. The classroom instruction is scheduled in two and a half hour sessions over four weeks.
         </p>
         <div class="my-5 mr-auto ml-auto text-center w-75">
-          <img class="img-fluid" src="images/classroom_instruction.jpg" alt="Mr. Sabbadino teaches a class" loading="lazy" />
+          <img class="img-fluid" src="images/classroom_instruction.jpg" alt="Mr. Sabbadino teaches a class" width="900" height="404" loading="lazy" />
         </div>
         <p class="mt-5">
           Classroom Instruction Covers:
@@ -83,7 +88,7 @@
           front/rear vehicle judgement, and turning forward and backwards.
         </p>
         <div class="my-5 mr-auto ml-auto text-center w-75">
-          <img class="img-fluid" src="images/behind_the_wheel.jpg" alt="Mr. Sabbadino drives with a student" loading="lazy" />
+          <img class="img-fluid" src="images/behind_the_wheel.jpg" alt="Mr. Sabbadino drives with a student" width="900" height="398" loading="lazy" />
         </div>
         <p class="mt-5">
           Behind-the-Wheel Driving Lessons Include:
@@ -124,9 +129,7 @@
         </p>
         <div class="my-5 did-you-know">
           <p class="mb-0 did-you-know-title">Did You Know?</p>
-          <p class="">
-            You need a driver's permit for at least 6 months before taking a license test
-          </p>
+          <p>You need a driver's permit for at least 6 months before taking a license test</p>
         </div>
         <h3 id="prices-block" class="mt-5 pt-5">Prices</h3>
         <table class="table mb-5">
@@ -142,8 +145,7 @@
           </tbody>
         </table>
         <footer class="text-center my-5 pt-5" style="line-height: 3;">
-          <a href="mailto:jandjsabb@att.net?subject=Registration%20From%20Website&body=Hi,%20I'd%20like%20to%20register%20for%20one%20of%20your%20driver%20training%20classes."
-          class="py-3 px-4 bg-sabbgreen text-white">
+          <a href="mailto:jandjsabb@att.net?subject=Registration%20From%20Website&body=Hi,%20I'd%20like%20to%20register%20for%20one%20of%20your%20driver%20training%20classes." class="py-3 px-4 bg-sabbgreen text-white">
             Contact Mr. Sabbadino
           </a>
           <br> at
@@ -154,6 +156,9 @@
       </article>
       <aside class="col-lg-3 mt-5 mt-lg-0">
         <h2>2020 Class Dates</h2>
+        <noscript>
+          <div class="alert alert-warning text-center" role="alert">JavaScript must be enabled to view future class dates.</div>
+        </noscript>
         <div id="class-date-container"></div>
         <h2 class="mt-5">Owner/Instructor</h2>
         <address>
@@ -208,6 +213,7 @@
       </div>
     </div>
   </footer>
+  <script src="polyfill.js"></script>
   <script src="main.js"></script>
   <script>
     function get_date_number_suffix(date_number) {
@@ -281,14 +287,17 @@
     for (let class_date of class_dates) {
       if ((new Date(class_date.expiration.y, class_date.expiration.m, class_date.expiration.d)) >= Date.now()) {
         const class_date_heading = document.createElement('h3');
-        class_date_heading.classList.add('mt-2', 'mb-0');
+        class_date_heading.classList.add('mt-2');
+        class_date_heading.classList.add('mb-0');
         if (class_date.full || class_date.dates.length === 0) {
           const class_name = document.createElement('span');
           class_name.innerText = class_date.name;
           class_name.classList.add('text-muted');
           class_date_heading.appendChild(class_name);
           const indicator = document.createElement('span');
-          indicator.classList.add('class-date-indicator', 'mb-0', 'ml-2');
+          indicator.classList.add('class-date-indicator');
+          indicator.classList.add('mb-0');
+          indicator.classList.add('ml-2');
           if (class_date.full) {
             indicator.classList.add('text-danger');
             indicator.innerText = 'Full!';
@@ -304,10 +313,11 @@
           class_date_heading.innerText = class_date.name;
           class_date_container.appendChild(class_date_heading);
           const class_dates_list = document.createElement('p');
-          class_dates_list.classList.add('mb-0', 'ml-3');
+          class_dates_list.classList.add('mb-0');
+          class_dates_list.classList.add('ml-3');
           let last_month = null;
           const date_parts = [];
-          class_date.dates.forEach((date, i) => {
+          class_date.dates.forEach(function(date, i) {
             const show_month_name = last_month !== date.m;
             last_month = date.m;
             date = new Date(date.y, date.m, date.d);
