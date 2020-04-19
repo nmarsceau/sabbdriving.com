@@ -13,7 +13,7 @@ class Modal {
 		this.modal.addEventListener('keydown', function(event) {modal.handle_key_press(event);});
 		this.close_button.addEventListener('click', function() {modal.close();});
 		this.modal_container.addEventListener('click', function(event) {
-			if(event.target === this.modal_container) {modal.close();}
+			if(event.target === modal.modal_container) {modal.close();}
 		});
 	}
 
