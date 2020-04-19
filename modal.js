@@ -9,10 +9,11 @@ class Modal {
 		this.last_focusable_element = this.focusable_elements[this.focusable_elements.length - 1];
 		this.last_focused_element = null;
 
-		this.modal.addEventListener('keydown', function(event) {this.handle_key_press(event);});
-		this.close_button.addEventListener('click', function() {this.close();});
+		const modal = this;
+		this.modal.addEventListener('keydown', function(event) {modal.handle_key_press(event);});
+		this.close_button.addEventListener('click', function() {modal.close();});
 		this.modal_container.addEventListener('click', function(event) {
-			if(event.target === this.modal_container) {this.close();}
+			if(event.target === this.modal_container) {modal.close();}
 		});
 	}
 
