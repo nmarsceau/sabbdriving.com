@@ -221,12 +221,14 @@ nav.main-menu ul li a:active {
   }
 
   nav.main-menu ul li a:hover {
-    text-decoration: underline 2px;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
     background-color: #fff;
   }
 
   nav.main-menu ul li a:active {
-    text-decoration: underline 2px;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
     background-color: #fff;
   }
 }

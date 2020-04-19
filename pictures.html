@@ -51,20 +51,6 @@
         It looks like JavaScript is disabled in your browser. Some features of this website may not work properly until JavaScript is enabled.
       </div>
     </noscript>
-    <!--[if IE ]>
-    <div class="alert alert-warning" role="alert">
-      <p class="alert-heading h2">This page is not supported in Internet Explorer.</p>
-      <p>
-        Please upgrade to a modern, more secure web browser like
-        <a href="https://www.google.com/chrome/" class="alert-link">Google Chrome</a>,
-        <a href="https://www.mozilla.org/en-US/firefox/new/" class="alert-link">Mozilla Firefox</a>, or
-        <a href="https://www.microsoft.com/en-us/edge" class="alert-link">Microsoft Edge</a>.
-      </p>
-      <p class="mb-0">
-        <a href="https://www.ezcomputersolutions.com/blog/stop-using-internet-explorer/" class="btn btn-primary">Learn Why</a>
-      </p>
-    </div>
-    <![endif]-->
     <section id="thumbnail-container" class="row no-gutters">
       <h1 class="col-12 mb-4">Media</h1>
       <noscript>
@@ -72,6 +58,18 @@
           The media gallery requires JavaScript.
         </div>
       </noscript>
+      <div id="unsupported-notice" class="alert alert-warning d-none" role="alert">
+        <p class="alert-heading h2">The media gallery is not supported in your browser.</p>
+        <p>
+          Please upgrade to a modern, more secure web browser like
+          <a href="https://www.google.com/chrome/" class="alert-link">Google Chrome</a>,
+          <a href="https://www.mozilla.org/en-US/firefox/new/" class="alert-link">Mozilla Firefox</a>, or
+          <a href="https://www.microsoft.com/en-us/edge" class="alert-link">Microsoft Edge</a>.
+        </p>
+        <p class="mb-0">
+          <a href="https://www.ezcomputersolutions.com/blog/stop-using-internet-explorer/" class="btn btn-primary">Learn Why</a>
+        </p>
+      </div>
     </section>
   </main>
   <footer class="bg-dark text-light mt-5">
@@ -248,43 +246,51 @@
       }
     ];
 
-    const image_modal = new Modal(document.getElementById('image-modal'));
-    const thumbnail_container = document.getElementById('thumbnail-container');
-    images.forEach(function(image) {
-      const container = document.createElement('div');
-      container.classList.add('col-6');
-      container.classList.add('col-md-4');
-      container.classList.add('col-lg-3');
-      container.classList.add('p-2');
-      const image_link = document.createElement('a');
-      image_link.href = '';
-      image_link.classList.add('image-link');
-      image_link.classList.add('d-block');
-      image_link.addEventListener('click', function(event) {
-        event.preventDefault();
-        const image_container = image_modal.modal.querySelector('#image-container');
-        const image_element = image_container.querySelector('img');
-        const image_description = image_modal.modal.querySelector('#image-description');
-        image_element.addEventListener('load', function() {
-          setTimeout(function() {image_modal.open();}, 150);
-        }, {once: true});
-        image_element.src = 'images/gallery/' + image.filename;
-        image_element.alt = image.description;
-        image_description.innerText = image.description;
+    if (typeof Modal === 'undefined') {
+      const unsupported_notice = document.getElementById('unsupported-notice');
+      if (unsupported_notice !== null) {
+        unsupported_notice.classList.remove('d-none');
+      }
+    }
+    else {
+      const image_modal = new Modal(document.getElementById('image-modal'));
+      const thumbnail_container = document.getElementById('thumbnail-container');
+      images.forEach(function(image) {
+        const container = document.createElement('div');
+        container.classList.add('col-6');
+        container.classList.add('col-md-4');
+        container.classList.add('col-lg-3');
+        container.classList.add('p-2');
+        const image_link = document.createElement('a');
+        image_link.href = '';
+        image_link.classList.add('image-link');
+        image_link.classList.add('d-block');
+        image_link.addEventListener('click', function(event) {
+          event.preventDefault();
+          const image_container = image_modal.modal.querySelector('#image-container');
+          const image_element = image_container.querySelector('img');
+          const image_description = image_modal.modal.querySelector('#image-description');
+          image_element.addEventListener('load', function() {
+            setTimeout(function() {image_modal.open();}, 150);
+          }, {once: true});
+          image_element.src = 'images/gallery/' + image.filename;
+          image_element.alt = image.description;
+          image_description.innerText = image.description;
+        });
+        const thumbnail = document.createElement('img');
+        thumbnail.classList.add('img-fluid');
+        thumbnail.loading = 'lazy';
+        thumbnail.width = 300;
+        thumbnail.style.width = 300;
+        thumbnail.height = 169;
+        thumbnail.style.height = 169;
+        thumbnail.src = 'images/gallery/' + image.thumbnail_filename;
+        thumbnail.alt = image.description;
+        image_link.appendChild(thumbnail);
+        container.appendChild(image_link);
+        thumbnail_container.appendChild(container);
       });
-      const thumbnail = document.createElement('img');
-      thumbnail.classList.add('img-fluid');
-      thumbnail.loading = 'lazy';
-      thumbnail.width = 300;
-      thumbnail.style.width = 300;
-      thumbnail.height = 169;
-      thumbnail.style.height = 169;
-      thumbnail.src = 'images/gallery/' + image.thumbnail_filename;
-      thumbnail.alt = image.description;
-      image_link.appendChild(thumbnail);
-      container.appendChild(image_link);
-      thumbnail_container.appendChild(container);
-    });
+    }
   </script>
 </body>
 </html>
