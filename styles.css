@@ -60,6 +60,14 @@ li {
   line-height: 1.3em;
 }
 
+a {
+  color: #0044dd;
+}
+
+a:hover {
+  color: #0000aa;
+}
+
 @media screen and (min-width: 800px) {
   .two-columns {
     -webkit-columns: 2;
