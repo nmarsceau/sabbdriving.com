@@ -16,9 +16,15 @@
   <nav class="main-menu bg-white shadow-lg">
     <a class="brand" href="index.html">
       <picture>
-        <source media="(max-width: 400px)" srcset="images/brand-sm.jpg" />
-        <source media="(min-width: 1300px)" srcset="images/brand-xl.jpg" />
-        <img src="images/brand.jpg" alt="home page" />
+        <source type="image/webp" media="(max-width: 400px)" srcset="images/brand/webp/xs.webp" />
+        <source type="image/webp" media="(max-width: 992px)" srcset="images/brand/webp/sm.webp" />
+        <source type="image/webp" media="(max-width: 1300px)" srcset="images/brand/webp/md.webp" />
+        <source type="image/webp" media="(min-width: 1300px)" srcset="images/brand/webp/xl.webp" />
+        <source type="image/jpeg" media="(max-width: 400px)" srcset="images/brand/jpg/xs.jpg" />
+        <source type="image/jpeg" media="(max-width: 992px)" srcset="images/brand/jpg/sm.jpg" />
+        <source type="image/jpeg" media="(max-width: 1300px)" srcset="images/brand/jpg/md.jpg" />
+        <source type="image/jpeg" media="(min-width: 1300px)" srcset="images/brand/jpg/xl.jpg" />
+        <img src="images/brand/jpg/sm.jpg" alt="home page" />
       </picture>
     </a>
     <button id="main-menu-toggle" type="button" aria-label="Toggle main menu"></button>
@@ -27,7 +33,7 @@
       <li><a href="credentials.html">Credentials</a></li>
       <li><a href="commendations.html">Commendations</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="pictures.html">Media</a></li>
+      <li><a href="pictures.html">Pictures</a></li>
     </ul>
   </nav>
   <header class="position-relative mb-3">
@@ -67,7 +73,10 @@
           education requirements. The classroom instruction is scheduled in two and a half hour sessions over four weeks.
         </p>
         <div class="my-5 mr-auto ml-auto text-center w-75">
-          <img class="img-fluid" src="images/classroom_instruction.jpg" alt="Mr. Sabbadino teaches a class" width="900" height="404" loading="lazy" />
+          <picture>
+            <source type="image/webp" srcset="images/homepage/webp/classroom_instruction.webp" />
+            <img type="image/jpeg" src="images/homepage/jpg/classroom_instruction.jpg" class="img-fluid" alt="Mr. Sabbadino teaches a class" width="900" height="404" loading="lazy" />
+          </picture>
         </div>
         <p class="mt-5">
           Classroom Instruction Covers:
@@ -89,7 +98,10 @@
           front/rear vehicle judgement, and turning forward and backwards.
         </p>
         <div class="my-5 mr-auto ml-auto text-center w-75">
-          <img class="img-fluid" src="images/behind_the_wheel.jpg" alt="Mr. Sabbadino drives with a student" width="900" height="398" loading="lazy" />
+          <picture>
+            <source type="image/webp" srcset="images/homepage/webp/behind_the_wheel.webp" />
+            <img type="image/jpeg" src="images/homepage/jpg/behind_the_wheel.jpg" class="img-fluid" alt="Mr. Sabbadino drives with a student" width="900" height="398" loading="lazy" />
+          </picture>
         </div>
         <p class="mt-5">
           Behind-the-Wheel Driving Lessons Include:
