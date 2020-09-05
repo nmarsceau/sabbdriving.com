@@ -16,9 +16,15 @@
   <nav class="main-menu bg-white shadow-lg">
     <a class="brand" href="index.html">
       <picture>
-        <source media="(max-width: 400px)" srcset="images/brand-sm.jpg" />
-        <source media="(min-width: 1300px)" srcset="images/brand-xl.jpg" />
-        <img src="images/brand.jpg" alt="home page" />
+        <source type="image/webp" media="(max-width: 400px)" srcset="images/brand/webp/xs.webp" />
+        <source type="image/webp" media="(max-width: 992px)" srcset="images/brand/webp/sm.webp" />
+        <source type="image/webp" media="(max-width: 1300px)" srcset="images/brand/webp/md.webp" />
+        <source type="image/webp" media="(min-width: 1300px)" srcset="images/brand/webp/xl.webp" />
+        <source type="image/jpeg" media="(max-width: 400px)" srcset="images/brand/jpg/xs.jpg" />
+        <source type="image/jpeg" media="(max-width: 992px)" srcset="images/brand/jpg/sm.jpg" />
+        <source type="image/jpeg" media="(max-width: 1300px)" srcset="images/brand/jpg/md.jpg" />
+        <source type="image/jpeg" media="(min-width: 1300px)" srcset="images/brand/jpg/xl.jpg" />
+        <img src="images/brand/jpg/sm.jpg" alt="home page" />
       </picture>
     </a>
     <button id="main-menu-toggle" type="button" aria-label="Toggle main menu"></button>
@@ -27,21 +33,22 @@
       <li><a href="credentials.html">Credentials</a></li>
       <li><a href="commendations.html">Commendations</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="pictures.html">Media</a></li>
+      <li><a href="pictures.html">Pictures</a></li>
     </ul>
   </nav>
   <header class="position-relative mb-3">
     <picture>
-      <source media="(max-width: 400px)" srcset="images/hero400.jpg" />
-      <source media="(max-width: 600px)" srcset="images/hero600.jpg" />
-      <source media="(max-width: 800px)" srcset="images/hero800.jpg" />
-      <source media="(max-width: 1000px)" srcset="images/hero1000.jpg" />
-      <source media="(max-width: 1200px)" srcset="images/hero1200.jpg" />
-      <source media="(max-width: 1400px)" srcset="images/hero1400.jpg" />
-      <source media="(max-width: 1600px)" srcset="images/hero1600.jpg" />
-      <source media="(max-width: 1800px)" srcset="images/hero1800.jpg" />
-      <source media="(min-width: 1800px)" srcset="images/hero2000.jpg" />
-      <img src="images/hero1200.jpg" alt="" class="w-100" />
+      <source type="image/webp" media="(max-width: 576px)" srcset="images/banner/webp/xs.webp" />
+      <source type="image/webp" media="(max-width: 768px)" srcset="images/banner/webp/sm.webp" />
+      <source type="image/webp" media="(max-width: 992px)" srcset="images/banner/webp/md.webp" />
+      <source type="image/webp" media="(max-width: 1200px)" srcset="images/banner/webp/lg.webp" />
+      <source type="image/webp" media="(min-width: 1200px)" srcset="images/banner/webp/xl.webp" />
+      <source type="image/jpeg" media="(max-width: 576px)" srcset="images/banner/jpg/xs.jpg" />
+      <source type="image/jpeg" media="(max-width: 768px)" srcset="images/banner/jpg/sm.jpg" />
+      <source type="image/jpeg" media="(max-width: 992px)" srcset="images/banner/jpg/md.jpg" />
+      <source type="image/jpeg" media="(max-width: 1200px)" srcset="images/banner/jpg/lg.jpg" />
+      <source type="image/jpeg" media="(min-width: 1200px)" srcset="images/banner/jpg/xl.jpg" />
+      <img type="image/jpeg" src="images/banner/jpg/lg.jpg" alt="" class="w-100" />
     </picture>
   </header>
 	<main class="container">
@@ -59,7 +66,7 @@
           development of proper attitudes and sufficient skills to face complex traffic conditions that exist in
           our society today, as well as those the future may bring. Although time is limited, the goal of Sabbadino
           Driving School is to provide inexperienced drivers experience in all types of driving situations, and to
-          see driving students mature to "Make Safety First & Make Safety Last" throughout life.
+          see driving students mature to "Make Safety First &amp; Make Safety Last" throughout life.
         </p>
 			  <h2 class="mt-4">Driver Training Classroom Time</h2>
 			  <p>
