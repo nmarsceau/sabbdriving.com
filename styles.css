@@ -259,12 +259,18 @@ nav.main-menu ul li a:active {
 
 
 /* 5. Image Viewer */
-#image-container img {
+.thumbnail {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.thumbnail img {
   width: 100%;
 }
-#image-description {
-  padding: 15px 30px;
-  text-align: center;
+
+#image-modal p {
+  font-size: 1.3rem;
 }
 
 

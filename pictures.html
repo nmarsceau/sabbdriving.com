@@ -10,7 +10,7 @@
   <link href="reset.css" rel="stylesheet" type="text/css" />
   <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link href="styles.css" rel="stylesheet" type="text/css" />
-  <link href="modal.css" rel="stylesheet" type="text/css" />
+  <link href="micromodal.css" rel="stylesheet" type="text/css" />
   <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 <body>
@@ -89,213 +89,241 @@
       </div>
     </div>
   </footer>
-  <div id="image-modal" class="my-modal-backdrop" tabindex="-1" hidden>
-    <div class="my-modal" aria-labelledby="image-viewer-label" role="dialog" aria-modal="true">
-      <button type="button" class="my-modal-close" aria-label="Close">
-        <span class="close-icon" aria-hidden="true">&times;</span>
-      </button>
-      <p id="image-viewer-label" hidden>Image Viewer</p>
-      <div id="image-container"><img src="" alt="" /></div>
-      <div id="image-description" aria-hidden="true"></div>
+  <div id="image-modal" class="modal micromodal-slide" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="image-modal-title">
+        <header class="modal__header">
+          <h2 class="hidden-visually" id="image-modal-title">Image Viewer</h2>
+          <span>
+            <button class="image-modal-nav previous" aria-label="previous image">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 8 8 12 12 16"></polyline>
+                <line x1="16" y1="12" x2="8" y2="12"></line>
+              </svg>
+            </button>
+            <button class="image-modal-nav next" aria-label="next image">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 16 16 12 12 8"></polyline>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+            </button>
+          </span>
+          <button class="modal__close" aria-label="Close image viewer" data-micromodal-close></button>
+        </header>
+        <div class="modal__content">
+          <picture>
+            <source srcset="" type="image/webp" />
+            <img src="" type="image/jpeg" alt="" class="img-fluid" />
+          </picture>
+          <p class="pt-3 px-4 text-center" aria-hidden="true"></p>
+        </div>
+      </div>
     </div>
   </div>
+  <script>
+    const pictures_config = {
+      total: 29,
+      alt: [
+        'Posters about drinking and driving displayed around the drivers education classroom.',
+        'Posters about drinking and driving displayed around the drivers education classroom.',
+        'Students wear drunk goggles and try to toss a ball into a bucket.',
+        'Students test their reflexes on a machine that simulates pressing the brake pedal in a car.',
+        'Students test their reflexes on a machine that simulates pressing the brake pedal in a car.',
+        'Mr. Sabbadino begins his lesson for the evening.',
+        'Mr. Sabbadino shows the class a video.',
+        'Mr. Sabbadino shows the class a video.',
+        'Mr. Sabbadino hands out a piece of paper to each of his students.',
+        'Mr. Sabbadino hands out a piece of paper to each of his students.',
+        'Mr. Sabbadino shows the class some material on the overhead projector.',
+        'Mr. Sabbadino shows the class some material on the overhead projector.',
+        'Mr. Sabbadino shows the class some material on the overhead projector.',
+        'A student begins her driving lesson behind the wheel.',
+        'A student begins his driving lesson in the parking lot.',
+        'Mr. Sabbadino explains a driving exercise to his student.',
+        'A driving student backs up until the rear bumper touches the cone.',
+        'A driving student weaves the car between the cones.',
+        'A driving student eases the car forward until the from bumper touches the cone.',
+        'Mr. Sabbadino and his two students continue their driving lesson on the road.',
+        'A student drives down a four-lane road in the drivers education car with Mr. Sabbadino.',
+        'The front end of the drivers education car as a student drives down the road.',
+        'A driving student uses his blinker before changing lanes.',
+        'A driving student uses his blinker before making a right on red.',
+        'A student drives down a two-lane road in the drivers education car with Mr. Sabbadino.',
+        'A student drives down a two-lane road in the drivers education car with Mr. Sabbadino.',
+        'A former student jumps for joy because she just got her license!',
+        'Mr. Sabbadino with Jocelyn Brazeal, winner of the 2018 SCDTSEA poster contest.',
+        'Mr. Sabbadino with Claire Swartz, winner of the 2019 SCDTSEA poster contest.',
+      ],
+    };
+  </script>
   <script src="polyfill.js"></script>
   <script src="main.js"></script>
-  <script src="modal.js"></script>
+  <script src="micromodal.min.js"></script>
   <script>
-    const images = [
-      {
-        filename: '1.jpg',
-        thumbnail_filename: '1-thumb.jpg',
-        description: 'Posters about drinking and driving displayed around the drivers education classroom.',
-      },
-      {
-        filename: '2.jpg',
-        thumbnail_filename: '2-thumb.jpg',
-        description: 'Posters about drinking and driving displayed around the divers education classroom.',
-      },
-      {
-        filename: '3.jpg',
-        thumbnail_filename: '3-thumb.jpg',
-        description: 'Students wear drunk goggles and try to toss a ball into a bucket.',
-      },
-      {
-        filename: '4.jpg',
-        thumbnail_filename: '4-thumb.jpg',
-        description: 'Students test their reflexes on a machine that simulates pressing the brake pedal in a car.',
-      },
-      {
-        filename: '5.jpg',
-        thumbnail_filename: '5-thumb.jpg',
-        description: 'Students test their reflexes on a machine that simulates pressing the brake pedal in a car.',
-      },
-      {
-        filename: '6.jpg',
-        thumbnail_filename: '6-thumb.jpg',
-        description: 'Mr. Sabbadino begins his lesson for the evening.',
-      },
-      {
-        filename: '7.jpg',
-        thumbnail_filename: '7-thumb.jpg',
-        description: 'Mr. Sabbadino shows the class a video.',
-      },
-      {
-        filename: '8.jpg',
-        thumbnail_filename: '8-thumb.jpg',
-        description: 'Mr. Sabbadino shows the class a video.',
-      },
-      {
-        filename: '9.jpg',
-        thumbnail_filename: '9-thumb.jpg',
-        description: 'Mr. Sabbadino hands out a piece of paper to each of his students.',
-      },
-      {
-        filename: '10.jpg',
-        thumbnail_filename: '10-thumb.jpg',
-        description: 'Mr. Sabbadino hands out a piece of paper to each of his students.',
-      },
-      {
-        filename: '11.jpg',
-        thumbnail_filename: '11-thumb.jpg',
-        description: 'Mr. Sabbadino shows the class some material on the overhead projector.',
-      },
-      {
-        filename: '12.jpg',
-        thumbnail_filename: '12-thumb.jpg',
-        description: 'Mr. Sabbadino shows the class some material on the overhead projector.',
-      },
-      {
-        filename: '13.jpg',
-        thumbnail_filename: '13-thumb.jpg',
-        description: 'Mr. Sabbadino shows the class some material on the overhead projector.',
-      },
-      {
-        filename: '14.jpg',
-        thumbnail_filename: '14-thumb.jpg',
-        description: 'A student begins her driving lesson behind the wheel.',
-      },
-      {
-        filename: '15.jpg',
-        thumbnail_filename: '15-thumb.jpg',
-        description: 'A student begins his driving lesson in the parking lot.',
-      },
-      {
-        filename: '16.jpg',
-        thumbnail_filename: '16-thumb.jpg',
-        description: 'Mr. Sabbadino explains a driving exercise to his student.',
-      },
-      {
-        filename: '17.jpg',
-        thumbnail_filename: '17-thumb.jpg',
-        description: 'A driving student back up until the rear bumper touches the cone.',
-      },
-      {
-        filename: '18.jpg',
-        thumbnail_filename: '18-thumb.jpg',
-        description: 'A driving student weaves the car between the cones.',
-      },
-      {
-        filename: '19.jpg',
-        thumbnail_filename: '19-thumb.jpg',
-        description: 'A driving student eases the car forward until the from bumper touches the cone.',
-      },
-      {
-        filename: '20.jpg',
-        thumbnail_filename: '20-thumb.jpg',
-        description: 'Mr. Sabbadino and his two students continue their driving lesson on the road.',
-      },
-      {
-        filename: '21.jpg',
-        thumbnail_filename: '21-thumb.jpg',
-        description: 'A student drives down a four-lane road in the drivers education car with Mr. Sabbadino.',
-      },
-      {
-        filename: '22.jpg',
-        thumbnail_filename: '22-thumb.jpg',
-        description: 'The front end of the drivers education car as a student drives down the road.',
-      },
-      {
-        filename: '23.jpg',
-        thumbnail_filename: '23-thumb.jpg',
-        description: 'A driving student uses his blinker before changing lanes.',
-      },
-      {
-        filename: '24.jpg',
-        thumbnail_filename: '24-thumb.jpg',
-        description: 'A driving student uses his blinker before making a right on red.',
-      },
-      {
-        filename: '25.jpg',
-        thumbnail_filename: '25-thumb.jpg',
-        description: 'A student drives down a two-lane road in the drivers education car with Mr. Sabbadino.',
-      },
-      {
-        filename: '26.jpg',
-        thumbnail_filename: '26-thumb.jpg',
-        description: 'A student drives down a two-lane road in the drivers education car with Mr. Sabbadino.',
-      },
-      {
-        filename: '27.jpg',
-        thumbnail_filename: '27-thumb.jpg',
-        description: 'A former student jumps for joy because she just got her license!',
-      },
-      {
-        filename: '28.jpg',
-        thumbnail_filename: '28-thumb.jpg',
-        description: 'Mr. Sabbadino with Jocelyn Brazeal, winner of the 2018 SCDTSEA poster contest.',
-      },
-      {
-        filename: '29.jpg',
-        thumbnail_filename: '29-thumb.jpg',
-        description: 'Mr. Sabbadino with Claire Swartz, winner of the 2019 SCDTSEA poster contest.',
-      }
-    ];
+    function load_image() {
+      const webp = image_modal.querySelector('source[type="image/webp"]');
+      webp.srcset = 'images/gallery/fullsize/webp/' + image_modal.image_number + '.webp';
+      const jpg = image_modal.querySelector('img');
+      jpg.src = 'images/gallery/fullsize/jpg/' + image_modal.image_number + '.jpg';
+      jpg.alt = pictures_config.alt[image_modal.image_number - 1];
+      const description = image_modal.querySelector('p');
+      description.innerText = pictures_config.alt[image_modal.image_number - 1];
+    }
 
-    if (typeof Modal === 'undefined') {
-      const unsupported_notice = document.getElementById('unsupported-notice');
-      if (unsupported_notice !== null) {
-        unsupported_notice.classList.remove('d-none');
+    function toggle_modal_nav_buttons() {
+      const previous = image_modal.querySelector('button.image-modal-nav.previous');
+      const next = image_modal.querySelector('button.image-modal-nav.next');
+      if (image_modal.image_number === 1) {
+        next.removeAttribute('disabled');
+        if (document.activeElement === previous) {next.focus();}
+        previous.setAttribute('disabled', 'disabled');
+      }
+      else if (image_modal.image_number === pictures_config.total) {
+        previous.removeAttribute('disabled');
+        if (document.activeElement === next) {previous.focus();}
+        next.setAttribute('disabled', 'disabled');
+      }
+      else {
+        previous.removeAttribute('disabled');
+        next.removeAttribute('disabled');
       }
     }
-    else {
-      const image_modal = new Modal(document.getElementById('image-modal'));
-      const thumbnail_container = document.getElementById('thumbnail-container');
-      images.forEach(function(image) {
-        const container = document.createElement('div');
-        container.classList.add('col-6');
-        container.classList.add('col-md-4');
-        container.classList.add('col-lg-3');
-        container.classList.add('p-2');
-        const image_link = document.createElement('a');
-        image_link.href = '';
-        image_link.classList.add('image-link');
-        image_link.classList.add('d-block');
-        image_link.addEventListener('click', function(event) {
-          event.preventDefault();
-          const image_container = image_modal.modal.querySelector('#image-container');
-          const image_element = image_container.querySelector('img');
-          const image_description = image_modal.modal.querySelector('#image-description');
-          image_element.addEventListener('load', function() {
-            setTimeout(function() {image_modal.open();}, 150);
-          }, {once: true});
-          image_element.src = 'images/gallery/' + image.filename;
-          image_element.alt = image.description;
-          image_description.innerText = image.description;
-        });
-        const thumbnail = document.createElement('img');
-        thumbnail.classList.add('img-fluid');
-        thumbnail.loading = 'lazy';
-        thumbnail.width = 300;
-        thumbnail.style.width = 300;
-        thumbnail.height = 169;
-        thumbnail.style.height = 169;
-        thumbnail.src = 'images/gallery/' + image.thumbnail_filename;
-        thumbnail.alt = image.description;
-        image_link.appendChild(thumbnail);
-        container.appendChild(image_link);
-        thumbnail_container.appendChild(container);
-      });
+
+    function previous_image() {
+      if (image_modal.image_number > 1) {
+        image_modal.image_number -= 1;
+        load_image();
+        toggle_modal_nav_buttons();
+      }
     }
+
+    function next_image() {
+      if (image_modal.image_number < pictures_config.total) {
+        image_modal.image_number += 1;
+        load_image();
+        toggle_modal_nav_buttons();
+      }
+    }
+
+    const thumbnail_container = document.getElementById('thumbnail-container');
+    const image_modal = document.getElementById('image-modal');
+    image_modal.start_x = null;
+    image_modal.start_y = null;
+    image_modal.end_x = null;
+    image_modal.end_y = null;
+    image_modal.touch_moves = 0;
+    for (let i = 0; i < pictures_config.total; i++) {
+      const image_number = i + 1;
+      const thumbnail = document.createElement('picture');
+      const webp = document.createElement('source');
+      webp.srcset = 'images/gallery/thumbs/webp/' + image_number + '.webp';
+      webp.type = 'image/webp';
+      thumbnail.appendChild(webp);
+      const jpg = document.createElement('img');
+      jpg.src = 'images/gallery/thumbs/jpg/' + image_number + '.jpg';
+      jpg.type = 'image/jpeg';
+      jpg.alt = pictures_config.alt[i];
+      jpg.loading = 'lazy';
+      jpg.classList.add('img-fluid');
+      jpg.width = 300;
+      jpg.height = 150;
+      jpg.style.width = 300;
+      jpg.style.height = 150;
+      thumbnail.appendChild(jpg);
+      const thumbnail_button = document.createElement('button');
+      thumbnail_button.classList.add('col-6');
+      thumbnail_button.classList.add('col-md-4');
+      thumbnail_button.classList.add('col-lg-3');
+      thumbnail_button.classList.add('p-2');
+      thumbnail_button.classList.add('thumbnail');
+      thumbnail_button.appendChild(thumbnail);
+      thumbnail_button.addEventListener('click', function(event) {
+        image_modal.image_number = image_number;
+        load_image();
+        toggle_modal_nav_buttons();
+        image_modal.querySelector('img').addEventListener('load', function() {
+          setTimeout(function() {
+            MicroModal.show('image-modal', {awaitCloseAnimation: true});
+          }, 150);
+        }, {once: true});
+      })
+      thumbnail_container.appendChild(thumbnail_button);
+    }
+    image_modal.querySelector('button.image-modal-nav.previous').addEventListener('click', previous_image);
+    image_modal.querySelector('button.image-modal-nav.next').addEventListener('click', next_image);
+    image_modal.addEventListener('keydown', function(event) {
+      switch (event.keyCode) {
+        case 38:
+        case 40:
+          event.preventDefault();
+          break;
+        case 37:
+          previous_image();
+          break;
+        case 39:
+          next_image();
+          break;
+      }
+    });
+
+    function reset_start_coordinates() {
+      image_modal.start_x = null;
+      image_modal.start_y = null;
+    }
+
+    function reset_end_coordinates() {
+      image_modal.end_x = null;
+      image_modal.end_y = null;
+    }
+
+    function reset_touch_moves_count() {
+      image_modal.touch_moves = 0;
+    }
+
+    function reset_touch_events() {
+      reset_start_coordinates();
+      reset_end_coordinates();
+      reset_touch_moves_count();
+    }
+
+    image_modal.addEventListener('touchstart', function(event) {
+      if (event.touches.length) {
+        image_modal.start_x = event.touches[0].clientX;
+        image_modal.start_y = event.touches[0].clientY;
+        reset_end_coordinates();
+        reset_touch_moves_count();
+      }
+    });
+
+    image_modal.addEventListener('touchmove', function(event) {
+      event.preventDefault();
+      if (event.touches.length) {
+        image_modal.end_x = event.touches[0].clientX;
+        image_modal.end_y = event.touches[0].clientY;
+        image_modal.touch_moves += 1;
+      }
+    });
+
+    image_modal.addEventListener('touchend', function(event) {
+      if (
+        image_modal.start_x === null
+        || image_modal.start_y === null
+        || image_modal.end_x === null
+        || image_modal.end_y === null
+        || image_modal.touch_moves < 3
+      ) {
+        reset_touch_events();
+        return;
+      }
+      const x_diff = image_modal.start_x - image_modal.end_x;
+      const y_diff = image_modal.start_y - image_modal.end_y;
+      if (Math.abs(y_diff) > Math.abs(x_diff)) {reset_touch_events(); return;}
+      if (x_diff < 0 && image_modal.image_number > 1) {previous_image();}
+      else if (x_diff > 0 && image_modal.image_number < pictures_config.total) {next_image();}
+      reset_touch_events();
+    });
   </script>
 </body>
 </html>
