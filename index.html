@@ -249,24 +249,6 @@
     const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const class_dates = [
       {
-        name: 'August',
-        dates: [{y: 2020, m: 7, d: 3}, {y: 2020, m: 7, d: 10}, {y: 2020, m: 7, d: 17}, {y: 2020, m: 7, d: 24}],
-        full: true,
-        expiration: {y: 2020, m: 7, d: 3},
-      },
-      {
-        name: 'September',
-        dates: [],
-        full: false,
-        expiration: {y: 2020, m: 8, d: 1},
-      },
-      {
-        name: 'October',
-        dates: [],
-        full: false,
-        expiration: {y: 2020, m: 9, d: 1},
-      },
-      {
         name: 'November',
         dates: [],
         full: false,
@@ -277,7 +259,73 @@
         dates: [],
         full: false,
         expiration: {y: 2020, m: 11, d: 1},
-      }
+      },
+      {
+        name: 'January/February',
+        dates: [{y: 2021, m: 0, d: 11}, {y: 2021, m: 0, d: 18}, {y: 2021, m: 0, d: 25}, {y: 2021, m: 1, d: 1}],
+        full: false,
+        expiration: {y: 2021, m: 0, d: 11},
+      },
+      {
+        name: 'February/March',
+        dates: [{y: 2021, m: 1, d: 15}, {y: 2021, m: 1, d: 22}, {y: 2021, m: 2, d: 1}, {y: 2021, m: 2, d: 8}],
+        full: false,
+        expiration: {y: 2021, m: 1, d: 15},
+      },
+      {
+        name: 'April',
+        dates: [],
+        full: false,
+        expiration: {y: 2021, m: 3, d: 1},
+      },
+      {
+        name: 'May',
+        dates: [{y: 2021, m: 4, d: 10}, {y: 2021, m: 4, d: 17}, {y: 2021, m: 4, d: 24}, {y: 2021, m: 4, d: 31}],
+        full: false,
+        expiration: {y: 2021, m: 4, d: 10},
+      },
+      {
+        name: 'June',
+        dates: [{y: 2021, m: 5, d: 7}, {y: 2021, m: 5, d: 14}, {y: 2021, m: 5, d: 21}, {y: 2021, m: 5, d: 28}],
+        full: false,
+        expiration: {y: 2021, m: 5, d: 7},
+      },
+      {
+        name: 'July',
+        dates: [{y: 2021, m: 6, d: 5}, {y: 2021, m: 6, d: 12}, {y: 2021, m: 6, d: 19}, {y: 2021, m: 6, d: 26}],
+        full: false,
+        expiration: {y: 2021, m: 6, d: 5},
+      },
+      {
+        name: 'August',
+        dates: [{y: 2021, m: 7, d: 2}, {y: 2021, m: 7, d: 9}, {y: 2021, m: 7, d: 16}, {y: 2021, m: 7, d: 23}],
+        full: false,
+        expiration: {y: 2021, m: 7, d: 2},
+      },
+      {
+        name: 'September',
+        dates: [],
+        full: false,
+        expiration: {y: 2021, m: 8, d: 1},
+      },
+      {
+        name: 'October',
+        dates: [],
+        full: false,
+        expiration: {y: 2021, m: 9, d: 1},
+      },
+      {
+        name: 'November',
+        dates: [],
+        full: false,
+        expiration: {y: 2021, m: 10, d: 1},
+      },
+      {
+        name: 'December',
+        dates: [],
+        full: false,
+        expiration: {y: 2021, m: 11, d: 1},
+      },
     ];
 
     const class_date_container = document.getElementById('class-date-container');
