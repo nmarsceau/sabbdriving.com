@@ -96,6 +96,21 @@ a:hover {
   outline: 2px dotted #004400 !important;
 }
 
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 
 /* 2. Future Class Dates */
 #class-date-container h3 {
