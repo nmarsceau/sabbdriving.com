@@ -5,6 +5,7 @@
   4. Footer Tagline
   5. Image Viewer
   6. Did You Know
+  7. Forms
 */
 
 
@@ -90,10 +91,6 @@ a:hover {
 
 .hidden-all {
   display: none;
-}
-
-*:focus {
-  outline: 2px dotted #004400 !important;
 }
 
 .video-container {
@@ -208,7 +205,7 @@ nav.main-menu ul li a:active {
   }
 
   nav.main-menu {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   nav.main-menu button {
@@ -236,7 +233,7 @@ nav.main-menu ul li a:active {
   nav.main-menu ul li a {
     display: inline-block;
     height: 100%;
-    padding: 1.2em 6px;
+    padding: 1.2em 4px;
   }
 
   nav.main-menu ul li a:focus {
@@ -256,33 +253,35 @@ nav.main-menu ul li a:active {
   }
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 950px) {
   nav.main-menu {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  nav.main-menu ul li a {
+    padding: 1.2em 6px;
   }
 }
 
-@media screen and (min-width: 975px) {
+@media screen and (min-width: 1075px) {
+  nav.main-menu {
+    font-size: 1.1rem;
+  }
+
   nav.main-menu ul li a {
     padding: 1.2em 8px;
   }
 }
 
-@media screen and (min-width: 1050px) {
+@media screen and (min-width: 1150px) {
   nav.main-menu {
     font-size: 1.2rem;
   }
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1230px) {
   nav.main-menu ul li a {
     padding: 1.2em 10px;
-  }
-}
-
-@media screen and (min-width: 1150px) {
-  nav.main-menu ul li a {
-    padding: 1.2em 15px;
   }
 }
 
@@ -320,4 +319,30 @@ nav.main-menu ul li a:active {
 .did-you-know .did-you-know-title {
   font-size: 1.5em;
   color: gray;
+}
+
+/* 7. Forms */
+span.required {
+  color: #ae1313;
+  font-size: 0.8em;
+  margin-left: 8px;
+  vertical-align: baseline;
+}
+
+span.optional {
+  color: #4040ce;
+  font-size: 0.8em;
+  margin-left: 8px;
+  vertical-align: baseline;
+}
+
+.error {
+  border: 1px solid #ae1313;
+}
+
+.error-message {
+  color: #ae1313;
+  font-size: 0.8em;
+  font-style: italic;
+  margin-left: 10px;
 }

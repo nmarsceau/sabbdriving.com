@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="title" content="Upstate Driver Education Courses, Sabbadino Driving School, Taylors Driving Lessons" />
-  <meta name="description" content="Read about Mr. Sabbadino's education and experience in the driver training field." />
+  <meta name="description" content="Contact Mr. Sabbadino to register for a driver training course or to ask a question." />
   <meta name="keyword" content="driver education, driving school, defensive driving, traffic education, upstate driving courses" />
-  <title>Credentials | Sabbadino Driver Training</title>
+  <title>Contact | Sabbadino Driver Training</title>
   <link href="reset.css" rel="stylesheet" type="text/css" />
   <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link href="styles.css" rel="stylesheet" type="text/css" />
@@ -59,52 +59,46 @@
         It looks like JavaScript is disabled in your browser. Some features of this website may not work properly until JavaScript is enabled.
       </div>
     </noscript>
-		<article class="row">
-      <h1 class="col-12 mb-4">Credentials</h1>
+    <article class="row">
+      <h1 class="col-12 mb-4">Contact</h1>
       <div class="col-lg-9">
-        <h2>Education</h2>
-        <ul>
-          <li>Bachelor of Arts, Bob Jones University, Practical Christian Training (with proficiencies in Business Administration and Christian Education)</li>
-          <li>Completed driver and traffic safety education preparation courses, University of South Carolina</li>
-          <li>Completed safety teacher preparation course, University of Georgia</li>
-          <li>Completed driver and traffic safety education courses, Texas A&amp;M</li>
-          <li>Master of Arts, Appalachian State University, Secondary Driver &amp; Traffic Safety Education</li>
-        </ul>
-        <h2>Experience</h2>
-        <ul>
-          <li>Graduate Assistant, Bob Jones University, Physical Education</li>
-          <li>University Host, Bob Jones University</li>
-          <li>Driver's Education Instructor (40+ years), Bob Jones Academy</li>
-          <li>Research Safety Assistant, Texas A&amp;M</li>
-          <li>Safety Consultant, ACME Delivery Services</li>
-          <li>Driver Educator (15+ years, part-time), Greenville Technical College</li>
-          <li>Driver Educator (15 years, part-time), Bob Jones University, TOPS program</li>
-          <li>Driver Trainer (1 year, part-time), Auto-Safe Driving School</li>
-          <li>Established Sabbadino Driving School LLC</li>
-          <li>Driver Training Instructor (2010 to present), Sabbadino Driving School LLC</li>
-          <li>Corporate Member, SCDTSEA*</li>
-          <li>Officer (40+ years), SCDTSEA* (Newsletter Editor)</li>
-          <li>President, SCDTSEA*</li>
-          <li>Member (30+ years), ADTSEA*</li>
-          <li>President-Elect, Southeast Region ADTSEA*</li>
-          <li>President, Southeast Region ADTSEA*</li>
-          <li>Former Member, MADD* Operations Council</li>
-          <li>Mr. Sabbadino was the South Carolina member on a national committee with ADTSEA* and NTHSA* to improve driver and traffic safety education standards.</li>
-          <li>Provided Driver Safety Education for over 8,000 students</li>
-        </ul>
-        <footer>
-          <h2 class="mt-5">*Acronyms</h2>
-          <dl>
-            <dt>ADTSEA</dt>
-            <dd>American Driver and Traffic Safety Education Association</dd>
-            <dt>MADD</dt>
-            <dd>Mothers Against Drunk Driving</dd>
-            <dt>NHTSA</dt>
-            <dd>National Highway Traffic Safety Administration</dd>
-            <dt>SCDTSEA</dt>
-            <dd>South Carolina Driver and Traffic Safety Education Association</dd>
-          </dl>
-        </footer>
+        <p>Contact Mr. Sabbadino to register for a driver training course or ask a question.</p>
+        <h2 class="mt-5">Phone</h2>
+        <a href="tel:18642920259">864.292.0259</a>
+        <h2 class="mt-5">Email</h2>
+			  <form class="validate" name="contact" method="post" netlify>
+          <div class="row mb-3">
+            <div class="col">
+              <label class="d-block">
+                Your Name<span class="required">required</span>
+                <input type="text" name="name" class="form-control form-control-lg"
+                  required maxlength="250">
+              </label>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label class="d-block">
+                Your Email Address<span class="optional">optional</span>
+                <input type="email" name="email" class="form-control form-control-lg"
+                  maxlength="320">
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label class="d-block">
+                Your Message<span class="required">required</span>
+                <textarea name="message" rows="6" class="form-control form-control-lg count" maxlength="2500" required></textarea>
+              </label>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col">
+              <button type="submit" class="btn btn-lg btn-success px-5">Send</button>
+            </div>
+          </div>
+        </form>
       </div>
     </article>
   </main>
@@ -127,5 +121,7 @@
   </footer>
   <script src="polyfill.js"></script>
   <script src="main.js"></script>
+  <script src="character_counter.js" async></script>
+  <script src="validate_form.js" async></script>
 </body>
 </html>
