@@ -61,7 +61,7 @@
     </noscript>
     <div class="row pt-4">
       <h1 class="mb-4">Sabbadino Driving School</h1>
-      <article class="col-lg-9">
+      <article class="col-lg-8">
         <h2>Learn Traffic Safety, Defensive Driving,<br />and Behind-the-Wheel Training</h2>
         <p class="mt-4 mb-5">
           At Sabbadino Driving School, our mission is to make safety first and to make safety last. Our driving
@@ -164,12 +164,14 @@
           <a href="contact.html" class="btn btn-lg btn-success">Contact Mr. Sabbadino</a>&MediumSpace;&MediumSpace;to register for a course.
         </footer>
       </article>
-      <aside class="col-lg-3 mt-5 mt-lg-0">
-        <h2>2021 Class Dates</h2>
-        <noscript>
-          <div class="alert alert-warning text-center" role="alert">JavaScript must be enabled to view future class dates.</div>
-        </noscript>
-        <div id="class-date-container"></div>
+      <aside class="col-lg-4 mt-5 mt-lg-0">
+        <div class="class-date-container">
+          <h2>2021 Class Dates</h2>
+          <noscript>
+            <div class="alert alert-warning text-center" role="alert">JavaScript must be enabled to view future class dates.</div>
+          </noscript>
+          <div id="class-dates"></div>
+        </div>
       </aside>
     </div>
   </main>
@@ -266,7 +268,7 @@
       },
     ];
 
-    const class_date_container = document.getElementById('class-date-container');
+    const class_date_container = document.getElementById('class-dates');
     class_dates.forEach(function(class_date) {
       if ((new Date(class_date.expiration.y, class_date.expiration.m, class_date.expiration.d)) >= Date.now()) {
         const class_date_heading = document.createElement('h3');

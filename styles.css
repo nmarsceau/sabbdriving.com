@@ -110,24 +110,31 @@ a:hover {
 
 
 /* 2. Future Class Dates */
-#class-date-container h3 {
+@media screen and (min-width: 992px) {
+  .class-date-container {
+    padding-left: 20px;
+    border-left: 1px solid #000;
+  }
+}
+
+#class-dates h3 {
   font-size: 1.1rem;
   font-weight: 600;
   font-family: Georgia, sans-serif;
 }
 
-#class-date-container h3 .class-date-indicator {
+#class-dates h3 .class-date-indicator {
   font-weight: normal;
   font-size: 1rem;
 }
 
 @media screen and (min-width: 500px) {
-  #class-date-container h3 {
+  #class-dates h3 {
     font-size: 1.2rem;
   }
 }
 
-#class-date-container p {
+#class-dates p {
   font-size: 1rem;
 }
 
