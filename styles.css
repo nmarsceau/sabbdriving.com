@@ -1,15 +1,211 @@
 /* Table of Contents
-  1. Site-Wide
-  2. Future Class Dates
-  3. Navigation Bar
-  4. Footer Tagline
-  5. Image Viewer
-  6. Did You Know
-  7. Forms
+  0. Reset
+  1. Helpers
+  2. Layout
+  3. Theme
+  4. Components
+    1. Homepage Images
+    2. Videos
+    3. Testimonials
+    4. Embedded Map
+    5. Future Class Dates
+    6. Navigation Bar
+    7. Footer Tagline
+    8. Image Viewer
+    9. Did You Know
+    10. Forms
 */
 
+/* 0. Reset */
+* {
+  box-sizing: border-box;
+}
 
-/* 1. Site-Wide */
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, details, figure, figcaption, footer, header,
+menu, nav, output, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1.5;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  background-color: #fff;
+  color: #212529;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 1em;
+  border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table th, table td {
+  vertical-align: top;
+}
+
+ol {
+	list-style: none;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+
+li {
+  padding-bottom: .5em;
+  line-height: 1.3em;
+}
+
+dt {
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+button {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+picture, picture img {
+  vertical-align: bottom;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+
+/* 1. Helpers */
+.hidden-visually {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.hidden-all {
+  display: none;
+}
+
+
+/* 2. Layout */
+main {
+  min-height: 50vh;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 1.5em;
+}
+
+body > header {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.banner {
+  width: 100%;
+}
+
+body > footer {
+  background-color: #343a40;
+  color: #f8f9fa;
+  margin-top: 3rem;
+}
+
+body > footer > .inner-footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5em 1.5em 4em;
+}
+
+article > footer {
+  margin-top: 3em;
+}
+
+.homepage-column-2 {
+  margin-top: 3em;
+}
+
+.two-columns {
+  margin: 1em 0 3em;
+}
+
+@media screen and (min-width: 550px) {
+  main {
+    padding: 0 3em;
+  }
+
+  body > footer > .inner-footer-container {
+    padding: 1.5em 3em 4em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .two-columns {
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  /* TODO: better naming? */
+  .homepage-column-container {
+    display: flex;
+  }
+
+  .homepage-column-1 {
+    flex: 1 1 auto;
+    margin-right: 2em;
+  }
+
+  .homepage-column-2 {
+    flex: 1 1 auto;
+    min-width: 15em;
+    margin-top: 0;
+  }
+}
+
+
+/* 3. Theme */
 h1, h2, h3, h4, h5, h6 {
   font-family: sans-serif;
 }
@@ -18,14 +214,17 @@ h1 {
   font-size: 2.5rem;
   color: #004400;
   font-style: oblique;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
   font-size: 1.7rem;
+  margin: 2rem 0 1.5rem;
 }
 
 h3 {
   font-size: 1.5rem;
+  margin: 1.5rem 0 1rem;
 }
 
 @media screen and (min-width: 500px) {
@@ -42,57 +241,89 @@ h3 {
   }
 }
 
-main {
-  min-height: 50vh;
-}
-
 article, aside, blockquote {
   font-family: Georgia, sans-serif;
   font-size: 1.2rem;
 }
 
-ul {
-  list-style-type: disc;
-  padding-left: 2em;
-}
-
-li {
-  padding-bottom: .5em;
-  line-height: 1.3em;
+table th, table td {
+  border-top: 1px solid lightgray;
+  padding: 0.75em;
 }
 
 a {
   color: #0044dd;
+  text-decoration: none;
 }
 
 a:hover {
   color: #0000aa;
+  text-decoration: underline;
 }
 
-@media screen and (min-width: 800px) {
-  .two-columns {
-    -webkit-columns: 2;
-    -moz-columns: 2;
-    columns: 2;
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #555;
+}
+
+.text-red {
+  color: #b60000;
+}
+
+.button {
+  padding: .75em 1.5em;
+  font-size: 1.1rem;
+}
+
+@media screen and (min-width: 550px) {
+  .button {
+    font-size: 1.2rem;
   }
 }
 
-.bg-sabbgreen {
-  background-color: #004400;
+.button-primary {
+  background-color: #3232F5;
+  border: 1px solid #3232F5;
+  color: #fff;
+  border-radius: 7px;
+  transition: background-color 0.3s ease;
 }
 
-.hidden-visually {
-  position: absolute !important;
-  height: 1px; width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
+.button-primary:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #0000c2;
 }
 
-.hidden-all {
-  display: none;
+.message {
+  border-radius: 7px;
+  padding: 0.75em 1.5em;
+  margin-bottom: 1em;
 }
 
+.message-warning {
+  background-color: #ffd500;
+}
+
+
+/* 4. Components */
+
+/* 4.1 Homepage Images */
+.marketing-image {
+  display: block;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.marketing-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 4.2 Videos */
 .video-container {
   position: relative;
   width: 100%;
@@ -108,9 +339,64 @@ a:hover {
   height: 100%;
 }
 
+.resource-video {
+  margin-bottom: 0.5em;
+}
 
-/* 2. Future Class Dates */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 400px) {
+  .resource-video {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .resource-video {
+    display: inline-block;
+    width: 47.5%;
+    margin: 1%;
+  }
+}
+
+/* 4.3 Testimonials */
+.testimonials blockquote {
+  margin-bottom: 3em;
+}
+
+@media screen and (min-width: 750px) {
+  .testimonials blockquote:nth-of-type(odd) {
+    padding-right: 15%;
+  }
+
+  .testimonials blockquote:nth-of-type(even) {
+    padding-left: 15%;
+  }
+}
+
+/* 4.4 Embedded Map */
+.map-container {
+  border: 0;
+  margin: 3em 0;
+  width: 100%;
+  height: 200px;
+}
+
+@media screen and (min-width: 650px) {
+  .map-container {
+    width: 600px;
+    height: 300px;
+  }
+}
+
+
+/* 4.5 Future Class Dates */
+.class-date-indicator {
+  font-weight: normal;
+  font-size: 1rem;
+  margin-bottom: 0;
+  margin-left: 0.5em;
+}
+
+@media screen and (min-width: 1000px) {
   .class-date-container {
     padding-left: 20px;
     border-left: 1px solid #000;
@@ -123,11 +409,6 @@ a:hover {
   font-family: Georgia, sans-serif;
 }
 
-#class-dates h3 .class-date-indicator {
-  font-weight: normal;
-  font-size: 1rem;
-}
-
 @media screen and (min-width: 500px) {
   #class-dates h3 {
     font-size: 1.2rem;
@@ -138,8 +419,17 @@ a:hover {
   font-size: 1rem;
 }
 
+.class-date-heading {
+  margin: 0.5em 0 0;
+}
 
-/* 3. Navigation Bar */
+.class-dates-list {
+  margin-bottom: 0;
+  margin-left: 1em;
+}
+
+
+/* 4.6 Navigation Bar */
 nav.main-menu {
   position: sticky;
   top: 0;
@@ -148,6 +438,7 @@ nav.main-menu {
   justify-content: space-between;
   height: 4em;
   font-size: 1.3rem;
+  background-color: #fff;
 }
 
 nav.main-menu ul.collapsed {
@@ -213,6 +504,7 @@ nav.main-menu ul li a:active {
 
   nav.main-menu {
     font-size: 0.9rem;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
   }
 
   nav.main-menu button {
@@ -293,42 +585,89 @@ nav.main-menu ul li a:active {
 }
 
 
-/* 4. Footer Tagline */
+/* 4.7 Footer Tagline */
 .tagline {
   font-size: 1.3rem;
+  padding: 1rem 0;
 }
 
 
-/* 5. Image Viewer */
+/* 4.8 Image Viewer */
+#thumbnail-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .thumbnail {
   cursor: pointer;
   background: none;
   border: none;
+  display: inline;
+  flex: 0 0 auto;
+  width: 50%;
+  padding: 0.25em;
 }
 
 .thumbnail img {
   width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 750px) {
+  .thumbnail {
+    width: calc(100% / 3);
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .thumbnail {
+    width: 25%;
+  }
+}
+
+.modal__container {
+  margin-top: 5em;
+}
+
+#image-modal img {
+  max-width: 100%;
+  height: auto;
 }
 
 #image-modal p {
   font-size: 1.3rem;
+  margin: 0.5em 0 0;
+}
+
+.image-modal-nav {
+  margin: 0.25em 0;
+}
+
+.image-modal-nav svg {
+  vertical-align: bottom;
+}
+
+.modal__close {
+  padding: 0 0.5em;
 }
 
 
-/* 6. Did You Know */
+/* 4.9 Did You Know */
 .did-you-know {
   border: 1px solid gray;
-
   padding: 15px 30px;
   border-radius: 15px;
+  margin: 3rem 0;
 }
 
 .did-you-know .did-you-know-title {
   font-size: 1.5em;
   color: gray;
+  margin-bottom: 0;
 }
 
-/* 7. Forms */
+/* 4.10 Forms */
 span.required {
   color: #ae1313;
   font-size: 0.8em;
@@ -352,4 +691,31 @@ span.optional {
   font-size: 0.8em;
   font-style: italic;
   margin-left: 10px;
+}
+
+label, input, textarea {
+  display: block;
+  width: 100%;
+}
+
+label {
+  margin: 1em 0;
+}
+
+input, textarea {
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  margin-top: 0.25em;
+  padding: 0.5em 0.75em;
+}
+
+textarea {
+  font-family: inherit;
+}
+
+@media screen and (min-width: 750px) {
+  form[name="contact"] {
+    max-width: 550px;
+  }
 }

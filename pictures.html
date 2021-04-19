@@ -7,14 +7,12 @@
   <meta name="description" content="What does driver training look like? Check out these pictures taken during both our classroom and behind-the-wheel training." />
   <meta name="keyword" content="driver education, driving school, defensive driving, traffic education, upstate driving courses" />
   <title>Pictures | Sabbadino Driver Training</title>
-  <link href="reset.css" rel="stylesheet" type="text/css" />
-  <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="micromodal.css" rel="stylesheet" type="text/css" media="none" onload="this.media='all'" />
   <link href="styles.css" rel="stylesheet" type="text/css" />
-  <link href="micromodal.css" rel="stylesheet" type="text/css" />
   <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 <body>
-  <nav class="main-menu bg-white shadow-lg">
+  <nav class="main-menu">
     <a class="brand" href="index.html">
       <picture>
         <source type="image/webp" media="(max-width: 400px)" srcset="images/brand/webp/xs.webp" />
@@ -39,7 +37,7 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <header class="position-relative mb-3">
+  <header>
     <picture>
       <source type="image/webp" media="(max-width: 576px)" srcset="images/banner/webp/xs.webp" />
       <source type="image/webp" media="(max-width: 768px)" srcset="images/banner/webp/sm.webp" />
@@ -51,51 +49,42 @@
       <source type="image/jpeg" media="(max-width: 992px)" srcset="images/banner/jpg/md.jpg" />
       <source type="image/jpeg" media="(max-width: 1200px)" srcset="images/banner/jpg/lg.jpg" />
       <source type="image/jpeg" media="(min-width: 1200px)" srcset="images/banner/jpg/xl.jpg" />
-      <img type="image/jpeg" src="images/banner/jpg/lg.jpg" alt="" class="w-100" />
+      <img type="image/jpeg" src="images/banner/jpg/lg.jpg" alt="" class="banner" />
     </picture>
   </header>
-  <main class="container">
+  <main>
     <noscript>
-      <div class="alert alert-warning text-center" role="alert">
-        It looks like JavaScript is disabled in your browser. Some features of this website may not work properly until JavaScript is enabled.
+      <div class="message message-warning text-center" role="alert">
+        JavaScript is disabled in this web browser. Some features of this website may not work properly until JavaScript is enabled.
       </div>
     </noscript>
-    <section id="thumbnail-container" class="row no-gutters">
-      <h1 class="col-12 mb-4">Pictures</h1>
+    <section>
+      <h1>Pictures</h1>
       <noscript>
-        <div class="alert alert-warning text-center" role="alert">
+        <div class="message message-warning text-center" role="alert">
           The picture gallery requires JavaScript.
         </div>
       </noscript>
-      <div id="unsupported-notice" class="alert alert-warning d-none" role="alert">
+      <div id="unsupported-notice" class="message message-warning" role="alert" hidden>
         <p class="alert-heading h2">The picture gallery is not supported in your browser.</p>
         <p>
-          Please upgrade to a modern, more secure web browser like
+          Please upgrade to a newer web browser like
           <a href="https://www.google.com/chrome/" class="alert-link">Google Chrome</a>,
           <a href="https://www.mozilla.org/en-US/firefox/new/" class="alert-link">Mozilla Firefox</a>, or
           <a href="https://www.microsoft.com/en-us/edge" class="alert-link">Microsoft Edge</a>.
         </p>
-        <p class="mb-0">
-          <a href="https://www.ezcomputersolutions.com/blog/stop-using-internet-explorer/" class="btn btn-primary">Learn Why</a>
-        </p>
       </div>
+      <div id="thumbnail-container"></div>
     </section>
   </main>
-  <footer class="bg-dark text-light mt-5">
-    <div class="container">
-      <div class="row">
-        <p class="col-12 my-3 tagline font-italic text-white">
-          &ldquo;Make&nbsp;Safety&nbsp;First &amp;&nbsp;Make&nbsp;Safety&nbsp;Last&rdquo;
-        </p>
-        <address class="col-12 mb-5">
-          <span class="hidden-visually">Joe Sabbadino</span>
-          <a href="mailto:jandjsabb@att.net" class="text-white">jandjsabb@att.net</a>
-          | <a href="tel:18642920259" class="text-white">864.292.0259</a>
-        </address>
-        <p class="col-12 mb-5">
-          &copy;&nbsp;Sabbadino&nbsp;Driving&nbsp;School,&nbsp;LLC 2011&#8209;<span id="copyright-current-year">2021</span>. All&nbsp;Rights&nbsp;Reserved.
-        </p>
-      </div>
+  <footer>
+    <div class="inner-footer-container">
+      <p class="tagline">
+        <em>&ldquo;Make&nbsp;Safety&nbsp;First &amp;&nbsp;Make&nbsp;Safety&nbsp;Last&rdquo;</em>
+      </p>
+      <p>
+        &copy;&nbsp;Sabbadino&nbsp;Driving&nbsp;School,&nbsp;LLC 2011&#8209;<span id="copyright-current-year">2021</span>. All&nbsp;Rights&nbsp;Reserved.
+      </p>
     </div>
   </footer>
   <div id="image-modal" class="modal micromodal-slide" aria-hidden="true">
@@ -124,9 +113,9 @@
         <div class="modal__content">
           <picture>
             <source srcset="" type="image/webp" />
-            <img src="" type="image/jpeg" alt="" class="img-fluid" />
+            <img src="" type="image/jpeg" alt="" />
           </picture>
-          <p class="pt-3 px-4 text-center" aria-hidden="true"></p>
+          <p class="text-center" aria-hidden="true"></p>
         </div>
       </div>
     </div>
@@ -169,7 +158,7 @@
   </script>
   <script src="polyfill.js"></script>
   <script src="main.js"></script>
-  <script src="micromodal.min.js"></script>
+  <script src="micromodal.min.js" async></script>
   <script>
     function load_image() {
       const webp = image_modal.querySelector('source[type="image/webp"]');
@@ -235,17 +224,12 @@
       jpg.type = 'image/jpeg';
       jpg.alt = pictures_config.alt[i];
       jpg.loading = 'lazy';
-      jpg.classList.add('img-fluid');
       jpg.width = 300;
       jpg.height = 150;
       jpg.style.width = 300;
       jpg.style.height = 150;
       thumbnail.appendChild(jpg);
       const thumbnail_button = document.createElement('button');
-      thumbnail_button.classList.add('col-6');
-      thumbnail_button.classList.add('col-md-4');
-      thumbnail_button.classList.add('col-lg-3');
-      thumbnail_button.classList.add('p-2');
       thumbnail_button.classList.add('thumbnail');
       thumbnail_button.appendChild(thumbnail);
       thumbnail_button.addEventListener('click', function(event) {
@@ -257,7 +241,7 @@
             MicroModal.show('image-modal', {awaitCloseAnimation: true});
           }, 150);
         }, {once: true});
-      })
+      });
       thumbnail_container.appendChild(thumbnail_button);
     }
     image_modal.querySelector('button.image-modal-nav.previous').addEventListener('click', previous_image);
