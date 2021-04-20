@@ -14,6 +14,7 @@
     8. Image Viewer
     9. Did You Know
     10. Forms
+    11. Skip to Main Content
 */
 
 /* 0. Reset */
@@ -718,4 +719,29 @@ textarea {
   form[name="contact"] {
     max-width: 550px;
   }
+}
+
+
+/* 4.11 Skip to Main Content */
+#main-content {
+  position: relative;
+  top: -4em;
+}
+
+a[href="#main-content"] {
+  z-index: 999;
+  position: fixed;
+  top: -100px;
+  padding: 0.5em 1em 0.75em;
+  left: 30px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0px -3px 20px -2px #000;
+  background-color: #040;
+  color: #fff;
+}
+
+a[href="#main-content"]:focus, a[href="#main-content"]:active {
+  top: 0;
+  text-decoration: underline;
+  outline: none;
 }
