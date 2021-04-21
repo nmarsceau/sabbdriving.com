@@ -177,13 +177,12 @@
       </p>
     </div>
   </footer>
-  <script src="polyfill.js"></script>
-  <script src="main.js"></script>
+  <script src="main.js" async></script>
   <script>
     function get_date_number_suffix(date_number) {
-      if ([1, 21, 31].includes(date_number)) {return 'st';}
-      else if ([2, 22].includes(date_number)) {return 'nd';}
-      else if ([3, 23].includes(date_number)) {return 'rd';}
+      if (1 === date_number || 21 === date_number || 31 === date_number) {return 'st';}
+      else if (2 === date_number || 22 === date_number) {return 'nd';}
+      else if (3 === date_number || 23 === date_number) {return 'rd';}
       else {return 'th';}
     }
 
