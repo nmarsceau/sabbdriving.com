@@ -113,10 +113,12 @@
           <button class="modal__close" aria-label="Close image viewer" data-micromodal-close></button>
         </header>
         <div class="modal__content">
-          <picture>
-            <source srcset="" type="image/webp" />
-            <img src="" type="image/jpeg" alt="" />
-          </picture>
+          <div class="modal-image-container">
+            <picture>
+              <source srcset="" type="image/webp" />
+              <img src="" type="image/jpeg" alt="" />
+            </picture>
+          </div>
           <p class="text-center" aria-hidden="true"></p>
         </div>
       </div>
@@ -124,7 +126,7 @@
   </div>
   <script>
     const pictures_config = {
-      total: 29,
+      total: 37,
       alt: [
         'Posters about drinking and driving displayed around the drivers education classroom.',
         'Posters about drinking and driving displayed around the drivers education classroom.',
@@ -155,6 +157,14 @@
         'A former student jumps for joy because she just got her license!',
         'Mr. Sabbadino with Jocelyn Brazeal, winner of the 2018 SCDTSEA poster contest.',
         'Mr. Sabbadino with Claire Swartz, winner of the 2019 SCDTSEA poster contest.',
+        'Judah Smith\'s poster entered in the 2015 SCDTSEA poster contest. (1st place)',
+        'Joseph Calamia\'s poster entered in the 2015 SCDTSEA poster contest. (3rd place)',
+        'Emily Smith\'s poster entered in the 2017 SCDTSEA poster contest. (1st place)',
+        'Leah Buffalino\'s poster entered in the 2017 SCDTSEA poster contest. (2nd place)',
+        'Emma Fordham\'s poster entered in the 2017 SCDTSEA poster contest. (3rd place)',
+        'Claire Swartz\'s poster entered in the 2019 SCDTSEA poster contest. (1st place)',
+        'Owen Nigh\'s poster entered in the 2020 SCDTSEA poster contest. (1st place)',
+        'Sophia Gray\'s poster entered in the 2020 SCDTSEA poster contest. (2nd place)',
       ],
     };
   </script>
@@ -163,8 +173,18 @@
   <script>
     function load_image() {
       const webp = image_modal.querySelector('source[type="image/webp"]');
-      webp.srcset = 'images/gallery/fullsize/webp/' + image_modal.image_number + '.webp';
       const jpg = image_modal.querySelector('img');
+      jpg.addEventListener('load', function() {
+        jpg.classList.remove('width_greater');
+        jpg.classList.remove('height_greater');
+        if (jpg.naturalWidth > jpg.naturalHeight) {
+          jpg.classList.add('width_greater');
+        }
+        else {
+          jpg.classList.add('height_greater');
+        }
+      }, {once: true});
+      webp.srcset = 'images/gallery/fullsize/webp/' + image_modal.image_number + '.webp';
       jpg.src = 'images/gallery/fullsize/jpg/' + image_modal.image_number + '.jpg';
       jpg.alt = pictures_config.alt[image_modal.image_number - 1];
       const description = image_modal.querySelector('p');

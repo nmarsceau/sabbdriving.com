@@ -22,24 +22,30 @@
     background-color: #fff;
     padding: 0 0.8em 0.8em;
     max-width: 90vw;
-    max-height: 90vh;
+    max-height: 85vh;
     border-radius: 4px;
     overflow-y: auto;
     box-sizing: border-box;
     position: relative;
-    top: 1em;
-}
-
-@media screen and (min-width: 500px) {
-    .modal__container {
-        top: 2em;
-    }
+    top: 6em;
 }
 
 @media screen and (min-width: 800px) {
     .modal__container {
-        top: 3em;
+        top: 7em;
     }
+}
+
+@media screen and (min-width: 875px) {
+    .modal__container {
+        top: 5em;
+    }
+}
+
+@media screen and (min-width: 1075px) {
+  .modal__container {
+      top: 6em;
+  }
 }
   
 .modal__header {

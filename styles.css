@@ -623,8 +623,37 @@ nav.main-menu ul li a:active {
   }
 }
 
-.modal__container {
-  margin-top: 5em;
+.modal-image-container {
+  text-align: center;
+}
+
+.modal-image-container img.width_greater {
+  width: unset;
+  max-width: 100%;
+}
+
+.modal-image-container img.height_greater {
+  width: unset;
+  max-height: 50vh;
+}
+
+@media screen and (min-width: 400px) {
+  .modal-image-container img.height_greater {
+    max-height: 60vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-image-container img.height_greater {
+    max-height: 64vh;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .modal-image-container img.width_greater,
+  .modal-image-container img.height_greater {
+    max-height: 70vh;
+  }
 }
 
 #image-modal p {
