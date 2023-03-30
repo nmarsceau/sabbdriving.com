@@ -67,15 +67,19 @@
       <h2>Email</h2>
       <form class="validate" name="contact" method="post" netlify>
         <label>
-          Your Name<span class="required">required</span>
+          Name<span class="required">required</span>
           <input type="text" name="name" required maxlength="250">
         </label>
         <label>
-          Your Email Address<span class="optional">optional</span>
-          <input type="email" name="email" maxlength="320">
+          Email Address<span class="required">required</span>
+          <input type="email" name="email" required maxlength="320">
         </label>
         <label>
-          Your Message<span class="required">required</span>
+          Phone Number<span class="required">required</span>
+          <input type="text" name="phone" required maxlength="20">
+        </label>
+        <label>
+          Message<span class="required">required</span>
           <textarea name="message" rows="6" class="count" maxlength="2500" required></textarea>
         </label>
         <button type="submit" class="button button-primary">Send</button>
@@ -95,5 +99,11 @@
   <script src="main.js" async></script>
   <script src="character_counter.js" async></script>
   <script src="validate_form.js" async></script>
+  <script src="inputmask.min.js" id="inputmaskScript" async></script>
+  <script>
+    document.getElementById('inputmaskScript').addEventListener('load', function() {
+      Inputmask({'mask': '(999) 999-9999'}).mask('[name="phone"]');
+    })
+  </script>
 </body>
 </html>
