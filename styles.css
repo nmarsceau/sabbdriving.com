@@ -15,6 +15,7 @@
 		9. Did You Know
 		10. Forms
 		11. Skip to Main Content
+		12. Form Success/Error Pages
 */
 
 /* 0. Reset */
@@ -134,6 +135,14 @@ strong {
 	display: none;
 }
 
+.text-center {
+	text-align: center;
+}
+
+.pictureContainer {
+	display: inline-block;
+}
+
 
 /* 2. Layout */
 main {
@@ -249,7 +258,7 @@ h3 {
 	}
 }
 
-article, aside, blockquote {
+article, aside, blockquote, .formSuccess p, .formError p {
 	font-family: Georgia, sans-serif;
 	font-size: 1.2rem;
 }
@@ -768,4 +777,13 @@ a[href="#main-content"]:focus, a[href="#main-content"]:active {
 	top: 0;
 	text-decoration: underline;
 	outline: none;
+}
+
+
+/* 4.12 Form Success/Error Pages */
+.formSuccess header .pictureContainer,
+.formError header .pictureContainer {
+	width: 250px;
+	height: 49px;
+	margin-block: 2em;
 }
