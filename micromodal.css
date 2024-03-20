@@ -3,154 +3,154 @@
 \**************************/
 
 .modal {
-    font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+	font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
 }
   
 .modal__overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.6);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.6);
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
 }
   
 .modal__container {
-    background-color: #fff;
-    padding: 0 0.8em 0.8em;
-    max-width: 90vw;
-    max-height: 85vh;
-    border-radius: 4px;
-    overflow-y: auto;
-    box-sizing: border-box;
-    position: relative;
-    top: 6em;
+	background-color: #fff;
+	padding: 0 0.8em 0.8em;
+	max-width: 90vw;
+	max-height: 85vh;
+	border-radius: 4px;
+	overflow-y: auto;
+	box-sizing: border-box;
+	position: relative;
+	top: 6em;
 }
 
 @media screen and (min-width: 800px) {
-    .modal__container {
-        top: 7em;
-    }
+	.modal__container {
+		top: 7em;
+	}
 }
 
 @media screen and (min-width: 875px) {
-    .modal__container {
-        top: 5em;
-    }
+	.modal__container {
+		top: 5em;
+	}
 }
 
 @media screen and (min-width: 1075px) {
   .modal__container {
-      top: 6em;
+	  top: 6em;
   }
 }
   
 .modal__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
   
 .modal__close {
-    background: transparent;
-    border: 0;
-    padding: 0;
-    cursor: pointer;
+	background: transparent;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
 }
 
 .modal__header .modal__close:before {
-    font-size: 2em;
-    content: "\2715";
+	font-size: 2em;
+	content: "\2715";
 }
 
 .modal__header .modal__close:focus, .modal__header .modal__close:hover {
-    color: #6677ff;
+	color: #6677ff;
 }
   
 .modal__content {
-    line-height: 1.5;
-    color: rgba(0,0,0,.8);
+	line-height: 1.5;
+	color: rgba(0,0,0,.8);
 }
 
 .image-modal-nav {
-    font-size: 0.875em;
-    background: none;
-    border: none;
-    padding: 0;
-    margin-right: 0.5em;
-    cursor: pointer;
+	font-size: 0.875em;
+	background: none;
+	border: none;
+	padding: 0;
+	margin-right: 0.5em;
+	cursor: pointer;
 }
 
 .image-modal-nav:focus:not(:disabled), .image-modal-nav:hover:not(:disabled) {
-    color: #6677ff;
+	color: #6677ff;
 }
 
 .image-moda-nav:disabled {
-    color: #777777;
+	color: #777777;
 }
 
 .modal__btn:hover {
-    background-color: #c6c6c6;
+	background-color: #c6c6c6;
 }
   
 .modal__btn-primary {
-    background-color: #00449e;
-    color: #fff;
+	background-color: #00449e;
+	color: #fff;
 }
   
   
 
 /**************************\
-    Animations
+	Animations
 \**************************/
 @keyframes mmfadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
   
 @keyframes mmfadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
+	from { opacity: 1; }
+	to { opacity: 0; }
 }
   
 @keyframes mmslideIn {
-    from { transform: translateY(15%); }
-    to { transform: translateY(0); }
+	from { transform: translateY(15%); }
+	to { transform: translateY(0); }
 }
   
 @keyframes mmslideOut {
-    from { transform: translateY(0); }
-    to { transform: translateY(-10%); }
+	from { transform: translateY(0); }
+	to { transform: translateY(-10%); }
 }
   
 .micromodal-slide {
-    display: none;
+	display: none;
 }
   
 .micromodal-slide.is-open {
-    display: block;
+	display: block;
 }
   
 .micromodal-slide[aria-hidden="false"] .modal__overlay {
-    animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+	animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
 }
   
 .micromodal-slide[aria-hidden="false"] .modal__container {
-    animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+	animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
 }
   
 .micromodal-slide[aria-hidden="true"] .modal__overlay {
-    animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+	animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
 }
   
 .micromodal-slide[aria-hidden="true"] .modal__container {
-    animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+	animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
 }
   
 .micromodal-slide .modal__container,
 .micromodal-slide .modal__overlay {
-    will-change: transform;
+	will-change: transform;
 }
