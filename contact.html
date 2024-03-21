@@ -105,16 +105,16 @@
 		Inputmask({'mask': '(999) 999-9999'}).mask('[name="phone"]')
 	})
 
-	document.querySelector('form[name="contact"]').addEventListener('submit', function(event) {
-		event.preventDefault()
-		fetch(event.target.action, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: new FormData(event.target)
-		})
-			.then(() => { window.location.href = "/success" })
-			.catch(() => { window.location.href = "/error" })
-	})
+	// document.querySelector('form[name="contact"]').addEventListener('submit', function(event) {
+	// 	event.preventDefault()
+	// 	fetch(event.target.action, {
+	// 		method: 'POST',
+	// 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+	// 		body: new FormData(event.target)
+	// 	})
+	// 		.then(() => { window.location.href = "/success" })
+	// 		.catch(() => { window.location.href = "/error" })
+	// })
 	</script>
 </body>
 </html>
