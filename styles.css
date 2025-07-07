@@ -16,6 +16,7 @@
 		10. Forms
 		11. Skip to Main Content
 		12. Form Success/Error Pages
+		13. Prices Container
 */
 
 /* 0. Reset */
@@ -786,4 +787,16 @@ a[href="#main-content"]:focus, a[href="#main-content"]:active {
 	width: 250px;
 	height: 49px;
 	margin-block: 2em;
+}
+
+/* 4.13 Prices Container */
+.prices-container {	
+	position: relative;
+}
+
+.prices-container .message {
+	position: absolute;
+    top: 0.25em;
+    right: 0;
+    padding-block: 0.25em;
 }
