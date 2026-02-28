@@ -11,12 +11,11 @@
 		5. Future Class Dates
 		6. Navigation Bar
 		7. Footer Tagline
-		8. Image Viewer
-		9. Did You Know
-		10. Forms
-		11. Skip to Main Content
-		12. Form Success/Error Pages
-		13. Prices Container
+		8. Did You Know
+		9. Forms
+		10. Skip to Main Content
+		11. Form Success/Error Pages
+		12. Prices Container
 */
 
 /* 0. Reset */
@@ -609,86 +608,7 @@ nav.main-menu ul li a:active {
 }
 
 
-/* 4.8 Image Viewer */
-#thumbnail-container {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.thumbnail {
-	cursor: pointer;
-	background: none;
-	border: none;
-	display: inline;
-	flex: 0 0 auto;
-	width: 50%;
-	padding: 0.25em;
-}
-
-@media screen and (min-width: 750px) {
-	.thumbnail {
-		width: calc(100% / 3);
-	}
-}
-
-@media screen and (min-width: 950px) {
-	.thumbnail {
-		width: 25%;
-	}
-}
-
-.modal-image-container {
-	text-align: center;
-}
-
-.modal-image-container img.width_greater {
-	width: unset;
-	max-width: 100%;
-}
-
-.modal-image-container img.height_greater {
-	width: unset;
-	max-height: 50vh;
-}
-
-@media screen and (min-width: 400px) {
-	.modal-image-container img.height_greater {
-		max-height: 60vh;
-	}
-}
-
-@media screen and (min-width: 768px) {
-	.modal-image-container img.height_greater {
-		max-height: 64vh;
-	}
-}
-
-@media screen and (min-width: 900px) {
-	.modal-image-container img.width_greater,
-	.modal-image-container img.height_greater {
-		max-height: 70vh;
-	}
-}
-
-#image-modal p {
-	font-size: 1.3rem;
-	margin: 0.5em 0 0;
-}
-
-.image-modal-nav {
-	margin: 0.25em 0;
-}
-
-.image-modal-nav svg {
-	vertical-align: bottom;
-}
-
-.modal__close {
-	padding: 0 0.5em;
-}
-
-
-/* 4.9 Did You Know */
+/* 4.8 Did You Know */
 .did-you-know {
 	border: 1px solid gray;
 	padding: 15px 30px;
@@ -702,7 +622,7 @@ nav.main-menu ul li a:active {
 	margin-bottom: 0;
 }
 
-/* 4.10 Forms */
+/* 4.9 Forms */
 span.required {
 	color: #ae1313;
 	font-size: 0.8em;
@@ -756,7 +676,7 @@ textarea {
 }
 
 
-/* 4.11 Skip to Main Content */
+/* 4.10 Skip to Main Content */
 #main-content {
 	position: relative;
 	top: -4em;
@@ -781,7 +701,7 @@ a[href="#main-content"]:focus, a[href="#main-content"]:active {
 }
 
 
-/* 4.12 Form Success/Error Pages */
+/* 4.11 Form Success/Error Pages */
 .formSuccess header .pictureContainer,
 .formError header .pictureContainer {
 	width: 250px;
@@ -789,14 +709,14 @@ a[href="#main-content"]:focus, a[href="#main-content"]:active {
 	margin-block: 2em;
 }
 
-/* 4.13 Prices Container */
+/* 4.12 Prices Container */
 .prices-container {	
 	position: relative;
 }
 
 .prices-container .message {
 	position: absolute;
-    top: 0.25em;
-    right: 0;
-    padding-block: 0.25em;
+	top: 0.25em;
+	right: 0;
+	padding-block: 0.25em;
 }

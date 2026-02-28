@@ -7,9 +7,152 @@
 	<meta name="description" content="What does driver training look like? Check out these pictures taken during both our classroom and behind-the-wheel training." />
 	<meta name="keyword" content="driver education, driving school, defensive driving, traffic education, upstate driving courses" />
 	<title>Pictures | Sabbadino Driver Training</title>
-	<link href="micromodal.css" rel="stylesheet" type="text/css" media="none" onload="this.media='all'" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 	<link rel="shortcut icon" href="images/favicon.ico" />
+	<style>
+		#thumbnail-container {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.thumbnail {
+			cursor: pointer;
+			background: none;
+			border: none;
+			display: inline;
+			flex: 0 0 auto;
+			width: 50%;
+			padding: 0.25em;
+		}
+
+		@media screen and (min-width: 750px) {
+			.thumbnail {
+				width: calc(100% / 3);
+			}
+		}
+
+		@media screen and (min-width: 950px) {
+			.thumbnail {
+				width: 25%;
+			}
+		}
+
+		#image-modal {
+			padding: 0 0.8em 0.8em;
+			margin: 6em auto auto;
+			max-width: 90vw;
+			max-height: 85vh;
+			width: min(90vw, 1100px);
+			border: 0;
+			border-radius: 4px;
+			overflow-y: auto;
+			box-sizing: border-box;
+		}
+
+		@media screen and (min-width: 800px) {
+			#image-modal {
+				margin-top: 7em;
+			}
+		}
+
+		@media screen and (min-width: 875px) {
+			#image-modal {
+				margin-top: 5em;
+			}
+		}
+
+		@media screen and (min-width: 1075px) {
+			#image-modal {
+				margin-top: 6em;
+			}
+		}
+
+		#image-modal::backdrop {
+			background: rgba(0, 0, 0, 0.6);
+		}
+
+		#image-modal header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.image-modal-nav {
+			font-size: 0.875em;
+			background: none;
+			border: none;
+			padding: 0;
+			margin: 0.25em 0;
+			cursor: pointer;
+		}
+
+		.image-modal-nav:focus:not(:disabled), .image-modal-nav:hover:not(:disabled) {
+			color: #6677ff;
+		}
+
+		.image-moda-nav:disabled {
+			color: #777777;
+		}
+
+		.image-modal-nav svg {
+			vertical-align: bottom;
+		}
+
+		#image-modal .closeBtn {
+			background: transparent;
+			border: 0;
+			padding: 0 0.5em;
+			cursor: pointer;
+		}
+
+		#image-modal .closeBtn::before {
+			font-size: 2em;
+			content: "\2715";
+		}
+
+		#image-modal .closeBtn:focus,
+		#image-modal .closeBtn:hover {
+			color: #6677ff;
+		}
+
+		.modal-image-container {
+			text-align: center;
+		}
+
+		.modal-image-container img.width_greater {
+			width: unset;
+			max-width: 100%;
+		}
+
+		.modal-image-container img.height_greater {
+			width: unset;
+			max-height: 50vh;
+		}
+
+		@media screen and (min-width: 400px) {
+			.modal-image-container img.height_greater {
+				max-height: 60vh;
+			}
+		}
+
+		@media screen and (min-width: 768px) {
+			.modal-image-container img.height_greater {
+				max-height: 64vh;
+			}
+		}
+
+		@media screen and (min-width: 900px) {
+			.modal-image-container img.width_greater,
+			.modal-image-container img.height_greater {
+				max-height: 70vh;
+			}
+		}
+
+		#image-modal p {
+			font-size: 1.3rem;
+			margin: 0.5em 0 0;
+		}
+	</style>
 </head>
 <body>
 	<a href="#main-content">Skip to main content</a>
@@ -50,7 +193,7 @@
 			<source type="image/jpeg" media="(max-width: 992px)" srcset="images/banner/jpg/md.jpg" />
 			<source type="image/jpeg" media="(max-width: 1200px)" srcset="images/banner/jpg/lg.jpg" />
 			<source type="image/jpeg" media="(min-width: 1200px)" srcset="images/banner/jpg/xl.jpg" />
-			<img type="image/jpeg" src="images/banner/jpg/lg.jpg" alt="" class="banner" width="1200" height="291" />
+			<img src="images/banner/jpg/lg.jpg" alt="" class="banner" width="1200" height="291" />
 		</picture>
 	</header>
 	<main>
@@ -89,41 +232,37 @@
 			</p>
 		</div>
 	</footer>
-	<div id="image-modal" class="modal micromodal-slide" aria-hidden="true">
-		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
-			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="image-modal-title">
-				<header class="modal__header">
-					<h2 class="hidden-visually" id="image-modal-title">Image Viewer</h2>
-					<span>
-						<button class="image-modal-nav previous" aria-label="previous image">
-							<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle">
-								<circle cx="12" cy="12" r="10"></circle>
-								<polyline points="12 8 8 12 12 16"></polyline>
-								<line x1="16" y1="12" x2="8" y2="12"></line>
-							</svg>
-						</button>
-						<button class="image-modal-nav next" aria-label="next image">
-							<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle">
-								<circle cx="12" cy="12" r="10"></circle>
-								<polyline points="12 16 16 12 12 8"></polyline>
-								<line x1="8" y1="12" x2="16" y2="12"></line>
-							</svg>
-						</button>
-					</span>
-					<button class="modal__close" aria-label="Close image viewer" data-micromodal-close></button>
-				</header>
-				<div class="modal__content">
-					<div class="modal-image-container">
-						<picture>
-							<source srcset="" type="image/webp" />
-							<img src="" type="image/jpeg" alt="" />
-						</picture>
-					</div>
-					<p class="text-center" aria-hidden="true"></p>
-				</div>
+	<dialog id="image-modal" aria-labelledby="image-modal-title">
+		<header>
+			<h2 class="hidden-visually" id="image-modal-title">Image Viewer</h2>
+			<span>
+				<button type="button" class="image-modal-nav previous" aria-label="Previous image">
+					<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle">
+						<circle cx="12" cy="12" r="10"></circle>
+						<polyline points="12 8 8 12 12 16"></polyline>
+						<line x1="16" y1="12" x2="8" y2="12"></line>
+					</svg>
+				</button>
+				<button type="button" class="image-modal-nav next" aria-label="Next image">
+					<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle">
+						<circle cx="12" cy="12" r="10"></circle>
+						<polyline points="12 16 16 12 12 8"></polyline>
+						<line x1="8" y1="12" x2="16" y2="12"></line>
+					</svg>
+				</button>
+			</span>
+			<button type="button" class="closeBtn" aria-label="Close image viewer"></button>
+		</header>
+		<div>
+			<div class="modal-image-container">
+				<picture>
+					<source srcset="" type="image/webp" />
+					<img src="" alt="" />
+				</picture>
 			</div>
+			<p class="text-center" aria-hidden="true"></p>
 		</div>
-	</div>
+	</dialog>
 	<script>
 		const pictures_config = {
 			total: 42,
@@ -174,175 +313,213 @@
 		};
 	</script>
 	<script src="main.js" async></script>
-	<script src="micromodal.min.js" async></script>
 	<script>
-		function load_image() {
-			const webp = image_modal.querySelector('source[type="image/webp"]');
-			const jpg = image_modal.querySelector('img');
-			jpg.addEventListener('load', function() {
-				jpg.classList.remove('width_greater');
-				jpg.classList.remove('height_greater');
-				if (jpg.naturalWidth > jpg.naturalHeight) {
-					jpg.classList.add('width_greater');
-				}
-				else {
-					jpg.classList.add('height_greater');
-				}
-			}, {once: true});
-			webp.srcset = 'images/gallery/fullsize/webp/' + image_modal.image_number + '.webp';
-			jpg.src = 'images/gallery/fullsize/jpg/' + image_modal.image_number + '.jpg';
-			jpg.alt = pictures_config.alt[image_modal.image_number - 1];
-			const description = image_modal.querySelector('p');
-			description.innerText = pictures_config.alt[image_modal.image_number - 1];
-		}
+		(function() {
+			const thumbnailContainer = document.getElementById('thumbnail-container');
+			const unsupportedNotice = document.getElementById('unsupported-notice');
+			const imageModal = document.getElementById('image-modal');
 
-		function toggle_modal_nav_buttons() {
-			const previous = image_modal.querySelector('button.image-modal-nav.previous');
-			const next = image_modal.querySelector('button.image-modal-nav.next');
-			if (image_modal.image_number === 1) {
-				next.removeAttribute('disabled');
-				if (document.activeElement === previous) {next.focus();}
-				previous.setAttribute('disabled', 'disabled');
-			}
-			else if (image_modal.image_number === pictures_config.total) {
-				previous.removeAttribute('disabled');
-				if (document.activeElement === next) {previous.focus();}
-				next.setAttribute('disabled', 'disabled');
-			}
-			else {
-				previous.removeAttribute('disabled');
-				next.removeAttribute('disabled');
-			}
-		}
-
-		function previous_image() {
-			if (image_modal.image_number > 1) {
-				image_modal.image_number -= 1;
-				load_image();
-				toggle_modal_nav_buttons();
-			}
-		}
-
-		function next_image() {
-			if (image_modal.image_number < pictures_config.total) {
-				image_modal.image_number += 1;
-				load_image();
-				toggle_modal_nav_buttons();
-			}
-		}
-
-		const thumbnail_container = document.getElementById('thumbnail-container');
-		const image_modal = document.getElementById('image-modal');
-		image_modal.start_x = null;
-		image_modal.start_y = null;
-		image_modal.end_x = null;
-		image_modal.end_y = null;
-		image_modal.touch_moves = 0;
-		for (let i = 0; i < pictures_config.total; i++) {
-			const image_number = i + 1;
-			const thumbnail = document.createElement('picture');
-			const webp = document.createElement('source');
-			webp.srcset = 'images/gallery/thumbs/webp/' + image_number + '.webp';
-			webp.type = 'image/webp';
-			thumbnail.appendChild(webp);
-			const jpg = document.createElement('img');
-			jpg.src = 'images/gallery/thumbs/jpg/' + image_number + '.jpg';
-			jpg.type = 'image/jpeg';
-			jpg.alt = pictures_config.alt[i];
-			jpg.loading = 'lazy';
-			jpg.width = 300;
-			jpg.height = 150;
-			jpg.style.width = 300;
-			jpg.style.height = 150;
-			thumbnail.appendChild(jpg);
-			const thumbnail_button = document.createElement('button');
-			thumbnail_button.classList.add('thumbnail');
-			thumbnail_button.appendChild(thumbnail);
-			thumbnail_button.addEventListener('click', function(event) {
-				image_modal.image_number = image_number;
-				load_image();
-				toggle_modal_nav_buttons();
-				image_modal.querySelector('img').addEventListener('load', function() {
-					setTimeout(function() {
-						MicroModal.show('image-modal', {awaitCloseAnimation: true});
-					}, 150);
-				}, {once: true});
-			});
-			thumbnail_container.appendChild(thumbnail_button);
-		}
-		image_modal.querySelector('button.image-modal-nav.previous').addEventListener('click', previous_image);
-		image_modal.querySelector('button.image-modal-nav.next').addEventListener('click', next_image);
-		image_modal.addEventListener('keydown', function(event) {
-			switch (event.keyCode) {
-				case 38:
-				case 40:
-					event.preventDefault();
-					break;
-				case 37:
-					previous_image();
-					break;
-				case 39:
-					next_image();
-					break;
-			}
-		});
-
-		function reset_start_coordinates() {
-			image_modal.start_x = null;
-			image_modal.start_y = null;
-		}
-
-		function reset_end_coordinates() {
-			image_modal.end_x = null;
-			image_modal.end_y = null;
-		}
-
-		function reset_touch_moves_count() {
-			image_modal.touch_moves = 0;
-		}
-
-		function reset_touch_events() {
-			reset_start_coordinates();
-			reset_end_coordinates();
-			reset_touch_moves_count();
-		}
-
-		image_modal.addEventListener('touchstart', function(event) {
-			if (event.touches.length) {
-				image_modal.start_x = event.touches[0].clientX;
-				image_modal.start_y = event.touches[0].clientY;
-				reset_end_coordinates();
-				reset_touch_moves_count();
-			}
-		});
-
-		image_modal.addEventListener('touchmove', function(event) {
-			event.preventDefault();
-			if (event.touches.length) {
-				image_modal.end_x = event.touches[0].clientX;
-				image_modal.end_y = event.touches[0].clientY;
-				image_modal.touch_moves += 1;
-			}
-		});
-
-		image_modal.addEventListener('touchend', function(event) {
-			if (
-				image_modal.start_x === null
-				|| image_modal.start_y === null
-				|| image_modal.end_x === null
-				|| image_modal.end_y === null
-				|| image_modal.touch_moves < 3
-			) {
-				reset_touch_events();
+			if (!window.HTMLDialogElement || typeof imageModal.showModal !== 'function') {
+				unsupportedNotice.hidden = false;
 				return;
 			}
-			const x_diff = image_modal.start_x - image_modal.end_x;
-			const y_diff = image_modal.start_y - image_modal.end_y;
-			if (Math.abs(y_diff) > Math.abs(x_diff)) {reset_touch_events(); return;}
-			if (x_diff < 0 && image_modal.image_number > 1) {previous_image();}
-			else if (x_diff > 0 && image_modal.image_number < pictures_config.total) {next_image();}
-			reset_touch_events();
-		});
+
+			const previousButton = imageModal.querySelector('button.image-modal-nav.previous');
+			const nextButton = imageModal.querySelector('button.image-modal-nav.next');
+			const closeButton = imageModal.querySelector('button.closeBtn');
+			const webpSource = imageModal.querySelector('source[type="image/webp"]');
+			const image = imageModal.querySelector('img');
+			const description = imageModal.querySelector('p');
+
+			let imageNumber = 1;
+			let triggerButton = null;
+
+			const touchState = {
+				startX: null,
+				startY: null,
+				endX: null,
+				endY: null,
+				moves: 0,
+			};
+
+			function resetTouchState() {
+				touchState.startX = null;
+				touchState.startY = null;
+				touchState.endX = null;
+				touchState.endY = null;
+				touchState.moves = 0;
+			}
+
+			function updateImageSizing() {
+				image.classList.remove('width_greater', 'height_greater');
+				if (image.naturalWidth > image.naturalHeight) {
+					image.classList.add('width_greater');
+				}
+				else {
+					image.classList.add('height_greater');
+				}
+			}
+
+			image.addEventListener('load', updateImageSizing);
+
+			function updateNavButtons() {
+				const onFirst = imageNumber === 1;
+				const onLast = imageNumber === pictures_config.total;
+				previousButton.disabled = onFirst;
+				nextButton.disabled = onLast;
+
+				if (onFirst && document.activeElement === previousButton) {
+					nextButton.focus();
+				}
+				if (onLast && document.activeElement === nextButton) {
+					previousButton.focus();
+				}
+			}
+
+			function loadImage(nextImageNumber) {
+				imageNumber = nextImageNumber;
+				const altText = pictures_config.alt[imageNumber - 1] || '';
+				webpSource.srcset = 'images/gallery/fullsize/webp/' + imageNumber + '.webp';
+				image.src = 'images/gallery/fullsize/jpg/' + imageNumber + '.jpg';
+				image.alt = altText;
+				description.textContent = altText;
+				updateNavButtons();
+			}
+
+			function showPreviousImage() {
+				if (imageNumber > 1) {
+					loadImage(imageNumber - 1);
+				}
+			}
+
+			function showNextImage() {
+				if (imageNumber < pictures_config.total) {
+					loadImage(imageNumber + 1);
+				}
+			}
+
+			function openImageModal(nextImageNumber, button) {
+				triggerButton = button;
+				loadImage(nextImageNumber);
+				imageModal.showModal();
+			}
+
+			const thumbnailFragment = document.createDocumentFragment();
+			for (let i = 0; i < pictures_config.total; i++) {
+				const currentImageNumber = i + 1;
+				const thumbnail = document.createElement('picture');
+				const webp = document.createElement('source');
+				webp.srcset = 'images/gallery/thumbs/webp/' + currentImageNumber + '.webp';
+				webp.type = 'image/webp';
+				thumbnail.appendChild(webp);
+
+				const jpg = document.createElement('img');
+				jpg.src = 'images/gallery/thumbs/jpg/' + currentImageNumber + '.jpg';
+				jpg.alt = pictures_config.alt[i] || '';
+				jpg.loading = 'lazy';
+				jpg.style.aspectRatio = '300/169';
+				thumbnail.appendChild(jpg);
+
+				const thumbnailButton = document.createElement('button');
+				thumbnailButton.type = 'button';
+				thumbnailButton.classList.add('thumbnail');
+				thumbnailButton.setAttribute('aria-label', 'Open image ' + currentImageNumber + ' of ' + pictures_config.total);
+				thumbnailButton.appendChild(thumbnail);
+				thumbnailButton.addEventListener('click', function() {
+					openImageModal(currentImageNumber, thumbnailButton);
+				});
+
+				thumbnailFragment.appendChild(thumbnailButton);
+			}
+			thumbnailContainer.appendChild(thumbnailFragment);
+
+			previousButton.addEventListener('click', showPreviousImage);
+			nextButton.addEventListener('click', showNextImage);
+			closeButton.addEventListener('click', function() {
+				imageModal.close();
+			});
+
+			imageModal.addEventListener('close', function() {
+				resetTouchState();
+				if (triggerButton && triggerButton.isConnected) {
+					triggerButton.focus();
+				}
+			});
+
+			imageModal.addEventListener('click', function(event) {
+				if (event.target === imageModal) {
+					imageModal.close();
+				}
+			});
+
+			imageModal.addEventListener('keydown', function(event) {
+				switch (event.key) {
+					case 'ArrowUp':
+					case 'ArrowDown':
+						event.preventDefault();
+						break;
+					case 'ArrowLeft':
+						event.preventDefault();
+						showPreviousImage();
+						break;
+					case 'ArrowRight':
+						event.preventDefault();
+						showNextImage();
+						break;
+				}
+			});
+
+			imageModal.addEventListener('touchstart', function(event) {
+				if (!event.touches.length) {
+					return;
+				}
+				touchState.startX = event.touches[0].clientX;
+				touchState.startY = event.touches[0].clientY;
+				touchState.endX = null;
+				touchState.endY = null;
+				touchState.moves = 0;
+			}, { passive: true });
+
+			imageModal.addEventListener('touchmove', function(event) {
+				if (!event.touches.length) {
+					return;
+				}
+				event.preventDefault();
+				touchState.endX = event.touches[0].clientX;
+				touchState.endY = event.touches[0].clientY;
+				touchState.moves += 1;
+			}, { passive: false });
+
+			imageModal.addEventListener('touchend', function() {
+				if (
+					touchState.startX === null
+					|| touchState.startY === null
+					|| touchState.endX === null
+					|| touchState.endY === null
+					|| touchState.moves < 3
+				) {
+					resetTouchState();
+					return;
+				}
+
+				const xDiff = touchState.startX - touchState.endX;
+				const yDiff = touchState.startY - touchState.endY;
+
+				if (Math.abs(yDiff) > Math.abs(xDiff)) {
+					resetTouchState();
+					return;
+				}
+
+				if (xDiff < 0) {
+					showPreviousImage();
+				}
+				else if (xDiff > 0) {
+					showNextImage();
+				}
+
+				resetTouchState();
+			});
+		})();
 	</script>
 </body>
 </html>
