@@ -1,0 +1,143 @@
+#thumbnail-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: inline;
+  flex: 0 0 auto;
+  width: 50%;
+  padding: 0.25em;
+}
+
+@media screen and (min-width: 750px) {
+  .thumbnail {
+    width: calc(100% / 3);
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .thumbnail {
+    width: 25%;
+  }
+}
+
+#image-modal {
+  padding: 0 0.8em 0.8em;
+  margin: 6em auto auto;
+  max-width: 90vw;
+  max-height: 85vh;
+  width: min(90vw, 1100px);
+  border: 0;
+  border-radius: 4px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 800px) {
+  #image-modal {
+    margin-top: 7em;
+  }
+}
+
+@media screen and (min-width: 875px) {
+  #image-modal {
+    margin-top: 5em;
+  }
+}
+
+@media screen and (min-width: 1075px) {
+  #image-modal {
+    margin-top: 6em;
+  }
+}
+
+#image-modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#image-modal header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-modal-nav {
+  font-size: 0.875em;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0.25em 0;
+  cursor: pointer;
+}
+
+.image-modal-nav:focus:not(:disabled),
+.image-modal-nav:hover:not(:disabled) {
+  color: #6677ff;
+}
+
+.image-modal-nav:disabled {
+  color: #777777;
+}
+
+.image-modal-nav svg {
+  vertical-align: bottom;
+}
+
+#image-modal .closeBtn {
+  background: transparent;
+  border: 0;
+  padding: 0 0.5em;
+  cursor: pointer;
+}
+
+#image-modal .closeBtn::before {
+  font-size: 2em;
+  content: "\2715";
+}
+
+#image-modal .closeBtn:focus,
+#image-modal .closeBtn:hover {
+  color: #6677ff;
+}
+
+.modal-image-container {
+  text-align: center;
+}
+
+.modal-image-container img.width_greater {
+  width: unset;
+  max-width: 100%;
+}
+
+.modal-image-container img.height_greater {
+  width: unset;
+  max-height: 50vh;
+}
+
+@media screen and (min-width: 400px) {
+  .modal-image-container img.height_greater {
+    max-height: 60vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-image-container img.height_greater {
+    max-height: 64vh;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .modal-image-container img.width_greater,
+  .modal-image-container img.height_greater {
+    max-height: 70vh;
+  }
+}
+
+#image-modal p {
+  font-size: 1.3rem;
+  margin: 0.5em 0 0;
+}

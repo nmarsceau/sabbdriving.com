@@ -1,0 +1,159 @@
+---
+layout: layouts/base.njk
+permalink: /
+pageTitle: Sabbadino Driver Training &mdash; Greenville, SC Driver Education Courses
+metaDescription: Learn to drive near Greenville SC from one of the leading driving instructors in the Upstate.
+extraScripts:
+  - /assets/js/hide-by-date.js
+---
+		<noscript>
+			<div class="message message-warning text-center" role="alert">
+				JavaScript is disabled in this web browser. Some features of this website may not work properly until JavaScript is enabled.
+			</div>
+		</noscript>
+		<h1>Sabbadino Driving School</h1>
+		<div class="homepage-column-container">
+			<article class="homepage-column-1">
+				<span id="main-content" tabindex="-1"></span>
+				<h2>Learn Traffic Safety, Defensive&nbsp;Driving,<br />and Behind-the-Wheel Training</h2>
+				<p>
+					At Sabbadino Driving School, our mission is to make safety first and to make safety last. Our driving
+					courses in Taylors, SC are taught by Joe Sabbadino. Mr. Sabb has over 50 years of experience teaching driver's
+					education in the Greenville area. As a lifelong educator, he has a knack for helping his students understand
+					the importance of defensive driving and traffic safety.
+				</p>
+				<h3>Classroom Instruction</h3>
+				<p>
+					With 10 hours of classroom instruction, our driver training courses exceed the South Carolina driver
+					education requirements. The classroom instruction is scheduled in two and a half hour sessions over four weeks.
+					<a href="/class_location/">Click here for directions to Mr. Sabbadino's driver training classroom.</a>
+				</p>
+				<picture class="marketing-image">
+					<source type="image/webp" srcset="/assets/images/homepage/webp/classroom_instruction.webp" />
+					<img type="image/jpeg" src="/assets/images/homepage/jpg/classroom_instruction.jpg" alt="Mr. Sabbadino teaches a class" width="900" height="404" loading="lazy" />
+				</picture>
+				<p>Classroom Instruction Covers:</p>
+				<ul class="two-columns">
+					<li>Right attitudes for drivers</li>
+					<li>Defensive driving</li>
+					<li>Dangers of driving under the influence</li>
+					<li>Nature's laws</li>
+					<li>Railroad safety</li>
+					<li>Truck safety</li>
+					<li>Emergencies</li>
+				</ul>
+				<h3>Behind-the-Wheel Training</h3>
+				<p>
+					Our unique approach to behind-the-wheel training sets us apart. Mr. Sabbadino takes two students on
+					each driving lesson. Each student drives for half of the lesson and observes for the other half.
+					Mr. Sabb has found this technique to be highly effective. Our driving lessons are designed to teach smooth starts and stops, increased speeds with controlled safety stops,
+					front/rear vehicle judgement, and turning forward and backwards.
+				</p>
+				<picture class="marketing-image">
+					<source type="image/webp" srcset="/assets/images/homepage/webp/behind_the_wheel.webp" />
+					<img type="image/jpeg" src="/assets/images/homepage/jpg/behind_the_wheel.jpg" alt="Mr. Sabbadino drives with a student" width="900" height="398" loading="lazy" />
+				</picture>
+				<p>Behind-the-Wheel Driving Lessons Include:</p>
+				<ul class="two-columns">
+					<li>Off-road forward and backing maneuvers</li>
+					<li>Tracking (keeping the vehicle centered in the lane)</li>
+					<li>Scanning (using eyes properly for defensive driving)</li>
+					<li>Lane Changing</li>
+					<li>Right and left turns</li>
+					<li>Curb parking uphill and downhill</li>
+					<li>Three-point turns</li>
+					<li>Interstate driving</li>
+					<li>City driving in Downtown Greenville</li>
+					<li>Mountain driving at Paris Mountain</li>
+					<li>Angle and Perpendicular Parking</li>
+					<li>Parallel parking</li>
+					<li>Practicing South Carolina Highway Department road tests</li>
+				</ul>
+				<p>
+					In addition to the 6 hours of behind-the-wheel training, all students need driving time with parents.
+					By law, 15- and 16-year-old students have to log 40 hours of driving time with parents before taking
+					the license test.
+				</p>
+				<div class="did-you-know">
+					<p class="did-you-know-title">Did You Know?</p>
+					<ul>
+						<li>Students drive over 100 miles during their behind-the-wheel training.</li>
+						<li>A student does not need a permit to drive with a driving instructor. However, a student does need a
+						permit to drive with anyone else.</li>
+					</ul>
+				</div>
+				<h3>Testing</h3>
+				<p>
+					For an additional fee, Mr. Sabbadino is also certified to give a license test to anyone who has
+					completed a driver education course. <a href="#prices">See below for pricing</a>. Once you
+					have completed this test with Mr. Sabbadino, you can take your paperwork directly to the DMV to
+					get your license.
+				</p>
+				<p><em><strong>Note:</strong> The DMV reserves the right to randomly select applicants for retesting.</em></p>
+				<div class="did-you-know">
+					<p class="did-you-know-title">Did You Know?</p>
+					<p>You need a driver's permit for at least 6 months before taking a license test.</p>
+				</div>
+				<div class="prices-container">
+					<h3 id="prices">Prices</h3>
+					<!--<span class="message message-warning text-center" role="alert">Effective 2026</span>-->
+					<table>
+						<tbody>
+							<tr>
+								<td>Driver Education Course</td>
+								<td><strong>$480</strong></td>
+							</tr>
+							<tr>
+								<td>Additional Driving Hours</td>
+								<td><strong>$70</strong>/hour</td>
+							</tr>
+							<tr>
+								<td>License Test</td>
+								<td><strong>$70</strong></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<footer class="text-center">
+					<a href="/contact/" class="button button-primary">Register for a course today!</a>
+				</footer>
+			</article>
+			<aside class="homepage-column-2">
+				<div class="class-date-container">
+					<h2>{{ classDates.yearHeading }} Class Dates</h2>
+					<div id="class-dates">
+						{% if classDates.classes.length %}
+							{% for classDate in classDates.classes %}
+								<hide-by-date timestamp="{{ classDate.expiration }}">
+									{% if classDate.full == true or classDate.dates.length == 0 %}
+										<h3 class="class-date-heading">
+											<span class="text-muted">{{ classDate.name }}</span>
+											{% if classDate.full %}
+												<span class="class-date-indicator text-red">Full!</span>
+											{% else %}
+												<span class="class-date-indicator text-muted">No Class</span>
+											{% endif %}
+										</h3>
+										{% if classDate.reason %}
+											<p class="reason">{{ classDate.reason }}</p>
+										{% endif %}
+									{% else %}
+										<h3 class="class-date-heading">{{ classDate.name }}</h3>
+										<p class="class-dates-list">
+											{% for date in classDate.dates %}
+												{% if not loop.first %}
+													{% if date.breakBefore %}<br />{% else %}, {% endif %}
+												{% endif %}
+												<time datetime="{{ date.iso }}">{{ date.label }}</time>
+											{% endfor %}
+										</p>
+									{% endif %}
+								</hide-by-date>
+							{% endfor %}
+						{% else %}
+							<p class="text-muted">No future class dates are currently listed.</p>
+						{% endif %}
+					</div>
+				</div>
+			</aside>
+		</div>

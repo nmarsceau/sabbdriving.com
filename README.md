@@ -5,3 +5,15 @@
 This is the codebase for [sabbdriving.com](https://www.sabbdriving.com/).
 
 ![A desktop-size screenshot of the website.](https://github.com/nmarsceau/sabbdriving.com/assets/53009141/e9715457-9ea4-4716-911b-8cf1b8386ffe)
+
+## Development
+
+This site is built with [Eleventy](https://www.11ty.dev/).
+
+- Source templates: `src/`
+- Build output: `_site/`
+
+Commands:
+
+- `npm run dev` starts the Eleventy dev server
+- `npm run build` builds the static site into `_site`

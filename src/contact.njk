@@ -1,0 +1,68 @@
+---
+layout: layouts/base.njk
+permalink: /contact/
+pageTitle: Contact | Sabbadino Driver Training
+metaDescription: Contact Mr. Sabbadino to register for a driver training course or to ask a question.
+extraScripts:
+  - /assets/js/character_counter.js
+  - /assets/js/validate_form.js
+  - /assets/js/inputmask.min.js
+inlineScript: |
+  document.addEventListener('DOMContentLoaded', function() {
+    function applyPhoneMask() {
+      Inputmask({ mask: '(999) 999-9999' }).mask('[name="phone"]');
+    }
+
+    if (window.Inputmask) {
+      applyPhoneMask();
+    } else {
+      var inputMaskScript = document.querySelector('script[src="/assets/js/inputmask.min.js"]');
+      if (inputMaskScript) {
+        inputMaskScript.addEventListener('load', applyPhoneMask);
+      }
+    }
+
+    document.querySelector('form[name="contact"]').addEventListener('submit', function(event) {
+      event.preventDefault();
+      fetch(event.target.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(event.target)).toString()
+      })
+        .then(function() { window.location.href = '/success/'; })
+        .catch(function() { window.location.href = '/error/'; });
+    });
+  });
+---
+		<noscript>
+			<div class="message message-warning text-center" role="alert">
+				JavaScript is disabled in this web browser. Some features of this website may not work properly until JavaScript is enabled.
+			</div>
+		</noscript>
+		<article>
+			<h1>Contact</h1>
+			<span id="main-content" tabindex="-1"></span>
+			<p>Contact Mr. Sabbadino to register for a driver training course or ask a question.</p>
+			<h2>Phone</h2>
+			<a href="tel:18642920259">864.292.0259</a>
+			<h2>Email</h2>
+			<form class="validate" name="contact" method="post" action="/success/" netlify>
+				<label>
+					Name<span class="required">required</span>
+					<input type="text" name="name" required maxlength="250">
+				</label>
+				<label>
+					Email Address<span class="required">required</span>
+					<input type="email" name="email" required maxlength="320">
+				</label>
+				<label>
+					Phone Number<span class="required">required</span>
+					<input type="tel" name="phone" required maxlength="20">
+				</label>
+				<label>
+					Message<span class="required">required</span>
+					<textarea name="message" rows="6" class="count" maxlength="2500" required></textarea>
+				</label>
+				<button type="submit" class="button button-primary">Send</button>
+			</form>
+		</article>

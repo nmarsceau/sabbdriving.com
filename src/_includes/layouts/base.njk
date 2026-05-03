@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="title" content="{{ metaTitle or site.defaultMetaTitle }}" />
+  <meta name="description" content="{{ metaDescription }}" />
+  <meta name="keyword" content="{{ metaKeyword or site.defaultMetaKeyword }}" />
+  <title>{{ pageTitle }}</title>
+  <link href="/assets/css/styles.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  {% if extraHeadStyles %}
+    {% for stylesheet in extraHeadStyles %}
+      <link href="{{ stylesheet }}" rel="stylesheet" type="text/css" />
+    {% endfor %}
+  {% endif %}
+</head>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
+  <a href="#main-content">Skip to main content</a>
+
+  {% if showMainNav != false %}
+    {% include "partials/site-nav.njk" %}
+    {% include "partials/banner.njk" %}
+  {% else %}
+    <header class="text-center">
+      <div class="pictureContainer">
+        <picture>
+          <source type="image/webp" media="(max-width: 400px)" srcset="/assets/images/brand/webp/xs.webp" />
+          <source type="image/webp" media="(max-width: 992px)" srcset="/assets/images/brand/webp/sm.webp" />
+          <source type="image/webp" media="(max-width: 1300px)" srcset="/assets/images/brand/webp/md.webp" />
+          <source type="image/webp" media="(min-width: 1300px)" srcset="/assets/images/brand/webp/xl.webp" />
+          <source type="image/jpeg" media="(max-width: 400px)" srcset="/assets/images/brand/jpg/xs.jpg" />
+          <source type="image/jpeg" media="(max-width: 992px)" srcset="/assets/images/brand/jpg/sm.jpg" />
+          <source type="image/jpeg" media="(max-width: 1300px)" srcset="/assets/images/brand/jpg/md.jpg" />
+          <source type="image/jpeg" media="(min-width: 1300px)" srcset="/assets/images/brand/jpg/xl.jpg" />
+          <img src="/assets/images/brand/jpg/sm.jpg" alt="Sabbadino driver training logo" width="250" height="49" />
+        </picture>
+      </div>
+    </header>
+  {% endif %}
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/site-footer.njk" %}
+
+  <script src="/assets/js/main.js" async></script>
+  {% if extraScripts %}
+    {% for scriptPath in extraScripts %}
+      <script src="{{ scriptPath }}" async></script>
+    {% endfor %}
+  {% endif %}
+  {% if inlineScript %}
+    <script>{{ inlineScript | safe }}</script>
+  {% endif %}
+</body>
+</html>

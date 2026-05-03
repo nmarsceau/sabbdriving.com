@@ -401,6 +401,10 @@ a:hover {
 
 
 /* 4.5 Future Class Dates */
+hide-by-date {
+	display: block;
+}
+
 .class-date-indicator {
 	font-weight: normal;
 	font-size: 1rem;

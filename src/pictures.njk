@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+permalink: /pictures/
+pageTitle: Pictures | Sabbadino Driver Training
+metaDescription: What does driver training look like? Check out these pictures taken during both our classroom and behind-the-wheel training.
+extraHeadStyles:
+  - /assets/css/pictures.css
+extraScripts:
+  - /assets/js/gallery.js
+---
+		<noscript>
+			<div class="message message-warning text-center" role="alert">
+				JavaScript is disabled in this web browser. Some features of this website may not work properly until JavaScript is enabled.
+			</div>
+		</noscript>
+		<section>
+			<h1>Pictures</h1>
+			<span id="main-content" tabindex="-1"></span>
+			<div id="unsupported-notice" class="message message-warning" role="alert" hidden>
+				<p class="alert-heading h2">The picture gallery is not supported in your browser.</p>
+				<p>
+					Please upgrade to a newer web browser like
+					<a href="https://www.google.com/chrome/" class="alert-link">Google Chrome</a>,
+					<a href="https://www.mozilla.org/en-US/firefox/new/" class="alert-link">Mozilla Firefox</a>, or
+					<a href="https://www.microsoft.com/en-us/edge" class="alert-link">Microsoft Edge</a>.
+				</p>
+			</div>
+			<div id="thumbnail-container">
+				{% for picture in gallery %}
+					<button
+						type="button"
+						class="thumbnail"
+						data-image-number="{{ picture.number }}"
+						data-alt="{{ picture.alt }}"
+						aria-label="Open image {{ picture.number }} of {{ gallery.length }}"
+					>
+						<picture>
+							<source srcset="/assets/images/gallery/thumbs/webp/{{ picture.number }}.webp" type="image/webp" />
+							<img src="/assets/images/gallery/thumbs/jpg/{{ picture.number }}.jpg" alt="{{ picture.alt }}" loading="lazy" style="aspect-ratio: 300/169;" />
+						</picture>
+					</button>
+				{% endfor %}
+			</div>
+		</section>
+
+	<dialog id="image-modal" aria-labelledby="image-modal-title">
+		<header>
+			<h2 class="hidden-visually" id="image-modal-title">Image Viewer</h2>
+			<span>
+				<button type="button" class="image-modal-nav previous" aria-label="Previous image">
+					<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle">
+						<circle cx="12" cy="12" r="10"></circle>
+						<polyline points="12 8 8 12 12 16"></polyline>
+						<line x1="16" y1="12" x2="8" y2="12"></line>
+					</svg>
+				</button>
+				<button type="button" class="image-modal-nav next" aria-label="Next image">
+					<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle">
+						<circle cx="12" cy="12" r="10"></circle>
+						<polyline points="12 16 16 12 12 8"></polyline>
+						<line x1="8" y1="12" x2="16" y2="12"></line>
+					</svg>
+				</button>
+			</span>
+			<button type="button" class="closeBtn" aria-label="Close image viewer"></button>
+		</header>
+		<div>
+			<div class="modal-image-container">
+				<picture>
+					<source srcset="" type="image/webp" />
+					<img src="" alt="" />
+				</picture>
+			</div>
+			<p class="text-center" aria-hidden="true"></p>
+		</div>
+	</dialog>
